@@ -1,0 +1,12 @@
+# Bot dependencies pinned to match AlgoTrade's venv (parity of write functions / backtester)
+pandas==3.0.1
+numpy==2.4.2
+scipy==1.17.1
+kiteconnect==5.0.1
+yfinance==1.2.0
+PyYAML==6.0.3
+schedule==1.2.2
+# cloudsync
+psycopg[binary]>=3.2,<4
+python-dotenv>=1.0
+pydantic==2.14.2  # imported by the bot's server.dashboard_store (creates dashboard_* tables)

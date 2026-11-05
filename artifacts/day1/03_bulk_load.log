@@ -1,0 +1,56 @@
+{
+  "market_data_1m": {
+    "read": 32543,
+    "applied": 32543,
+    "rejected": 0
+  },
+  "market_data_5m": {
+    "read": 6311,
+    "applied": 6311,
+    "rejected": 0
+  },
+  "market_data_15m": {
+    "read": 3379,
+    "applied": 3379,
+    "rejected": 0
+  },
+  "market_data_1h": {
+    "read": 1235,
+    "applied": 1235,
+    "rejected": 0
+  },
+  "vix_data": {
+    "read": 2885,
+    "applied": 2885,
+    "rejected": 0
+  },
+  "signals": {
+    "read": 188,
+    "applied": 188,
+    "rejected": 0
+  },
+  "option_data": {
+    "read": 336480,
+    "applied": 336480,
+    "rejected": 0
+  },
+  "delta_cache": {
+    "read": 348109,
+    "applied": 348109,
+    "rejected": 0
+  },
+  "dashboard_strategy_state": {
+    "read": 3,
+    "applied": 3,
+    "rejected": 0
+  },
+  "dashboard_trade_history": {
+    "read": 8,
+    "applied": 8,
+    "rejected": 0
+  }
+}
+
+real	2m7.569s
+user	0m0.000s
+sys	0m0.015s

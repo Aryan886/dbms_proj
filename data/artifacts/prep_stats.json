@@ -1,0 +1,20 @@
+{
+  "source": "C:\\Users\\aryan\\Desktop\\AlgoTrade\\db\\trading_bot.db",
+  "working_copy": "data\\trading_bot.db",
+  "measured_at": "2026-11-05T07:19:05.572939+00:00",
+  "before_vacuum": {
+    "page_size": 4096,
+    "page_count": 627409,
+    "freelist_count": 605183,
+    "free_page_pct": 96.46,
+    "file_size_bytes": 2569867264
+  },
+  "after_vacuum": {
+    "page_size": 4096,
+    "page_count": 21618,
+    "freelist_count": 0,
+    "free_page_pct": 0.0,
+    "file_size_bytes": 88547328
+  },
+  "vacuum_seconds": 5.888
+}
