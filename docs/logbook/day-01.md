@@ -176,7 +176,9 @@ Only the dead Kite API is faked.
 | L2 float sums compared with 1e-9 relative tolerance | Needed because summation order differs; real differences are far larger | Keep; documented in `reconcile.py` |
 
 ## 6. Open items carried forward
-- [ ] `git init` the project folder and make the first commit (`.gitignore` is ready).
+- [x] `git init` the project folder and make the first commit: done, `d866018` on `main`. The
+  88 MB working database (`data/*`) and `.env` are ignored. The small measurement files in
+  `artifacts/` and `data/artifacts/` are tracked as evidence.
 - [ ] Bot repo: commit or restore the uncommitted deleted result files on `main` (spec prerequisite).
 - [ ] Day 2: fingerprints must use production's column order (see 4.4).
 - [ ] Day 2: the three limitations marked "Day 2" above.
