@@ -3,10 +3,21 @@ import json
 import os
 from pathlib import Path
 
-from cloudsync import bulk_load, migrate, prep, reconcile
+from cloudsync import bench, bulk_load, cdc, migrate, prep, reconcile, sandbox, sync
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _load_env() -> None:
+    try:
+        from dotenv import load_dotenv
+    except ImportError:  # pragma: no cover
+        return
+    load_dotenv(PROJECT_ROOT / ".env")  # never overrides variables already set
 
 
 def main(argv=None) -> int:
+    _load_env()
     parser = argparse.ArgumentParser(prog="cloudsync")
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -15,6 +26,8 @@ def main(argv=None) -> int:
     p.add_argument("--workdir", required=True, type=Path)
 
     m = sub.add_parser("migrate", help="Apply pending numbered Postgres migrations")
+    m.add_argument("--extra-dir", type=Path, action="append", default=[],
+                   help="Additional directory of NNNN_name.sql migrations (e.g. a drift fix)")
     _add_dsn(m)
 
     b = sub.add_parser("bulk-load", help="One-time load of the in-scope SQLite tables into Postgres")
@@ -27,14 +40,64 @@ def main(argv=None) -> int:
     r.add_argument("--out", required=True, type=Path, help="Directory for the report files")
     _add_dsn(r)
 
+    c = sub.add_parser("cdc-install", help="WAL mode + _changelog + generated triggers + fingerprints")
+    c.add_argument("--sqlite", required=True, type=Path)
+    _add_dsn(c)
+
+    s = sub.add_parser("sync", help="Apply captured changes to Postgres")
+    s.add_argument("mode", choices=["once", "daemon"])
+    s.add_argument("--sqlite", required=True, type=Path)
+    s.add_argument("--batch-size", type=int, default=sync.BATCH_SIZE)
+    s.add_argument("--poll", type=float, default=1.0, help="daemon: idle sleep in seconds")
+    s.add_argument("--max-retries", type=int, default=3, help="once: connection retries before giving up")
+    s.add_argument("--backoff", type=float, default=0.5, help="first retry delay (doubles each time)")
+    s.add_argument("--backoff-cap", type=float, default=30.0)
+    _add_dsn(s)
+
+    d = sub.add_parser("drift-resume", help="Resume a table paused by schema drift (after a migration)")
+    d.add_argument("--sqlite", required=True, type=Path)
+    d.add_argument("--table", required=True)
+    _add_dsn(d)
+
+    w = sub.add_parser("bench-wal", help="Benchmark concurrent write+read: rollback journal vs WAL")
+    w.add_argument("--sqlite", required=True, type=Path, help="Database to copy (never modified)")
+    w.add_argument("--out", required=True, type=Path)
+    w.add_argument("--seconds", type=float, default=10.0)
+    w.add_argument("--timeout", type=float, default=5.0, help="busy timeout (Python sqlite3 default: 5 s)")
+    w.add_argument("--table", default="delta_cache", help="table the reader scans")
+
+    x = sub.add_parser("sandbox", help="Throwaway copy of the working copy + cloud DB for experiments")
+    x.add_argument("action", choices=["create", "drop"])
+    x.add_argument("name")
+    x.add_argument("--from-sqlite", type=Path, default=Path("data/trading_bot.db"))
+    x.add_argument("--from-dsn", default=None, help="main cloud DSN to clone (default: $PG_DSN)")
+    x.add_argument("--dir", type=Path, default=Path("data/sandboxes"))
+
     args = parser.parse_args(argv)
     if args.command == "prep":
         print(json.dumps(prep.run(args.source, args.workdir), indent=2))
     elif args.command == "migrate":
-        applied = migrate.run(_dsn(args))
+        applied = migrate.run(_dsn(args), args.extra_dir)
         print(f"applied {len(applied)} migration(s): {applied}")
     elif args.command == "bulk-load":
         print(json.dumps(bulk_load.run(args.sqlite, _dsn(args)), indent=2))
+    elif args.command == "cdc-install":
+        print(json.dumps(cdc.install(args.sqlite, _dsn(args)), indent=2))
+    elif args.command == "sync" and args.mode == "once":
+        print(json.dumps(sync.once(args.sqlite, _dsn(args), args.batch_size, args.max_retries,
+                                   args.backoff, args.backoff_cap), indent=2))
+    elif args.command == "sync":
+        sync.daemon(args.sqlite, _dsn(args), args.batch_size, args.poll, args.backoff, args.backoff_cap)
+    elif args.command == "drift-resume":
+        print(json.dumps(sync.drift_resume(args.sqlite, _dsn(args), args.table), indent=2))
+    elif args.command == "bench-wal":
+        print(json.dumps(bench.run(args.sqlite, args.out, args.seconds, args.timeout, args.table), indent=2))
+    elif args.command == "sandbox":
+        dsn = args.from_dsn or _dsn(argparse.Namespace(dsn=None))
+        if args.action == "create":
+            print(json.dumps(sandbox.create(args.name, args.from_sqlite, dsn, args.dir), indent=2))
+        else:
+            print(json.dumps(sandbox.drop(args.name, dsn, args.dir), indent=2))
     elif args.command == "reconcile":
         levels = [int(x) for x in args.levels.split(",") if x.strip()]
         report = reconcile.run(args.sqlite, _dsn(args), levels, args.out)

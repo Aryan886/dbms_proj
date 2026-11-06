@@ -13,16 +13,20 @@ MIGRATIONS_DIR = Path(__file__).parent / "migrations"
 _NAME = re.compile(r"^(\d{4})_(.+)\.sql$")
 
 
-def available() -> list[tuple[int, str, Path]]:
-    found = []
-    for path in sorted(MIGRATIONS_DIR.glob("*.sql")):
-        m = _NAME.match(path.name)
-        if m:
-            found.append((int(m.group(1)), m.group(2), path))
-    return found
+def available(extra_dirs=()) -> list[tuple[int, str, Path]]:
+    found = {}
+    for directory in (MIGRATIONS_DIR, *map(Path, extra_dirs)):
+        for path in directory.glob("*.sql"):
+            m = _NAME.match(path.name)
+            if m:
+                version = int(m.group(1))
+                if version in found:
+                    raise SystemExit(f"duplicate migration version {version}: {found[version][2]} and {path}")
+                found[version] = (version, m.group(2), path)
+    return [found[v] for v in sorted(found)]
 
 
-def run(dsn: str) -> list[int]:
+def run(dsn: str, extra_dirs=()) -> list[int]:
     applied_now = []
     with psycopg.connect(dsn) as conn:
         conn.execute("""
@@ -33,7 +37,7 @@ def run(dsn: str) -> list[int]:
             )""")
         conn.commit()
         done = {v for (v,) in conn.execute("SELECT version FROM schema_version")}
-        for version, name, path in available():
+        for version, name, path in available(extra_dirs):
             if version in done:
                 continue
             with conn.transaction():

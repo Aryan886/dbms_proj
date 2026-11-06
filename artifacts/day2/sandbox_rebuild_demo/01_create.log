@@ -1,0 +1,10 @@
+{
+  "name": "rebuild1h",
+  "sqlite": "data\\sandboxes\\rebuild1h\\trading_bot.db",
+  "dsn": "user=postgres password=postgres dbname=algotrade_sbx_rebuild1h host=localhost port=5433",
+  "pg_database": "algotrade_sbx_rebuild1h"
+}
+
+real	0m2.715s
+user	0m0.000s
+sys	0m0.015s

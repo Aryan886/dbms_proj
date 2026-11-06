@@ -7,6 +7,12 @@ Every SourceTable knows:
 
 The same upserts are used by the one-time bulk load and (day 2) by the sync
 engine, so both paths share one definition of "a source row in the cloud".
+
+For the sync engine each table also knows how to remove the cloud image of a
+source row (`delete_sql`, keyed on the source pk). Tables whose cloud key is a
+natural key rather than the source pk (`natural_key=True`) have that image
+removed before every re-apply, so an id that moved to another natural key, or a
+delete-and-rebuild, can never leave a stale or clashing row behind.
 """
 from dataclasses import dataclass
 
@@ -15,8 +21,9 @@ from dataclasses import dataclass
 class SourceTable:
     name: str
     pk: str
-    select_sql: str
+    columns: str
     upsert_sql: str
+    delete_sql: str
     pg_count_sql: str
     # Level-2 checksum: the source timestamp column and the numeric measure
     # summed per day, plus the equivalent Postgres query returning rows of
@@ -24,6 +31,14 @@ class SourceTable:
     ts_col: str
     measure_col: str
     pg_daily_sql: str
+    natural_key: bool = False
+
+    @property
+    def select_sql(self) -> str:
+        return f"SELECT {self.columns} FROM {self.name} ORDER BY {self.pk}"
+
+    def select_by_pk_sql(self, n: int) -> str:
+        return f"SELECT {self.columns} FROM {self.name} WHERE {self.pk} IN ({','.join('?' * n)})"
 
 
 def _daily(from_where: str, ts: str, measure: str) -> str:
@@ -39,10 +54,7 @@ def _market_data(timeframe: str) -> SourceTable:
     return SourceTable(
         name=name,
         pk="id",
-        select_sql=f"""
-            SELECT id, timestamp, symbol, open, high, low, close,
-                   ao_value, donchian_upper, donchian_lower, donchian_mid, SL, SH, vix_value
-            FROM {name} ORDER BY id""",
+        columns="id, timestamp, symbol, open, high, low, close, ao_value, donchian_upper, donchian_lower, donchian_mid, SL, SH, vix_value",
         upsert_sql=f"""
             WITH c AS (
                 INSERT INTO candles (instrument_id, timeframe, ts, source_id, open, high, low, close)
@@ -62,6 +74,8 @@ def _market_data(timeframe: str) -> SourceTable:
                 ao_value = EXCLUDED.ao_value, donchian_upper = EXCLUDED.donchian_upper,
                 donchian_lower = EXCLUDED.donchian_lower, donchian_mid = EXCLUDED.donchian_mid,
                 sl = EXCLUDED.sl, sh = EXCLUDED.sh, vix_value = EXCLUDED.vix_value""",
+        delete_sql=f"DELETE FROM candles WHERE timeframe = '{timeframe}' AND source_id = %(pk)s",
+        natural_key=True,
         pg_count_sql=f"SELECT count(*) FROM candles WHERE timeframe = '{timeframe}'",
         ts_col="timestamp",
         measure_col="close",
@@ -72,10 +86,7 @@ def _market_data(timeframe: str) -> SourceTable:
 VIX_DATA = SourceTable(
     name="vix_data",
     pk="timestamp",
-    select_sql="""
-        SELECT timestamp, symbol, vix_value, vix_ao_value, vix_donchian_upper,
-               vix_donchian_lower, vix_donchian_mid
-        FROM vix_data ORDER BY timestamp""",
+    columns="timestamp, symbol, vix_value, vix_ao_value, vix_donchian_upper, vix_donchian_lower, vix_donchian_mid",
     upsert_sql="""
         INSERT INTO vix_observations (ts, instrument_id, value, ao_value, donchian_upper, donchian_lower, donchian_mid)
         VALUES (%(timestamp)s::timestamptz, (SELECT id FROM instruments WHERE symbol = %(symbol)s),
@@ -84,6 +95,7 @@ VIX_DATA = SourceTable(
             instrument_id = EXCLUDED.instrument_id, value = EXCLUDED.value, ao_value = EXCLUDED.ao_value,
             donchian_upper = EXCLUDED.donchian_upper, donchian_lower = EXCLUDED.donchian_lower,
             donchian_mid = EXCLUDED.donchian_mid""",
+    delete_sql="DELETE FROM vix_observations WHERE ts = %(pk)s::timestamptz",
     pg_count_sql="SELECT count(*) FROM vix_observations",
     ts_col="timestamp",
     measure_col="vix_value",
@@ -93,7 +105,7 @@ VIX_DATA = SourceTable(
 SIGNALS = SourceTable(
     name="signals",
     pk="id",
-    select_sql="SELECT id, timestamp, symbol, signal, reason, confidence_score FROM signals ORDER BY id",
+    columns="id, timestamp, symbol, signal, reason, confidence_score",
     upsert_sql="""
         INSERT INTO signals (id, instrument_id, ts, signal, reason, confidence_score)
         VALUES (%(id)s, (SELECT id FROM instruments WHERE symbol = %(symbol)s), %(timestamp)s::timestamptz,
@@ -101,6 +113,7 @@ SIGNALS = SourceTable(
         ON CONFLICT (id) DO UPDATE SET
             instrument_id = EXCLUDED.instrument_id, ts = EXCLUDED.ts, signal = EXCLUDED.signal,
             reason = EXCLUDED.reason, confidence_score = EXCLUDED.confidence_score""",
+    delete_sql="DELETE FROM signals WHERE id = %(pk)s",
     pg_count_sql="SELECT count(*) FROM signals",
     ts_col="timestamp",
     measure_col="confidence_score",
@@ -110,16 +123,15 @@ SIGNALS = SourceTable(
 OPTION_DATA = SourceTable(
     name="option_data",
     pk="id",
-    select_sql="""
-        SELECT id, timestamp, symbol, strike_price, option_type, ltp, iv, expiry_date,
-               spot_price, tradingsymbol, open_interest
-        FROM option_data ORDER BY id""",
+    columns="id, timestamp, symbol, strike_price, option_type, ltp, iv, expiry_date, spot_price, tradingsymbol, open_interest",
     # Header/line split + spot FD enforcement live in apply_option_data (migration 0004).
     upsert_sql="""
         SELECT apply_option_data(%(id)s::bigint, %(timestamp)s::text, %(symbol)s::text,
                                  %(strike_price)s::integer, %(option_type)s::text, %(ltp)s::float8,
                                  %(iv)s::float8, %(expiry_date)s::text, %(spot_price)s::numeric,
                                  %(tradingsymbol)s::text, %(open_interest)s::bigint)""",
+    delete_sql="SELECT delete_option_data(%(pk)s::bigint)",  # line + orphaned header (migration 0005)
+    natural_key=True,
     pg_count_sql="SELECT count(*) FROM option_snapshots",
     ts_col="timestamp",
     measure_col="ltp",
@@ -130,15 +142,14 @@ OPTION_DATA = SourceTable(
 DELTA_CACHE = SourceTable(
     name="delta_cache",
     pk="id",
-    select_sql="""
-        SELECT id, timestamp, symbol, strike_price, option_type, delta, expiry_date,
-               spot_price, ltp, tradingsymbol
-        FROM delta_cache ORDER BY id""",
+    columns="id, timestamp, symbol, strike_price, option_type, delta, expiry_date, spot_price, ltp, tradingsymbol",
     # Duplicate (contract, ts) rows: highest source id kept, others quarantined (see migration 0003).
     upsert_sql="""
         SELECT apply_delta_cache(%(id)s::bigint, %(timestamp)s::text, %(symbol)s::text, %(expiry_date)s::text,
                                  %(strike_price)s::integer, %(option_type)s::text, %(tradingsymbol)s::text,
                                  %(delta)s::float8, %(spot_price)s::numeric, %(ltp)s::float8)""",
+    delete_sql="SELECT delete_delta_cache(%(pk)s::bigint)",  # promotes a quarantined duplicate (0005)
+    natural_key=True,
     pg_count_sql="SELECT count(*) FROM delta_snapshots",
     ts_col="timestamp",
     measure_col="delta",
@@ -148,9 +159,7 @@ DELTA_CACHE = SourceTable(
 STRATEGY_STATE = SourceTable(
     name="dashboard_strategy_state",
     pk="strategy_id",
-    select_sql="""
-        SELECT strategy_id, display_name, status, mode, last_started_at, last_stopped_at, updated_at
-        FROM dashboard_strategy_state ORDER BY strategy_id""",
+    columns="strategy_id, display_name, status, mode, last_started_at, last_stopped_at, updated_at",
     upsert_sql="""
         INSERT INTO dashboard_strategy_state (strategy_id, display_name, status, mode,
                                               last_started_at, last_stopped_at, updated_at)
@@ -160,6 +169,7 @@ STRATEGY_STATE = SourceTable(
             display_name = EXCLUDED.display_name, status = EXCLUDED.status, mode = EXCLUDED.mode,
             last_started_at = EXCLUDED.last_started_at, last_stopped_at = EXCLUDED.last_stopped_at,
             updated_at = EXCLUDED.updated_at""",
+    delete_sql="DELETE FROM dashboard_strategy_state WHERE strategy_id = %(pk)s",
     pg_count_sql="SELECT count(*) FROM dashboard_strategy_state",
     ts_col="updated_at",
     measure_col="NULL",  # no numeric column: count + timestamp range only
@@ -169,11 +179,7 @@ STRATEGY_STATE = SourceTable(
 TRADE_HISTORY = SourceTable(
     name="dashboard_trade_history",
     pk="id",
-    select_sql="""
-        SELECT id, strategy_id, symbol, entry_ts, exit_ts, side, qty, entry_price, exit_price,
-               realized_pnl, status, source, position_type, section, subcat, exit_reason,
-               sl_initial, sl_final, sl_adjustments
-        FROM dashboard_trade_history ORDER BY id""",
+    columns="id, strategy_id, symbol, entry_ts, exit_ts, side, qty, entry_price, exit_price, realized_pnl, status, source, position_type, section, subcat, exit_reason, sl_initial, sl_final, sl_adjustments",
     upsert_sql="""
         INSERT INTO dashboard_trade_history (
             id, strategy_id, instrument_id, contract_id, entry_ts, exit_ts, side, qty, entry_price,
@@ -194,6 +200,7 @@ TRADE_HISTORY = SourceTable(
             source = EXCLUDED.source, position_type = EXCLUDED.position_type, section = EXCLUDED.section,
             subcat = EXCLUDED.subcat, exit_reason = EXCLUDED.exit_reason, sl_initial = EXCLUDED.sl_initial,
             sl_final = EXCLUDED.sl_final, sl_adjustments = EXCLUDED.sl_adjustments""",
+    delete_sql="DELETE FROM dashboard_trade_history WHERE id = %(pk)s",
     pg_count_sql="SELECT count(*) FROM dashboard_trade_history",
     ts_col="entry_ts",
     measure_col="realized_pnl",

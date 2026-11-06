@@ -1,0 +1,13 @@
+{
+  "batches": 3,
+  "entries": 2045,
+  "upserts": 810,
+  "deletes": 1235,
+  "rejected": 0,
+  "paused_tables": [],
+  "backlog": 0
+}
+
+real	0m7.125s
+user	0m0.015s
+sys	0m0.015s

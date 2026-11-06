@@ -1,0 +1,20 @@
+1h rows before: (1235, 787, 10943)
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=None
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 810
+[DEBUG] Final result rows: 810, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+backfill summary: {'NIFTY50': 810}
+1h rows after: (810, 10944, 11753)
+changelog: [('market_data_1h', 'D', 1235), ('market_data_1h', 'I', 810)]
+
+real	0m2.930s
+user	0m0.000s
+sys	0m0.046s

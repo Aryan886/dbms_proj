@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-11-06T06:36:48.583132+00:00",
+  "source": "data\\trading_bot.db",
+  "seconds_per_mode": 10.0,
+  "busy_timeout_s": 0.5,
+  "reader_table": "delta_cache",
+  "write_interval_ms": 5.0,
+  "modes": [
+    {
+      "journal_mode": "delete",
+      "writes_ok": 14,
+      "write_lock_errors": 10,
+      "write_latency_ms": {
+        "p50": 78.983,
+        "p95": 641.629,
+        "p99": 645.95,
+        "max": 645.95,
+        "mean": 295.601
+      },
+      "reads_ok": 9,
+      "read_lock_errors": 0,
+      "read_ms": {
+        "p50": 1219.607,
+        "max": 1431.579
+      }
+    },
+    {
+      "journal_mode": "wal",
+      "writes_ok": 1566,
+      "write_lock_errors": 0,
+      "write_latency_ms": {
+        "p50": 0.98,
+        "p95": 1.407,
+        "p99": 1.938,
+        "max": 25.971,
+        "mean": 1.066
+      },
+      "reads_ok": 9,
+      "read_lock_errors": 0,
+      "read_ms": {
+        "p50": 1192.01,
+        "max": 1226.448
+      }
+    }
+  ]
+}

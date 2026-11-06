@@ -10,6 +10,8 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
+from cloudsync.guard import assert_writable
+
 WORKING_DB_NAME = "trading_bot.db"
 
 
@@ -31,12 +33,15 @@ def file_stats(db_path: Path) -> dict:
 
 
 def run(source: Path, workdir: Path) -> dict:
+    assert_writable(workdir / WORKING_DB_NAME, "prep (working copy)")
     workdir.mkdir(parents=True, exist_ok=True)
     artifacts = workdir / "artifacts"
     artifacts.mkdir(exist_ok=True)
     working = workdir / WORKING_DB_NAME
-    if working.exists():
-        working.unlink()
+    # Side files belong to the copy being replaced (the WAL ones exist once
+    # cdc-install has run); none of them may outlive it.
+    for suffix in ("", "-wal", "-shm", "-journal"):
+        Path(f"{working}{suffix}").unlink(missing_ok=True)
 
     src = sqlite3.connect(f"file:{source.resolve().as_posix()}?mode=ro", uri=True)
     dst = sqlite3.connect(working)

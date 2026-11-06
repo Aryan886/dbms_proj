@@ -1,0 +1,2 @@
+cf66a20172d94e86c195d3bd66c2e6e6d4c2413c604af5b7728853022e49e0f1 */c/Users/aryan/Desktop/AlgoTrade/db/trading_bot.db
+measured 2026-11-06; file mtime 2026-06-16 20:43:10 +0530; size 2569867264

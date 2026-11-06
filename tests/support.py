@@ -94,3 +94,61 @@ def pg_rows(dsn, query, params=None):
     import psycopg
     with psycopg.connect(dsn) as conn:
         return conn.execute(query, params).fetchall()
+
+
+def free_port() -> int:
+    import socket
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
+
+
+class TcpForwarder:
+    """A switchable 'network link': forwards 127.0.0.1:<port> to the Docker Postgres.
+
+    Until start() is called nothing listens on the port, so clients see the
+    database as unreachable, exactly like a dropped connection to RDS."""
+
+    def __init__(self, port: int, target=("127.0.0.1", 5433)):
+        self.port, self.target = port, target
+        self._server = None
+
+    def start(self):
+        import socket
+        import threading
+        self._server = socket.create_server(("127.0.0.1", self.port))
+
+        def pipe(src, dst):
+            try:
+                while data := src.recv(65536):
+                    dst.sendall(data)
+            except OSError:
+                pass
+            finally:
+                for s in (src, dst):
+                    try:
+                        s.close()
+                    except OSError:
+                        pass
+
+        def accept_loop():
+            while True:
+                try:
+                    client, _ = self._server.accept()
+                except OSError:
+                    return
+                upstream = socket.create_connection(self.target)
+                threading.Thread(target=pipe, args=(client, upstream), daemon=True).start()
+                threading.Thread(target=pipe, args=(upstream, client), daemon=True).start()
+
+        threading.Thread(target=accept_loop, daemon=True).start()
+
+    def stop(self):
+        if self._server:
+            self._server.close()
+            self._server = None
+
+
+def dsn_via_port(dsn: str, port: int) -> str:
+    import psycopg
+    return psycopg.conninfo.make_conninfo(dsn, host="127.0.0.1", port=port)

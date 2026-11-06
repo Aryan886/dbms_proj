@@ -8,3 +8,6 @@ __pycache__/
 # Its small measurement files are kept: the logbook cites them as evidence.
 data/*
 !data/artifacts/
+
+# Daemon logs (scripts/start_sync_daemon.bat)
+logs/

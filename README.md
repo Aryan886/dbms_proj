@@ -33,6 +33,45 @@ write functions and backtester.
 | `bulk-load` | Loads the 10 in-scope tables; rows that violate a constraint go to `rejected_rows` | per-table read/kept/rejected summary |
 | `reconcile` | L1 row counts (`sqlite = postgres + rejected`) and L2 per-IST-day checksums; exits 1 on failure | `reconciliation.json` and `.md` |
 
+## Day 2: continuous sync
+
+Install CDC **before** the bulk load, so no write can fall between the baseline and the first
+sync. Changes captured during the load are re-applied idempotently.
+
+```bash
+.venv/Scripts/python -m cloudsync migrate
+.venv/Scripts/python -m cloudsync cdc-install --sqlite data/trading_bot.db
+.venv/Scripts/python -m cloudsync bulk-load --sqlite data/trading_bot.db     # first time only
+.venv/Scripts/python -m cloudsync sync once --sqlite data/trading_bot.db     # one deterministic pass
+.venv/Scripts/python -m cloudsync sync daemon --sqlite data/trading_bot.db   # continuous
+```
+
+| Command | What it does |
+|---|---|
+| `cdc-install` | Switches SQLite to WAL. Creates `_changelog` and generates INSERT/UPDATE/DELETE triggers for the 10 in-scope tables from their live column lists. Stores each table's column fingerprint in Postgres (never overwritten by a re-install). |
+| `sync once` | Applies every captured change in batches (`--batch-size`, default 1000). Each batch's upserts, deletes, rejects and `sync_state` move commit in one Postgres transaction; entries are pruned from SQLite only after that commit. If Postgres is unreachable it retries `--max-retries` times with exponential back-off. |
+| `sync daemon` | The same, forever: sleeps `--poll` seconds when idle and backs off (0.5 s doubling, capped at 30 s) while offline. `scripts/start_sync_daemon.bat` starts it; `scripts/create_sync_task.bat` (run as Administrator) registers it in Task Scheduler at 09:10. |
+| `drift-resume --table T` | Resumes a table paused by schema drift. Refused until a migration has been applied since the pause (`migrate --extra-dir DIR` adds a directory of numbered migrations). |
+| `bench-wal` | Benchmarks a bot-style writer against a sync-style reader in rollback-journal and WAL mode, on copies of the database. Writes `wal_benchmark.json` and `.md`. |
+
+Crash testing: set `CLOUDSYNC_FAULT=mid_batch:N` or `after_commit:N` and the process dies
+(exit code 75) at that point of batch N.
+
+## Safety: the real database is read-only
+
+- `cloudsync` refuses (`REFUSED`, non-zero exit) any command that would write to the bot's real
+  database (`SOURCE_DB`) or anywhere under `BOT_REPO` (see `cloudsync/guard.py`). Reading it
+  (`prep --source`, `bulk-load`, `reconcile`) is allowed and always opens it read-only.
+- Experiments never run on the main working copy. Use a throwaway pair instead:
+
+```bash
+.venv/Scripts/python -m cloudsync sandbox create exp1   # copies data/trading_bot.db + clones the PG_DSN database
+.venv/Scripts/python -m cloudsync sandbox drop exp1
+```
+
+  `create` prints the sandbox's `sqlite` path and `dsn`; pass those to the bot functions and to
+  `sync`/`reconcile`. Stop the sync daemon first (the Postgres clone needs no other connections).
+
 ## Tests
 
 ```bash

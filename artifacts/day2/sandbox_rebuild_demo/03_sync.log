@@ -1,0 +1,9 @@
+{
+  "batches": 3,
+  "entries": 2045,
+  "upserts": 810,
+  "deletes": 1235,
+  "rejected": 0,
+  "paused_tables": [],
+  "backlog": 0
+}

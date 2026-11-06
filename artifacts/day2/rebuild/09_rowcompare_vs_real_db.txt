@@ -1,0 +1,28 @@
+tables only in working copy: ['_changelog']
+tables only in real DB     : []
+table                               real rows  copy rows  real-copy  copy-real
+dashboard_strategy_state                    3          3          0          0 OK
+dashboard_trade_history                     8          8          0          0 OK
+delta_cache                            348109     348109          0          0 OK
+equity_data_15m                          1560       1560          0          0 OK
+equity_data_1m                          23445      23445          0          0 OK
+equity_data_5m                           4687       4687          0          0 OK
+equity_sma_15m                           1335       1335          0          0 OK
+equity_sma_1m                           20071      20071          0          0 OK
+equity_sma_5m                            4038       4038          0          0 OK
+market_data_15m                          3379       3379          0          0 OK
+market_data_1h                           1235       1235          0          0 OK
+market_data_1m                          32543      32543          0          0 OK
+market_data_5m                           6311       6311          0          0 OK
+market_sma_15m                           2329       2329          0          0 OK
+market_sma_1h                            1235       1235          0          0 OK
+market_sma_1m                           30294      30294          0          0 OK
+market_sma_5m                            6536       6536          0          0 OK
+option_data                            336480     336480          0          0 OK
+option_open_interest                        0          0          0          0 OK
+option_open_interest_5m                     0          0          0          0 OK
+options_data                                0          0          0          0 OK
+signals                                   188        188          0          0 OK
+trades                                      0          0          0          0 OK
+vix_data                                 2885       2885          0          0 OK
+RESULT: IDENTICAL

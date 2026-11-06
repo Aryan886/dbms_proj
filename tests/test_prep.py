@@ -43,6 +43,31 @@ class PrepTest(unittest.TestCase):
         self.assertEqual(after["file_size_bytes"], working.stat().st_size)
         self.assertEqual(after["page_count"] * after["page_size"], after["file_size_bytes"])
 
+    def test_re_prep_discards_a_stale_wal_left_by_the_previous_working_copy(self):
+        run_cli("prep", "--source", self.source, "--workdir", self.workdir)
+        working = self.workdir / "trading_bot.db"
+        wal = self.workdir / "trading_bot.db-wal"
+        # The previous copy was in WAL mode (cdc-install) and its writer died with frames
+        # not yet checkpointed into the main file: simulate that left-over -wal file.
+        conn = sqlite3.connect(working)
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.execute("PRAGMA wal_autocheckpoint=0")
+        conn.execute("DELETE FROM vix_data")
+        conn.commit()
+        stale = wal.read_bytes()
+        conn.close()
+        wal.write_bytes(stale)
+
+        run_cli("prep", "--source", self.source, "--workdir", self.workdir)
+        self.assertFalse(wal.exists())
+        # cdc-install switches the fresh copy to WAL: SQLite must not replay the old frames into it.
+        conn = sqlite3.connect(working)
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.close()
+
+        self.assertEqual(sqlite_rows(working, "SELECT count(*) FROM vix_data"), [(100,)])
+        self.assertEqual(sqlite_rows(working, "PRAGMA integrity_check"), [("ok",)])
+
 
 if __name__ == "__main__":
     unittest.main()

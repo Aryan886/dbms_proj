@@ -14,7 +14,7 @@ It's written for three readers:
 | Day | Date | Theme (from the spec's day plan) | Status | Log |
 |---|---|---|---|---|
 | 1 | 2026-11-05 | Prep, schema, bulk load, reconciliation levels 1–2 | ✅ Done | [day-01.md](day-01.md) |
-| 2 | — | WAL, CDC triggers, sync engine, drift handling | ⏳ Not started | — |
+| 2 | 2026-11-06 | WAL, CDC triggers, sync engine, drift handling | ✅ Done | [day-02.md](day-02.md) |
 | 3 | — | Compatibility & indicator views, replay simulator, level-3 parity | ⏳ Not started | — |
 | 4 | — | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ⏳ Not started | — |
 | 5 | — | PITR demo, report, demo rehearsal | ⏳ Not started | — |
@@ -38,6 +38,28 @@ chose it as a sensible default and recorded it.
 | D8 | 1 | Working copy VACUUMed in place, after measuring | Agent | Every later step runs on the compact 88 MB file |
 | D9 | 1 | INFY seeded in `instruments`, `equity_*` tables not migrated | Agent | The spec lists INFY as an instrument but `equity_*` isn't in scope |
 | D10 | 1 | `delta_cache` duplicates: highest source id wins, others quarantined, in **either arrival order** | Spec + Agent | The spec fixes the rule; arrival-order independence is needed for CDC replays |
+| D11 | 1 | Postgres (CHECK/FK/NOT NULL) decides what's invalid; Python only routes failures | Agent | "Rejected by the database rather than by application code" |
+| D12 | 1 | L1 passes when `sqlite = postgres + rejected` | Agent | Nothing silently lost; every reject explained |
+| D13 | 2 | Triggers record only (table, pk, op, seq); rows read at apply time | Spec | Updates collapse; replays idempotent |
+| D14 | 2 | `_changelog.seq` is AUTOINCREMENT | Agent | A pruned-empty rowid table restarts at 1, so changes would be skipped silently |
+| D15 | 2 | One cursor per table in `sync_state`; paused tables skipped | Spec + Agent | A global cursor can't pass a paused table without losing entries |
+| D16 | 2 | Natural-key tables: delete the cloud image before re-applying; source-pk tables: upsert | Agent | No stale/clashing rows after id moves or rebuilds; FK-safe |
+| D17 | 2 | Rejects of touched rows re-decided every batch | Agent | A corrected row leaves quarantine (Day-1 gap) |
+| D18 | 2 | Deleting a `delta_cache` survivor promotes the highest quarantined sibling | Agent | "Highest remaining id wins" survives deletes |
+| D19 | 2 | Observed contract beats derived (key corrected or merged, observed tradingsymbol kept) | Agent | Holiday-shifted monthly expiries (Day-1 gap) |
+| D20 | 2 | Fingerprints in Postgres, never overwritten by re-install; resume needs a newer `schema_version` | Agent (implements Spec) | Drift can't be silently accepted |
+| D21 | 2 | Fault injection via `CLOUDSYNC_FAULT=mid_batch:N` / `after_commit:N` | Agent | Deterministic crash tests; reused by the Day-3 chaos toggle |
+| D22 | 2 | `once` retries with back-off then fails; `daemon` retries forever (0.5 s doubling, cap 30 s) | Agent | Back-off demoable without a daemon |
+| D23 | 2 | WAL benchmark: two processes, bot's 5 s busy timeout plus a 0.5 s run | Agent | Measures SQLite locking, not the GIL |
+| D24 | 2 | Real-data delete test uses the bot's own `backfill_market_data_1h` on the working copy | Agent | Real code path; changed the working copy's 1h data (day-02 §4.4) |
+| D25 | 2 | Deletes pipelined (`executemany`), per-row fallback only on failure | Agent | Measured 3.0 s → 0.16 s per 1,000-change batch |
+| D26 | 2 | Daemon via `.bat` + Task Scheduler at 09:10 | Agent (implements Spec) | Same mechanism as the bot |
+| D27 | 2 | `migrate --extra-dir` for drift migrations | Agent | Ship a drift fix without editing the package |
+| D28 | 2 | **The bot's real database is read-only: only read actions on it** | Team | Owner's rule after the 1h incident (day-02 §4.4); enforced by `cloudsync/guard.py` |
+| D29 | 2 | **Every experiment runs in a throwaway sandbox**, never on the main working copy or cloud database | Team | Owner's rule after the same incident |
+| D30 | 2 | Guard protects `SOURCE_DB` and all of `BOT_REPO`, checked inside each writing function | Agent | No path into the bot repo can be written |
+| D31 | 2 | Sandbox = backup-API SQLite copy + `CREATE DATABASE … TEMPLATE` cloud clone | Agent | Sandbox syncs never touch the main cloud database |
+| D32 | 2 | Main pair rebuilt from the real database and proven identical row for row | Team + Agent | Undo the 1h divergence with proof for every table |
 
 ## How to add a day
 
