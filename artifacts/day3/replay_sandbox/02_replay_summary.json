@@ -1,0 +1,188 @@
+{
+  "day": "2026-03-27",
+  "source": "data\\trading_bot.db",
+  "target": "data\\sandboxes\\replay0327\\trading_bot.db",
+  "chaos": [
+    "kill",
+    "rebuild",
+    "revise"
+  ],
+  "rewound": {
+    "market_data_1m": 375,
+    "market_data_5m": 75,
+    "market_data_15m": 25,
+    "market_data_1h": 7,
+    "market_sma_1h": 7,
+    "vix_data": 91,
+    "signals": 4,
+    "option_data": 336480,
+    "delta_cache": 6386
+  },
+  "written": {
+    "delta_cache": 6386,
+    "vix_data": 91,
+    "market_data_1m": 375,
+    "market_data_5m": 75,
+    "market_data_15m": 25,
+    "signals": 4,
+    "option_data": 336480,
+    "market_data_1h": 7,
+    "market_sma_1h": 7
+  },
+  "revised": [
+    "2026-03-27 09:43:00",
+    "2026-03-27 10:13:00",
+    "2026-03-27 10:43:00",
+    "2026-03-27 11:13:00",
+    "2026-03-27 11:43:00",
+    "2026-03-27 12:13:00",
+    "2026-03-27 12:43:00",
+    "2026-03-27 13:13:00",
+    "2026-03-27 13:43:00",
+    "2026-03-27 14:13:00",
+    "2026-03-27 14:43:00",
+    "2026-03-27 15:13:00"
+  ],
+  "syncs": [
+    {
+      "fault": "mid_batch:1",
+      "exit_code": 75,
+      "seconds": 1.11
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 124.55
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 1.83
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 1.6
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 6.09
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 13.88
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 4.87
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 1.49
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 6.5
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 11.52
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 15.21
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 11.4
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 13.13
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 14.75
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 13.0
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 18.31
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 18.05
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 9.28
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 1.39
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 5.32
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 10.96
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 10.44
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 11.05
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 10.78
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 11.09
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 14.67
+    },
+    {
+      "fault": null,
+      "exit_code": 0,
+      "seconds": 8.1
+    }
+  ],
+  "rebuild": {
+    "NIFTY50": 810
+  },
+  "seconds": 422.85,
+  "changelog_backlog": 0
+}

@@ -1,0 +1,2 @@
+main working copy sha256 after replay: f772c9295da0d454a40e8978cc13255a20c86ca8a75a10b0b5d33265a1321261
+main cloud 1h candles: 1235 | 1h SMAs: 1235 | sync_batches: 0

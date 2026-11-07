@@ -3,7 +3,7 @@ import json
 import os
 from pathlib import Path
 
-from cloudsync import bench, bulk_load, cdc, migrate, prep, reconcile, sandbox, sync
+from cloudsync import bench, bulk_load, cdc, migrate, prep, reconcile, replay, sandbox, sync
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -32,12 +32,17 @@ def main(argv=None) -> int:
 
     b = sub.add_parser("bulk-load", help="One-time load of the in-scope SQLite tables into Postgres")
     b.add_argument("--sqlite", required=True, type=Path)
+    b.add_argument("--tables", default="", help="comma-separated subset of source tables (default: all)")
     _add_dsn(b)
 
     r = sub.add_parser("reconcile", help="Compare SQLite and Postgres; write a report")
     r.add_argument("--sqlite", required=True, type=Path)
-    r.add_argument("--levels", default="1,2", help="Comma-separated levels to run, e.g. 1,2")
+    r.add_argument("--levels", default="1,2", help="Comma-separated levels to run, e.g. 1,2,3")
     r.add_argument("--out", required=True, type=Path, help="Directory for the report files")
+    r.add_argument("--start", default=None, help="level 3: first backtest day (YYYY-MM-DD)")
+    r.add_argument("--end", default=None, help="level 3: last backtest day (YYYY-MM-DD)")
+    r.add_argument("--parity-dir", type=Path, default=None,
+                   help="level 3: keep the export, the source copy and both backtest logs here")
     _add_dsn(r)
 
     c = sub.add_parser("cdc-install", help="WAL mode + _changelog + generated triggers + fingerprints")
@@ -73,6 +78,15 @@ def main(argv=None) -> int:
     x.add_argument("--from-dsn", default=None, help="main cloud DSN to clone (default: $PG_DSN)")
     x.add_argument("--dir", type=Path, default=Path("data/sandboxes"))
 
+    y = sub.add_parser("replay", help="Replay a historical day into a CDC'd sandbox (stand-in for the Kite feed)")
+    y.add_argument("--source", required=True, type=Path, help="Database to read the day from (opened read-only)")
+    y.add_argument("--target", required=True, type=Path, help="Sandbox SQLite with CDC installed")
+    y.add_argument("--day", required=True, help="YYYY-MM-DD")
+    y.add_argument("--speed", type=float, default=0.0, help="simulated seconds per real second (0 = no pacing)")
+    y.add_argument("--chaos", default="", help="comma-separated: revise, rebuild, kill")
+    y.add_argument("--sync-dsn", default=None, help="run `sync once` against this DSN during the replay")
+    y.add_argument("--sync-every", type=int, default=0, help="replay steps between sync runs")
+
     args = parser.parse_args(argv)
     if args.command == "prep":
         print(json.dumps(prep.run(args.source, args.workdir), indent=2))
@@ -80,7 +94,8 @@ def main(argv=None) -> int:
         applied = migrate.run(_dsn(args), args.extra_dir)
         print(f"applied {len(applied)} migration(s): {applied}")
     elif args.command == "bulk-load":
-        print(json.dumps(bulk_load.run(args.sqlite, _dsn(args)), indent=2))
+        only = [t.strip() for t in args.tables.split(",") if t.strip()] or None
+        print(json.dumps(bulk_load.run(args.sqlite, _dsn(args), only), indent=2))
     elif args.command == "cdc-install":
         print(json.dumps(cdc.install(args.sqlite, _dsn(args)), indent=2))
     elif args.command == "sync" and args.mode == "once":
@@ -98,9 +113,13 @@ def main(argv=None) -> int:
             print(json.dumps(sandbox.create(args.name, args.from_sqlite, dsn, args.dir), indent=2))
         else:
             print(json.dumps(sandbox.drop(args.name, dsn, args.dir), indent=2))
+    elif args.command == "replay":
+        chaos = {c.strip() for c in args.chaos.split(",") if c.strip()}
+        print(json.dumps(replay.run(args.source, args.target, args.day, args.speed, chaos, args.sync_dsn,
+                                    args.sync_every), indent=2))
     elif args.command == "reconcile":
         levels = [int(x) for x in args.levels.split(",") if x.strip()]
-        report = reconcile.run(args.sqlite, _dsn(args), levels, args.out)
+        report = reconcile.run(args.sqlite, _dsn(args), levels, args.out, args.start, args.end, args.parity_dir)
         print(f"reconciliation {'PASSED' if report['passed'] else 'FAILED'} -> {args.out}")
         return 0 if report["passed"] else 1
     return 0

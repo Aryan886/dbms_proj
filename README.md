@@ -57,6 +57,22 @@ sync. Changes captured during the load are re-applied idempotently.
 Crash testing: set `CLOUDSYNC_FAULT=mid_batch:N` or `after_commit:N` and the process dies
 (exit code 75) at that point of batch N.
 
+## Day 3: compatibility views, indicators, replay, level-3 parity
+
+```bash
+.venv/Scripts/python -m cloudsync migrate          # 0006-0009: compat views, market_sma_1h, indicator + drift views
+.venv/Scripts/python -m cloudsync reconcile --sqlite data/trading_bot.db --levels 1,2,3 --start 2026-01-01 --end 2026-03-27 --out artifacts/day3
+.venv/Scripts/python -m cloudsync replay --source data/trading_bot.db --target <sandbox sqlite> --day 2026-03-27 --chaos revise,rebuild,kill --sync-dsn "<sandbox dsn>" --sync-every 30
+```
+
+| Object / command | What it is |
+|---|---|
+| schema `compat` | One view per source table, same name, columns, column order and value types as the bot's SQLite. Connect with `search_path=compat` and the bot's SQL runs unchanged. |
+| `candle_indicators_computed` | SMA 5/20/50/200, SMA of highs/lows, AO and Donchian(20) computed with window functions over `candles`. |
+| `dq_indicator_drift`, `dq_indicator_drift_summary` | Where the values the bot stored differ from the SQL-computed ones, per candle and per indicator. |
+| `reconcile --levels 3` | Exports the compat views to a fresh SQLite, runs the bot's unchanged backtester on a copy of the source and on the export, and diffs the trades. `--parity-dir` keeps the files. |
+| `replay` | Replays one day from a source into a sandbox with CDC installed, through the bot's write functions. Chaos: `revise`, `rebuild`, `kill`. Refuses the real database and the main working copy. |
+
 ## Safety: the real database is read-only
 
 - `cloudsync` refuses (`REFUSED`, non-zero exit) any command that would write to the bot's real

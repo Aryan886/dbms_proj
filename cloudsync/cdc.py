@@ -23,7 +23,7 @@ from psycopg.types.json import Jsonb
 
 from cloudsync import pg
 from cloudsync.guard import assert_writable
-from cloudsync.tables import SOURCE_TABLES
+from cloudsync.tables import SOURCE_TABLES, SourceTable
 
 CHANGELOG_DDL = """
 CREATE TABLE IF NOT EXISTS _changelog (
@@ -50,29 +50,26 @@ def fingerprint(columns: list[list]) -> str:
     return hashlib.sha256(json.dumps(columns).encode()).hexdigest()[:16]
 
 
-def _pk_column(table: str, columns: list[list]) -> str:
-    pks = [c[0] for c in columns if c[2]]
-    if len(pks) != 1:
-        raise SystemExit(f"{table}: expected a single-column primary key, found {pks or 'none'}")
-    return pks[0]
+def _pk_columns(columns: list[list]) -> tuple:
+    """The live primary-key columns, in key order (PRAGMA table_info's pk position)."""
+    return tuple(c[0] for c in sorted((c for c in columns if c[2]), key=lambda c: c[2]))
 
 
-def _trigger_sql(table: str, pk: str) -> list[str]:
-    log = f"INSERT INTO _changelog (table_name, pk, op) VALUES ('{table}'"
+def _trigger_sql(table: SourceTable) -> list[str]:
+    # A composite key (market_sma_1h) is recorded as one text value, the key
+    # columns joined by '|'; SourceTable.key_sql builds the same expression.
+    name, new, old = table.name, table.key_sql("NEW."), table.key_sql("OLD.")
+    log = f"INSERT INTO _changelog (table_name, pk, op) VALUES ('{name}'"
     return [
-        f'DROP TRIGGER IF EXISTS "_cdc_{table}_ins"',
-        f'DROP TRIGGER IF EXISTS "_cdc_{table}_upd"',
-        f'DROP TRIGGER IF EXISTS "_cdc_{table}_del"',
-        f'CREATE TRIGGER "_cdc_{table}_ins" AFTER INSERT ON "{table}" BEGIN '
-        f'{log}, NEW."{pk}", \'I\'); END',
+        f'DROP TRIGGER IF EXISTS "_cdc_{name}_ins"',
+        f'DROP TRIGGER IF EXISTS "_cdc_{name}_upd"',
+        f'DROP TRIGGER IF EXISTS "_cdc_{name}_del"',
+        f'CREATE TRIGGER "_cdc_{name}_ins" AFTER INSERT ON "{name}" BEGIN {log}, {new}, \'I\'); END',
         # A pk change is recorded under both keys: the old one resolves to a
         # delete, the new one to an upsert.
-        f'CREATE TRIGGER "_cdc_{table}_upd" AFTER UPDATE ON "{table}" BEGIN '
-        f'{log}, OLD."{pk}", \'U\'); '
-        f"INSERT INTO _changelog (table_name, pk, op) SELECT '{table}', NEW.\"{pk}\", 'U' "
-        f'WHERE NEW."{pk}" IS NOT OLD."{pk}"; END',
-        f'CREATE TRIGGER "_cdc_{table}_del" AFTER DELETE ON "{table}" BEGIN '
-        f'{log}, OLD."{pk}", \'D\'); END',
+        f'CREATE TRIGGER "_cdc_{name}_upd" AFTER UPDATE ON "{name}" BEGIN {log}, {old}, \'U\'); '
+        f"INSERT INTO _changelog (table_name, pk, op) SELECT '{name}', {new}, 'U' WHERE {new} IS NOT {old}; END",
+        f'CREATE TRIGGER "_cdc_{name}_del" AFTER DELETE ON "{name}" BEGIN {log}, {old}, \'D\'); END',
     ]
 
 
@@ -91,13 +88,14 @@ def install(sqlite_path: Path, dsn: str) -> dict:
             cols = live_columns(conn, table.name)
             if not cols:
                 raise SystemExit(f"source table {table.name} not found in {sqlite_path}")
-            pk = _pk_column(table.name, cols)
-            if pk != table.pk:
-                raise SystemExit(f"{table.name}: live pk {pk!r} differs from the mapped pk {table.pk!r}")
-            for stmt in _trigger_sql(table.name, pk):
+            pk = _pk_columns(cols)
+            if pk != table.key_columns:
+                raise SystemExit(f"{table.name}: live primary key {list(pk)} differs from the mapped key "
+                                 f"{list(table.key_columns)}")
+            for stmt in _trigger_sql(table):
                 conn.execute(stmt)
             fingerprints[table.name] = cols
-            summary["tables"][table.name] = {"pk": pk, "fingerprint": fingerprint(cols)}
+            summary["tables"][table.name] = {"pk": "|".join(pk), "fingerprint": fingerprint(cols)}
         conn.execute("COMMIT")
     except BaseException:
         if conn.in_transaction:

@@ -48,6 +48,32 @@ def make_bot_db(path: Path) -> Path:
         for name, decl in (("ltp", "REAL"), ("tradingsymbol", "TEXT")):
             if name not in cols:
                 conn.execute(f"ALTER TABLE delta_cache ADD COLUMN {name} {decl}")
+        # Production's 1m/5m/15m tables predate SL/SH/vix_value in create_tables():
+        # they were added later by ALTER TABLE (SL and SH with no declared type), so
+        # production's column order is ..., donchian_mid, SL, SH, vix_value. The
+        # tables are still empty here, so rebuild them the way production got them.
+        for tf in ("1m", "5m", "15m"):
+            conn.executescript(f"""
+                DROP TABLE market_data_{tf};
+                CREATE TABLE market_data_{tf} (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT NULL, symbol TEXT NOT NULL,
+                    open REAL, high REAL, low REAL, close REAL, ao_value REAL, donchian_upper REAL,
+                    donchian_lower REAL, donchian_mid REAL);
+                ALTER TABLE market_data_{tf} ADD COLUMN SL;
+                ALTER TABLE market_data_{tf} ADD COLUMN SH;
+                ALTER TABLE market_data_{tf} ADD COLUMN vix_value REAL;
+                CREATE UNIQUE INDEX ux_market_data_{tf}_symbol_timestamp ON market_data_{tf} (symbol, timestamp);
+            """)
+        # market_sma_1h exists in production (the backtester reads it); the bot only
+        # creates it lazily, on the first store_sma_from_df. Create it the way
+        # production has it: sma_5_high/sma_5_low were added later by ALTER TABLE.
+        conn.executescript("""
+            CREATE TABLE IF NOT EXISTS market_sma_1h(
+                timestamp TEXT NOT NULL, symbol TEXT NOT NULL, sma_5 REAL, sma_20 REAL, sma_50 REAL,
+                sma_200 REAL, PRIMARY KEY (timestamp, symbol));
+            ALTER TABLE market_sma_1h ADD COLUMN sma_5_high REAL;
+            ALTER TABLE market_sma_1h ADD COLUMN sma_5_low REAL;
+        """)
         conn.commit()
     finally:
         conn.close()

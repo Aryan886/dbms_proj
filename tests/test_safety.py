@@ -43,6 +43,8 @@ class RealDatabaseGuardTest(unittest.TestCase):
         # Anything inside the bot repository is protected too, not just the one file.
         self.assert_refused("prep", "--source", self.real_db, "--workdir", self.bot_repo / "db")
         self.assert_refused("bench-wal", "--sqlite", self.real_db, "--out", self.bot_repo / "bench")
+        # Day 3: the replay simulator writes its target through the bot's own functions.
+        self.assert_refused("replay", "--source", self.real_db, "--target", self.real_db, "--day", "2026-03-27")
         self.assert_untouched()
 
     def test_read_only_commands_still_work_on_the_real_database(self):

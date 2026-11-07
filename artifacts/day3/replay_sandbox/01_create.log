@@ -1,0 +1,10 @@
+{
+  "name": "replay0327",
+  "sqlite": "data\\sandboxes\\replay0327\\trading_bot.db",
+  "dsn": "user=postgres password=postgres dbname=algotrade_sbx_replay0327 host=localhost port=5433",
+  "pg_database": "algotrade_sbx_replay0327"
+}
+
+real	0m3.614s
+user	0m0.062s
+sys	0m0.015s

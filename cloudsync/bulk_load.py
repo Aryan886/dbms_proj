@@ -20,10 +20,16 @@ def _read_rows(sqlite_path: Path, select_sql: str):
         conn.close()
 
 
-def run(sqlite_path: Path, dsn: str) -> dict:
+def run(sqlite_path: Path, dsn: str, only: list[str] | None = None) -> dict:
+    """Load every in-scope table, or only the ones named (e.g. a table added by a later migration)."""
+    unknown = set(only or []) - set(SOURCE_TABLES)
+    if unknown:
+        raise SystemExit(f"unknown source table(s): {sorted(unknown)}")
     summary = {}
     with pg.connect(dsn) as conn:
         for table in SOURCE_TABLES.values():
+            if only and table.name not in only:
+                continue
             read = 0
             for batch in _read_rows(sqlite_path, table.select_sql):
                 with conn.transaction():

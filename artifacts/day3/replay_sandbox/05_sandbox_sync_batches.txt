@@ -1,0 +1,1 @@
+sandbox sync_batches (committed): batches=706 entries=691002 upserts=345892 deletes=345098 rejected=0 latency p50=395.3 ms max=2452.3 ms
