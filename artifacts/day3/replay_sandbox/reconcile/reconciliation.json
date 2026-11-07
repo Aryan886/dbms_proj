@@ -1,0 +1,267 @@
+{
+  "generated_at": "2026-11-07T18:17:33.296018+00:00",
+  "sqlite": "data\\sandboxes\\replay0327\\trading_bot.db",
+  "levels": {
+    "1": {
+      "passed": true,
+      "tables": {
+        "market_data_1m": {
+          "sqlite": 32543,
+          "postgres": 32543,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_5m": {
+          "sqlite": 6311,
+          "postgres": 6311,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_15m": {
+          "sqlite": 3379,
+          "postgres": 3379,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_1h": {
+          "sqlite": 810,
+          "postgres": 810,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_sma_1h": {
+          "sqlite": 810,
+          "postgres": 810,
+          "rejected": 0,
+          "passed": true
+        },
+        "vix_data": {
+          "sqlite": 2885,
+          "postgres": 2885,
+          "rejected": 0,
+          "passed": true
+        },
+        "signals": {
+          "sqlite": 188,
+          "postgres": 188,
+          "rejected": 0,
+          "passed": true
+        },
+        "option_data": {
+          "sqlite": 336480,
+          "postgres": 336480,
+          "rejected": 0,
+          "passed": true
+        },
+        "delta_cache": {
+          "sqlite": 348109,
+          "postgres": 346059,
+          "rejected": 2050,
+          "passed": true
+        },
+        "dashboard_strategy_state": {
+          "sqlite": 3,
+          "postgres": 3,
+          "rejected": 0,
+          "passed": true
+        },
+        "dashboard_trade_history": {
+          "sqlite": 8,
+          "postgres": 8,
+          "rejected": 0,
+          "passed": true
+        }
+      }
+    },
+    "2": {
+      "passed": true,
+      "tables": {
+        "market_data_1m": {
+          "passed": true,
+          "days_compared": 88,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_5m": {
+          "passed": true,
+          "days_compared": 85,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_15m": {
+          "passed": true,
+          "days_compared": 136,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_1h": {
+          "passed": true,
+          "days_compared": 135,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_sma_1h": {
+          "passed": true,
+          "days_compared": 135,
+          "measure": "sma_20",
+          "mismatches": []
+        },
+        "vix_data": {
+          "passed": true,
+          "days_compared": 28,
+          "measure": "vix_value",
+          "mismatches": []
+        },
+        "signals": {
+          "passed": true,
+          "days_compared": 26,
+          "measure": "confidence_score",
+          "mismatches": []
+        },
+        "option_data": {
+          "passed": true,
+          "days_compared": 1,
+          "measure": "ltp",
+          "mismatches": []
+        },
+        "delta_cache": {
+          "passed": true,
+          "days_compared": 53,
+          "measure": "delta",
+          "mismatches": []
+        },
+        "dashboard_strategy_state": {
+          "passed": true,
+          "days_compared": 3,
+          "measure": "NULL",
+          "mismatches": []
+        },
+        "dashboard_trade_history": {
+          "passed": true,
+          "days_compared": 5,
+          "measure": "realized_pnl",
+          "mismatches": []
+        }
+      }
+    },
+    "3": {
+      "passed": true,
+      "shims": [
+        "BacktestableBot._last_options_snapshot_timestamp = None"
+      ],
+      "window": {
+        "start": "2026-03-27",
+        "end": "2026-03-27"
+      },
+      "source": {
+        "num_trades": 2,
+        "total_pnl": 637.5000000000014,
+        "error": null
+      },
+      "cloud": {
+        "num_trades": 2,
+        "total_pnl": 637.5000000000014,
+        "error": null
+      },
+      "trade_diff": {
+        "only_in_source": [],
+        "only_in_cloud": [],
+        "changed": []
+      },
+      "exported_rows": {
+        "market_data_1m": 32543,
+        "market_data_5m": 6311,
+        "market_data_15m": 3379,
+        "market_data_1h": 810,
+        "market_sma_1h": 810,
+        "vix_data": 2885,
+        "signals": 188,
+        "option_data": 336480,
+        "delta_cache": 346059,
+        "dashboard_strategy_state": 3,
+        "dashboard_trade_history": 8
+      },
+      "fidelity": {
+        "market_data_1m": {
+          "source_rows": 32543,
+          "export_rows": 32543,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "market_data_5m": {
+          "source_rows": 6311,
+          "export_rows": 6311,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "market_data_15m": {
+          "source_rows": 3379,
+          "export_rows": 3379,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "market_data_1h": {
+          "source_rows": 810,
+          "export_rows": 810,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "market_sma_1h": {
+          "source_rows": 810,
+          "export_rows": 810,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "vix_data": {
+          "source_rows": 2885,
+          "export_rows": 2885,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "signals": {
+          "source_rows": 188,
+          "export_rows": 188,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "option_data": {
+          "source_rows": 336480,
+          "export_rows": 336480,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "delta_cache": {
+          "source_rows": 348109,
+          "export_rows": 346059,
+          "only_in_source": 2050,
+          "only_in_export": 0,
+          "identical": false
+        },
+        "dashboard_strategy_state": {
+          "source_rows": 3,
+          "export_rows": 3,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        },
+        "dashboard_trade_history": {
+          "source_rows": 8,
+          "export_rows": 8,
+          "only_in_source": 0,
+          "only_in_export": 0,
+          "identical": true
+        }
+      },
+      "work_dir": null
+    }
+  },
+  "passed": true
+}

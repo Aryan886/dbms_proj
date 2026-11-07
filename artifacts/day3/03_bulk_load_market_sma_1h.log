@@ -1,0 +1,11 @@
+{
+  "market_sma_1h": {
+    "read": 1235,
+    "kept": 1235,
+    "rejected": 0
+  }
+}
+
+real	0m1.341s
+user	0m0.015s
+sys	0m0.015s

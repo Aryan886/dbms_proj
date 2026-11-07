@@ -1,0 +1,4 @@
+cf66a20172d94e86c195d3bd66c2e6e6d4c2413c604af5b7728853022e49e0f1
+measured 2026-11-07 after the day-3 runs; mtime 2026-06-16 20:43:10; size 2569867264
+side files: none
+matches artifacts/day2/rebuild/real_db_sha256.txt: True

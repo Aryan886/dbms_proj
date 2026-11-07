@@ -1,0 +1,577 @@
+.C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\pandas\core\indexes\base.py:676: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002080FD12C50>
+  result._references.add_index_reference(result)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\pandas\core\indexes\base.py:676: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208202A67A0>
+  result._references.add_index_reference(result)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...<frozen importlib._bootstrap>:491: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208202A67A0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:491: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002080FD12C50>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen importlib._bootstrap>:491: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002082035FA60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...................C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002082035FA60>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4C70>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4F40>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F55D0>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4130>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4400>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F53F0>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002087AB98130>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002087AB98400>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4220>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F5A80>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F4040>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F5C60>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x00000208204F5F30>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002080F3C6110>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\aryan\DEV_Maxxing\dbms_proj\.venv\Lib\site-packages\psycopg\cursor.py:282: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x000002080FD11990>
+  records = self._tx.load_rows(self._pos, res.ntuples, self._make_row)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....................
+----------------------------------------------------------------------
+Ran 44 tests in 294.895s
+
+OK
+Database schema created successfully.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+Database schema created successfully.
+Options data stored successfully.
+[CACHE] Option data age: newest = 1.0s, oldest = 1.0s
+DEBUG: today = 2026-11-07, type = <class 'datetime.date'>
+[DEBUG] Using CE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000CE
+  Strike Price: 23000
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 121.19999999999999
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015470693598626004
+  Delta: 51.994502525635475
+[DEBUG] Using PE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000PE
+  Strike Price: 23000
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 108.575
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015470693400448703
+  Delta: -47.99002798616274
+[DEBUG] Using CE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050CE
+  Strike Price: 23050
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 95.4
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.01547069337928106
+  Delta: 49.436386985672634
+[DEBUG] Using PE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050PE
+  Strike Price: 23050
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 140.05
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.0154706933025642
+  Delta: -50.54814352733415
+Delta calculations completed and stored successfully.
+Database schema created successfully.
+Options data stored successfully.
+[CACHE] Option data age: newest = 0.3s, oldest = 0.3s
+DEBUG: today = 2026-11-07, type = <class 'datetime.date'>
+[DEBUG] Using CE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000CE
+  Strike Price: 23000
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 121.19999999999999
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015470494976519127
+  Delta: 51.994493957838685
+[DEBUG] Using PE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000PE
+  Strike Price: 23000
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 108.575
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015470494965966993
+  Delta: -47.9900367442699
+[DEBUG] Using CE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050CE
+  Strike Price: 23050
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 95.4
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015470494956619008
+  Delta: 49.43636200241287
+[DEBUG] Using PE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050PE
+  Strike Price: 23050
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 140.05
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.01547049495062996
+  Delta: -50.548168700009946
+Delta calculations completed and stored successfully.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=2
+[DEBUG] Combined rows after dedup: 5
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+Options data stored successfully.
+Database schema created successfully.
+Options data stored successfully.
+Database schema created successfully.
+Options data stored successfully.
+Database schema created successfully.
+Database schema created successfully.
+Stored 3 VIX data points for NIFTY50 successfully!!!
+Database schema created successfully.
+Options data stored successfully.
+Database schema created successfully.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_5m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 10
+[DEBUG] Final result rows: 10, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_5m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 12
+[DEBUG] Final result rows: 12, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_15m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=None
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 8
+[DEBUG] Final result rows: 8, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+Database schema created successfully.
+Options data stored successfully.
+[CACHE] Option data age: newest = 0.3s, oldest = 0.3s
+DEBUG: today = 2026-11-07, type = <class 'datetime.date'>
+[DEBUG] Using CE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000CE
+  Strike Price: 23000
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 121.19999999999999
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015468973171660709
+  Delta: 51.994428312044114
+[DEBUG] Using PE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000PE
+  Strike Price: 23000
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 108.575
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015468973156101858
+  Delta: -47.99010391185491
+[DEBUG] Using CE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050CE
+  Strike Price: 23050
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 95.4
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015468973135314472
+  Delta: 49.43617037949609
+[DEBUG] Using PE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050PE
+  Strike Price: 23050
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 140.05
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015468973121466778
+  Delta: -50.54836184551015
+Delta calculations completed and stored successfully.
+Database schema created successfully.
+Stored 3 VIX data points for NIFTY50 successfully!!!
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 40
+[DEBUG] Final result rows: 40, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1h.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 25
+[DEBUG] Final result rows: 25, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=6
+[DEBUG] Combined rows after dedup: 21
+[DEBUG] Final result rows: 15, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+Database schema created successfully.
+Stored 5000 VIX data points for NIFTY50 successfully!!!
+Database schema created successfully.
+Stored 5000 VIX data points for NIFTY50 successfully!!!
+Database schema created successfully.
+Database schema created successfully.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 12
+[DEBUG] Final result rows: 12, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_15m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=None
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=None
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 12
+[DEBUG] Final result rows: 12, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_15m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=None
+[DEBUG] Final query : SELECT * FROM market_data_15m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1h WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+Market data stored successfully in market_data_1h.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+Stored 2 VIX data points for NIFTY50 successfully!!!
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=2
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 1, SL/SH computed successfully
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+Options data stored successfully.
+[CACHE] Option data age: newest = 0.7s, oldest = 0.7s
+DEBUG: today = 2026-11-07, type = <class 'datetime.date'>
+[DEBUG] Using CE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000CE
+  Strike Price: 23000
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 121.19999999999999
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015465063543932366
+  Delta: 51.99425965539856
+[DEBUG] Using PE option for strike 23000:
+  Tradingsymbol: NIFTY26111323000PE
+  Strike Price: 23000
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 108.575
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.01546506353502801
+  Delta: -47.99027647722986
+[DEBUG] Using CE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050CE
+  Strike Price: 23050
+  Option Type: CE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 95.4
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015465063528753771
+  Delta: 49.43567800131005
+[DEBUG] Using PE option for strike 23050:
+  Tradingsymbol: NIFTY26111323050PE
+  Strike Price: 23050
+  Option Type: PE
+  Expiry Date: 2026-11-13
+  IV: 0.2721400525050547
+  LTP: 140.05
+  Volume: None
+  OI: None
+  Time to Expiry (years): 0.015465063524729384
+  Delta: -50.548858131451425
+Delta calculations completed and stored successfully.
+Database schema created successfully.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 2, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=2
+[DEBUG] Combined rows after dedup: 2
+[DEBUG] Final result rows: 1, SL/SH computed successfully
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 5
+[DEBUG] Final result rows: 5, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 10
+[DEBUG] Final result rows: 10, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 10
+[DEBUG] Final result rows: 10, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 4
+[DEBUG] Final result rows: 4, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=4
+[DEBUG] Combined rows after dedup: 6
+[DEBUG] Final result rows: 6, SL/SH computed successfully
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 3
+[DEBUG] Final result rows: 3, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+Database schema created successfully.
+[DEBUG] fetch_market_data called with symbol=NIFTY50, limit=6
+[DEBUG] Final query : SELECT * FROM market_data_1m WHERE 1=1 AND symbol = ? ORDER BY timestamp DESC LIMIT 6
+[DEBUG] Params : ['NIFTY50']
+Standardized columns: {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'SL': 'sl', 'SH': 'sh'}
+[DEBUG] prev_df fetched: rows=0
+[DEBUG] Combined rows after dedup: 1
+[DEBUG] Final result rows: 1, SL/SH computed successfully
+[WARN] DataFrame is missing columns: ['ao_value', 'donchian_upper', 'donchian_lower', 'donchian_mid']
+Market data stored successfully in market_data_1m.
+
+real	4m57.637s
+user	0m0.000s
+sys	0m0.031s

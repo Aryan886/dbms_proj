@@ -15,7 +15,7 @@ It's written for three readers:
 |---|---|---|---|---|
 | 1 | 2026-11-05 | Prep, schema, bulk load, reconciliation levels 1–2 | ✅ Done | [day-01.md](day-01.md) |
 | 2 | 2026-11-06 | WAL, CDC triggers, sync engine, drift handling | ✅ Done | [day-02.md](day-02.md) |
-| 3 | — | Compatibility & indicator views, replay simulator, level-3 parity | ⏳ Not started | — |
+| 3 | 2026-11-07 | Compatibility & indicator views, replay simulator, level-3 parity | ✅ Done | [day-03.md](day-03.md) |
 | 4 | — | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ⏳ Not started | — |
 | 5 | — | PITR demo, report, demo rehearsal | ⏳ Not started | — |
 | 6 | — | Buffer | ⏳ Not started | — |
@@ -60,6 +60,23 @@ chose it as a sensible default and recorded it.
 | D30 | 2 | Guard protects `SOURCE_DB` and all of `BOT_REPO`, checked inside each writing function | Agent | No path into the bot repo can be written |
 | D31 | 2 | Sandbox = backup-API SQLite copy + `CREATE DATABASE … TEMPLATE` cloud clone | Agent | Sandbox syncs never touch the main cloud database |
 | D32 | 2 | Main pair rebuilt from the real database and proven identical row for row | Team + Agent | Undo the 1h divergence with proof for every table |
+| D33 | 3 | **`market_sma_1h` migrated as stored data** (11th in-scope table), changing spec story 13 | Team | The backtester reads it and the strategy uses 1h sma_20/50/200; the stored values can't be recomputed |
+| D34 | 3 | Replay: candles/VIX/signals through bot writers; option, delta and SMA rows inserted verbatim | Team | The bot's option/delta/SMA writers stamp now(), call Kite or recompute |
+| D35 | 3 | Day-3 seams: compat views, indicator + drift views, level 3. Replay checked by a recorded sandbox run | Team | Owner's choice |
+| D36 | 3 | Level-3 test data: a slice of the working copy that is known to trade | Team | Two empty trade lists prove nothing |
+| D37 | 3 | Compat views in their own schema `compat` (`search_path = compat`) | Agent | Base tables already use some source names |
+| D38 | 3 | Compat view types: IST `timestamp` and `float8` | Agent | Real comparison semantics; the typing gain stays visible |
+| D39 | 3 | Compat column order follows production, not `create_tables()` | Agent (implements Spec) | They differ for 1m/5m/15m |
+| D40 | 3 | Composite source keys recorded as `col1\|col2` text in `_changelog` | Agent | `rowid` can change on VACUUM |
+| D41 | 3 | No FK from `candle_sma` to `candles` | Agent | The bot writes/deletes them independently; drift view reports orphans |
+| D42 | 3 | **Backtester shim**: class-level default for the attribute the bot's backtester lacks, on both runs | Team | The committed backtester crashes on any open position; no bot file changes |
+| D43 | 3 | Each backtest in its own process on a copy (backup of the source, and the export) | Agent | The backtester opens its DB read-write; no shared module state |
+| D44 | 3 | Export tables created from the source's own DDL, filled in source-key order | Agent | Same columns, affinities, indexes and ids as the compared database |
+| D45 | 3 | Level 3 also reports per-table export fidelity (informational) | Agent | Shows which table caused a trade difference |
+| D46 | 3 | A backtest that refuses or crashes is a level-3 result (FAIL with its error), not a crash of `reconcile` | Agent | The real data has a strict-data gap (day-03 §4.5) |
+| D47 | 3 | Real level-3 runs use windows the backtester can complete (before and after the Dec–Feb gap) | Agent | The full range stops on 2025-12-17 on the source itself |
+| D48 | 3 | `bulk-load --tables` loads a subset (a table added by a later migration) | Agent | Load 1,235 SMA rows without re-loading 730k rows |
+| D49 | 3 | Replay refuses the real database and the main working copy, and needs CDC on its target | Agent (implements D29) | The replay rewinds a day with DELETEs |
 
 ## How to add a day
 

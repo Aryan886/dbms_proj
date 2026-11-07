@@ -121,6 +121,30 @@ class CdcAndSyncTest(SyncTestBase):
         self.assertEqual(pg_rows(self.dsn, "SELECT id, signal FROM signals"), [(2, "BUY")])
         self.reconcile()
 
+    def test_hourly_smas_with_a_composite_key_follow_rebuilds_replaces_and_deletes(self):
+        from utils.db_func import store_market_data, store_sma_from_df
+        from utils.market_data_1h import backfill_market_data_1h
+        store_market_data(candles_df("2026-03-27 09:15", [23000.0 + i for i in range(12)], freq="15min"),
+                          interval="15m", db_path=str(self.sqlite))
+        backfill_market_data_1h(db_path=str(self.sqlite))  # deletes, then re-stores 1h candles AND their SMAs
+        self.sync_once()
+        # INSERT OR REPLACE on the composite key (timestamp, symbol): new values for existing hours, plus a new hour.
+        store_sma_from_df(candles_df("2026-03-27 11:15", [23500.0, 23510.0], freq="1h"), "NIFTY50", "1h",
+                          db_path=str(self.sqlite))
+        conn = sqlite3.connect(self.sqlite)
+        conn.execute("DELETE FROM market_sma_1h WHERE timestamp = '2026-03-27 09:15:00'")
+        conn.commit()
+        conn.close()
+
+        self.sync_once()
+
+        source = sqlite_rows(self.sqlite, "SELECT timestamp, sma_5, sma_20 FROM market_sma_1h ORDER BY timestamp")
+        self.assertEqual([r[0] for r in source], ["2026-03-27 10:15:00", "2026-03-27 11:15:00", "2026-03-27 12:15:00"])
+        self.assertEqual(pg_rows(self.dsn, """
+            SELECT to_char(ts AT TIME ZONE 'Asia/Kolkata', 'YYYY-MM-DD HH24:MI:SS'), sma_5, sma_20
+            FROM candle_sma ORDER BY ts"""), source)
+        self.reconcile()
+
 
 class ExactlyOnceTest(SyncTestBase):
     def write_minutes(self, n, start="2026-03-27 09:15"):

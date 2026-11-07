@@ -32,13 +32,25 @@ class SourceTable:
     measure_col: str
     pg_daily_sql: str
     natural_key: bool = False
+    # Composite source keys (market_sma_1h): the changelog records one text key,
+    # the key columns joined by '|', and `pk` names that value in the row dicts.
+    pk_columns: tuple = ()
+
+    @property
+    def key_columns(self) -> tuple:
+        return self.pk_columns or (self.pk,)
+
+    def key_sql(self, prefix: str = "") -> str:
+        """SQLite expression for the changelog key (prefix: 'NEW.' / 'OLD.' in triggers)."""
+        cols = [f'{prefix}"{c}"' for c in self.key_columns]
+        return " || '|' || ".join(cols) if self.pk_columns else cols[0]
 
     @property
     def select_sql(self) -> str:
-        return f"SELECT {self.columns} FROM {self.name} ORDER BY {self.pk}"
+        return f"SELECT {self.columns} FROM {self.name} ORDER BY {self.key_sql()}"
 
     def select_by_pk_sql(self, n: int) -> str:
-        return f"SELECT {self.columns} FROM {self.name} WHERE {self.pk} IN ({','.join('?' * n)})"
+        return f"SELECT {self.columns} FROM {self.name} WHERE {self.key_sql()} IN ({','.join('?' * n)})"
 
 
 def _daily(from_where: str, ts: str, measure: str) -> str:
@@ -207,9 +219,34 @@ TRADE_HISTORY = SourceTable(
     pg_daily_sql=_daily("dashboard_trade_history", "entry_ts", "realized_pnl"),
 )
 
+# Stored hourly SMAs, read by the backtester (migration 0007). Composite source
+# key (timestamp, symbol), which is also the cloud key, so a plain upsert.
+MARKET_SMA_1H = SourceTable(
+    name="market_sma_1h",
+    pk="_pk",
+    pk_columns=("timestamp", "symbol"),
+    columns="timestamp || '|' || symbol AS _pk, timestamp, symbol, sma_5, sma_20, sma_50, sma_200, "
+            "sma_5_high, sma_5_low",
+    upsert_sql="""
+        INSERT INTO candle_sma (instrument_id, timeframe, ts, sma_5, sma_20, sma_50, sma_200, sma_5_high, sma_5_low)
+        VALUES ((SELECT id FROM instruments WHERE symbol = %(symbol)s), '1h', %(timestamp)s::timestamptz,
+                %(sma_5)s, %(sma_20)s, %(sma_50)s, %(sma_200)s, %(sma_5_high)s, %(sma_5_low)s)
+        ON CONFLICT (instrument_id, timeframe, ts) DO UPDATE SET
+            sma_5 = EXCLUDED.sma_5, sma_20 = EXCLUDED.sma_20, sma_50 = EXCLUDED.sma_50,
+            sma_200 = EXCLUDED.sma_200, sma_5_high = EXCLUDED.sma_5_high, sma_5_low = EXCLUDED.sma_5_low""",
+    delete_sql="""
+        DELETE FROM candle_sma WHERE timeframe = '1h'
+          AND ts = split_part(%(pk)s, '|', 1)::timestamptz
+          AND instrument_id = (SELECT id FROM instruments WHERE symbol = split_part(%(pk)s, '|', 2))""",
+    pg_count_sql="SELECT count(*) FROM candle_sma WHERE timeframe = '1h'",
+    ts_col="timestamp",
+    measure_col="sma_20",
+    pg_daily_sql=_daily("candle_sma WHERE timeframe = '1h'", "ts", "sma_20"),
+)
+
 # Load order matters: observed contracts (option_data, delta_cache) before
 # trades that may reference them; strategies before their trades (FK).
 SOURCE_TABLES: dict[str, SourceTable] = {
-    t.name: t for t in [*(_market_data(tf) for tf in ("1m", "5m", "15m", "1h")), VIX_DATA, SIGNALS,
-                        OPTION_DATA, DELTA_CACHE, STRATEGY_STATE, TRADE_HISTORY]
+    t.name: t for t in [*(_market_data(tf) for tf in ("1m", "5m", "15m", "1h")), MARKET_SMA_1H, VIX_DATA,
+                        SIGNALS, OPTION_DATA, DELTA_CACHE, STRATEGY_STATE, TRADE_HISTORY]
 }
