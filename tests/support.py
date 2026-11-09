@@ -80,12 +80,12 @@ def make_bot_db(path: Path) -> Path:
     return path
 
 
-def run_cli(*args, env=None, check=True) -> subprocess.CompletedProcess:
+def run_cli(*args, env=None, check=True, timeout=None) -> subprocess.CompletedProcess:
     full_env = dict(os.environ)
     full_env.update(env or {})
     proc = subprocess.run(
         [sys.executable, "-m", "cloudsync", *map(str, args)],
-        cwd=PROJECT_ROOT, env=full_env, capture_output=True, text=True,
+        cwd=PROJECT_ROOT, env=full_env, capture_output=True, text=True, timeout=timeout,
     )
     if check and proc.returncode != 0:
         raise AssertionError(f"cloudsync {args} failed ({proc.returncode}):\n{proc.stdout}\n{proc.stderr}")

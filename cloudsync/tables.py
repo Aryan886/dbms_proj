@@ -213,10 +213,12 @@ TRADE_HISTORY = SourceTable(
             subcat = EXCLUDED.subcat, exit_reason = EXCLUDED.exit_reason, sl_initial = EXCLUDED.sl_initial,
             sl_final = EXCLUDED.sl_final, sl_adjustments = EXCLUDED.sl_adjustments""",
     delete_sql="DELETE FROM dashboard_trade_history WHERE id = %(pk)s",
-    pg_count_sql="SELECT count(*) FROM dashboard_trade_history",
+    # Levels 1-2 compare the rows that mirror SQLite (id > 0); backfilled backtest
+    # trades (negative ids, migration 0015) exist only in the cloud.
+    pg_count_sql="SELECT count(*) FROM dashboard_trade_history WHERE id > 0",
     ts_col="entry_ts",
     measure_col="realized_pnl",
-    pg_daily_sql=_daily("dashboard_trade_history", "entry_ts", "realized_pnl"),
+    pg_daily_sql=_daily("dashboard_trade_history WHERE id > 0", "entry_ts", "realized_pnl"),
 )
 
 # Stored hourly SMAs, read by the backtester (migration 0007). Composite source

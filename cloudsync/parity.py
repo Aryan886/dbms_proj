@@ -128,7 +128,8 @@ def run_backtest(bot_repo: str, db_path: Path, start: str, end: str, work_dir: P
     A run the backtester refuses or crashes on (for example BacktestDataCoverageError when
     the data no longer covers the window) is a result, not an infrastructure error: it
     comes back with no trades and its last error line, and level 3 fails on it."""
-    run_dir = Path(work_dir) / f"run_{Path(db_path).stem}"
+    # Absolute: the worker's cwd is run_dir, so a relative path would resolve twice.
+    run_dir = (Path(work_dir) / f"run_{Path(db_path).stem}").resolve()
     run_dir.mkdir(parents=True, exist_ok=True)
     out = run_dir / "trades.json"
     proc = subprocess.run([sys.executable, "-I", str(_WORKER), bot_repo, str(Path(db_path).resolve()), start, end,

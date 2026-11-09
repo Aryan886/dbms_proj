@@ -1,0 +1,7 @@
+applied 6 migration(s): [10, 11, 12, 13, 14, 15]
+
+real	0m1.304s
+user	0m0.000s
+sys	0m0.015s
+applied 1 migration(s): [16]
+applied 1 migration(s): [17]

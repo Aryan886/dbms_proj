@@ -1,0 +1,13 @@
+{
+  "batches": 0,
+  "entries": 0,
+  "upserts": 0,
+  "deletes": 0,
+  "rejected": 0,
+  "paused_tables": [],
+  "backlog": 0
+}
+
+real	0m0.698s
+user	0m0.000s
+sys	0m0.015s

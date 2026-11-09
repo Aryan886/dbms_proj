@@ -1,0 +1,14 @@
+{
+ "start": "2025-11-03",
+ "end": "2025-12-16",
+ "strategy_id": "nifty-options",
+ "backtest_trades": 16,
+ "backtest_total_pnl": -4651.250000000001,
+ "shims": [
+  "BacktestableBot._last_options_snapshot_timestamp = None"
+ ],
+ "rows_inserted": 16,
+ "rows_replaced": 0,
+ "inserted_pnl": -4651.25,
+ "work_dir": ".test_tmp\\backfill_main_11"
+}

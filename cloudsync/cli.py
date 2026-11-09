@@ -87,6 +87,20 @@ def main(argv=None) -> int:
     y.add_argument("--sync-dsn", default=None, help="run `sync once` against this DSN during the replay")
     y.add_argument("--sync-every", type=int, default=0, help="replay steps between sync runs")
 
+    f = sub.add_parser("backfill-trades",
+                       help="Run the backtester on a copy and put its trades in the cloud's trade history (tagged)")
+    f.add_argument("--sqlite", required=True, type=Path, help="Database the backtest reads (copied, never modified)")
+    f.add_argument("--start", required=True, help="first backtest day (YYYY-MM-DD)")
+    f.add_argument("--end", required=True, help="last backtest day (YYYY-MM-DD)")
+    f.add_argument("--strategy", default="nifty-options")
+    f.add_argument("--out", type=Path, default=None, help="directory for the summary and the trade list")
+    f.add_argument("--work-dir", type=Path, default=None, help="scratch directory (default: a temp dir)")
+    _add_dsn(f)
+
+    i = sub.add_parser("bench-indexes", help="EXPLAIN ANALYZE the bot's query shapes under index variants")
+    i.add_argument("--out", required=True, type=Path)
+    _add_dsn(i)
+
     args = parser.parse_args(argv)
     if args.command == "prep":
         print(json.dumps(prep.run(args.source, args.workdir), indent=2))
@@ -117,6 +131,15 @@ def main(argv=None) -> int:
         chaos = {c.strip() for c in args.chaos.split(",") if c.strip()}
         print(json.dumps(replay.run(args.source, args.target, args.day, args.speed, chaos, args.sync_dsn,
                                     args.sync_every), indent=2))
+    elif args.command == "backfill-trades":
+        from cloudsync import backfill
+        bot_repo = os.environ.get("BOT_REPO", r"C:\Users\aryan\Desktop\AlgoTrade")
+        print(json.dumps(backfill.backfill(args.sqlite, _dsn(args), args.start, args.end, bot_repo, args.strategy,
+                                           args.out, args.work_dir), indent=2))
+    elif args.command == "bench-indexes":
+        from cloudsync import index_audit
+        results = index_audit.run(_dsn(args), args.out)
+        print(f"index audit: {len(results['variants'])} variants -> {args.out}")
     elif args.command == "reconcile":
         levels = [int(x) for x in args.levels.split(",") if x.strip()]
         report = reconcile.run(args.sqlite, _dsn(args), levels, args.out, args.start, args.end, args.parity_dir)

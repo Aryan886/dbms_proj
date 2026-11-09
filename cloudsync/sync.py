@@ -66,7 +66,7 @@ def _open_sqlite(sqlite_path: Path) -> sqlite3.Connection:
 def _read_batch(lite, cursors: dict[str, int], active: list[str], batch_size: int):
     """Next entries for the active tables, and the current rows they point at."""
     if not active:
-        return [], {}
+        return [], {}, 0
     where = " OR ".join("(table_name = ? AND seq > ?)" for _ in active)
     params = [p for name in active for p in (name, cursors.get(name, 0))]
     lite.execute("BEGIN")  # one read snapshot for entries + rows
@@ -86,9 +86,13 @@ def _read_batch(lite, cursors: dict[str, int], active: list[str], batch_size: in
                 for r in lite.execute(table.select_by_pk_sql(len(chunk)), chunk):
                     rows[r[table.pk]] = dict(r)
             current[name] = (keys, rows)
+        backlog = 0
+        if entries:  # entries still waiting after this batch, in the same snapshot
+            backlog = lite.execute(f"SELECT count(*) FROM _changelog WHERE ({where}) AND seq > ?",
+                                   (*params, entries[-1]["seq"])).fetchone()[0]
     finally:
         lite.execute("COMMIT")
-    return entries, current
+    return entries, current, backlog
 
 
 def _prune(lite, cursors: dict[str, int]) -> int:
@@ -122,7 +126,7 @@ def _apply_deletes(conn, table, pks) -> tuple[int, int]:
     return deleted, rejected
 
 
-def _apply_batch(conn, entries, current, batch_no: int) -> dict:
+def _apply_batch(conn, entries, current, backlog: int, batch_no: int) -> dict:
     started = datetime.now(timezone.utc)
     upserts = deletes = rejected = 0
     with conn.transaction():
@@ -160,12 +164,12 @@ def _apply_batch(conn, entries, current, batch_no: int) -> dict:
         oldest = min(datetime.fromisoformat(e["changed_at"]).replace(tzinfo=timezone.utc) for e in entries)
         conn.execute(
             """INSERT INTO sync_batches (first_seq, last_seq, entries, upserts, deletes, rejected, tables,
-                                         started_at, committed_at, latency_ms, max_lag_ms)
+                                         started_at, committed_at, latency_ms, max_lag_ms, backlog_after)
                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, clock_timestamp(),
                        extract(epoch FROM clock_timestamp() - %s) * 1000,
-                       extract(epoch FROM clock_timestamp() - %s) * 1000)""",
+                       extract(epoch FROM clock_timestamp() - %s) * 1000, %s)""",
             (entries[0]["seq"], entries[-1]["seq"], len(entries), upserts, deletes, rejected,
-             sorted(last), started, started, oldest))
+             sorted(last), started, started, oldest, backlog))
     return {"entries": len(entries), "upserts": upserts, "deletes": deletes, "rejected": rejected,
             "last_seq": dict(last)}
 
@@ -206,11 +210,11 @@ def run_pass(sqlite_path: Path, conn: psycopg.Connection, batch_size: int = BATC
         _prune(lite, cursors)
         total = {"batches": 0, "entries": 0, "upserts": 0, "deletes": 0, "rejected": 0}
         while True:
-            entries, current = _read_batch(lite, cursors, active, batch_size)
+            entries, current, backlog = _read_batch(lite, cursors, active, batch_size)
             if not entries:
                 break
             total["batches"] += 1
-            result = _apply_batch(conn, entries, current, total["batches"])
+            result = _apply_batch(conn, entries, current, backlog, total["batches"])
             _fault("after_commit", total["batches"])
             cursors.update(result.pop("last_seq"))
             _prune(lite, cursors)
@@ -226,6 +230,24 @@ def run_pass(sqlite_path: Path, conn: psycopg.Connection, batch_size: int = BATC
 # ---------- modes ----------
 _RETRYABLE = (psycopg.OperationalError, sqlite3.OperationalError)
 
+# One sync per cloud database. A session-level advisory lock (advisory locks are
+# per database) is held for the life of the sync's connection; it survives the
+# batch commits and is released by Postgres when the session ends, even on a crash.
+SYNC_LOCK_KEY = 0x636C6F756473796E  # "cloudsyn"
+
+
+def _take_sync_lock(conn: psycopg.Connection) -> None:
+    if not conn.execute("SELECT pg_try_advisory_lock(%s)", (SYNC_LOCK_KEY,)).fetchone()[0]:
+        holder = conn.execute("""SELECT pid, application_name, backend_start FROM pg_locks l
+                                 JOIN pg_stat_activity a USING (pid)
+                                 WHERE l.locktype = 'advisory' AND l.granted
+                                   AND (l.classid::bigint << 32 | l.objid::bigint) = %s""",
+                              (SYNC_LOCK_KEY,)).fetchone()
+        raise SystemExit("REFUSED: another sync is already running against this cloud database"
+                         + (f" (backend pid {holder[0]}, connected since {holder[2]:%Y-%m-%d %H:%M:%S})"
+                            if holder else ""))
+    conn.commit()
+
 
 def once(sqlite_path: Path, dsn: str, batch_size: int, max_retries: int, backoff: float,
          backoff_cap: float) -> dict:
@@ -234,6 +256,7 @@ def once(sqlite_path: Path, dsn: str, batch_size: int, max_retries: int, backoff
     for attempt in range(max_retries + 1):
         try:
             with pg.connect(dsn, connect_timeout=5) as conn:
+                _take_sync_lock(conn)
                 return run_pass(sqlite_path, conn, batch_size)
         except _RETRYABLE as err:
             if attempt == max_retries:
@@ -251,6 +274,7 @@ def daemon(sqlite_path: Path, dsn: str, batch_size: int, poll: float, backoff: f
     while True:
         try:
             with pg.connect(dsn, connect_timeout=5) as conn:
+                _take_sync_lock(conn)
                 if delay != backoff:
                     log("connected again; resuming from sync_state")
                 delay = backoff

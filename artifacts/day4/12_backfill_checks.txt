@@ -1,0 +1,4 @@
+base rows by sign/source [(False, 'backtest-backfill', 90, Decimal('12620.00')), (True, 'backtest', 2, Decimal('1230.00')), (True, 'demo', 4, Decimal('1727.50')), (True, 'live-sync', 2, Decimal('2500.00'))]
+compat rows (8, 1)
+identity (exit-entry)*qty vs pnl, max abs diff (Decimal('0.50'), 90)
+audit rows by table/op/actor [('dashboard_trade_history', 'INSERT', 'postgres', 90), ('dashboard_trade_history', 'UPDATE', 'postgres', 90)]

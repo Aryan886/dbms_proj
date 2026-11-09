@@ -1,0 +1,37 @@
+{
+ "before": {
+  "file_bytes": 88563712,
+  "page_size": 4096,
+  "page_count": 21622,
+  "indexes": [
+   "idx_market_data_15m_symbol_timestamp",
+   "idx_market_data_1m_symbol_timestamp",
+   "idx_market_data_5m_symbol_timestamp",
+   "ux_market_data_15m_symbol_timestamp",
+   "ux_market_data_1h_symbol_timestamp",
+   "ux_market_data_1m_symbol_timestamp",
+   "ux_market_data_5m_symbol_timestamp"
+  ],
+  "plan": [
+   "SEARCH market_data_1m USING INDEX ux_market_data_1m_symbol_timestamp (symbol=? AND timestamp>? AND timestamp<?)"
+  ],
+  "query_ms_avg_of_200": 0.441
+ },
+ "after": {
+  "file_bytes": 86982656,
+  "page_size": 4096,
+  "page_count": 21236,
+  "indexes": [
+   "ux_market_data_15m_symbol_timestamp",
+   "ux_market_data_1h_symbol_timestamp",
+   "ux_market_data_1m_symbol_timestamp",
+   "ux_market_data_5m_symbol_timestamp"
+  ],
+  "plan": [
+   "SEARCH market_data_1m USING INDEX ux_market_data_1m_symbol_timestamp (symbol=? AND timestamp>? AND timestamp<?)"
+  ],
+  "query_ms_avg_of_200": 0.483
+ },
+ "saved_bytes": 1581056,
+ "saved_pages": 386
+}
