@@ -16,7 +16,7 @@ It's written for three readers:
 | 1 | 2026-11-05 | Prep, schema, bulk load, reconciliation levels 1–2 | ✅ Done | [day-01.md](day-01.md) |
 | 2 | 2026-11-06 | WAL, CDC triggers, sync engine, drift handling | ✅ Done | [day-02.md](day-02.md) |
 | 3 | 2026-11-07 | Compatibility & indicator views, replay simulator, level-3 parity | ✅ Done | [day-03.md](day-03.md) |
-| 4 | — | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ⏳ Not started | — |
+| 4 | 2026-11-08 | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ✅ Done (main cloud is now RDS) | [day-04.md](day-04.md) |
 | 5 | — | PITR demo, report, demo rehearsal | ⏳ Not started | — |
 | 6 | — | Buffer | ⏳ Not started | — |
 
@@ -77,6 +77,23 @@ chose it as a sensible default and recorded it.
 | D47 | 3 | Real level-3 runs use windows the backtester can complete (before and after the Dec–Feb gap) | Agent | The full range stops on 2025-12-17 on the source itself |
 | D48 | 3 | `bulk-load --tables` loads a subset (a table added by a later migration) | Agent | Load 1,235 SMA rows without re-loading 730k rows |
 | D49 | 3 | Replay refuses the real database and the main working copy, and needs CDC on its target | Agent (implements D29) | The replay rewinds a day with DELETEs |
+| D50 | 4 | **Backfilled backtest trades go to the cloud only**, tagged; SQLite untouched | Team | Keeps the main working copy pipeline-only |
+| D51 | 4 | **RDS created by the owner with a wizard** (`scripts/rds_setup_wizard.sh`); switch after RDS reconciles | Team | Needs the owner's AWS console |
+| D52 | 4 | Day-4 seams: roles, audit trigger, analytics views (+ sync lock); backfill and index audit measured | Team | Owner's choice |
+| D53 | 4 | Extra Day-4 scope: single-daemon lock only | Team | Owner's choice |
+| D54 | 4 | NOLOGIN group roles, `IF NOT EXISTS`, granted per database; connect via membership or `-c role=` | Agent | No secrets in migrations; roles are cluster-wide |
+| D55 | 4 | `sync_writer` granted table by table on `public` base tables, not `ON ALL TABLES` | Agent | `public` also holds views the writer mustn't read |
+| D56 | 4 | Audit log in schema `audit`, caller's-rights trigger, writer has INSERT only | Agent | Real `actor`; append-only trail for the pipeline |
+| D57 | 4 | P&L views per (strategy, source); closed trades; IST exit day; trade-level max drawdown from 0 | Agent | Backfilled and live trades never mix |
+| D58 | 4 | Data-quality thresholds from measured cadence (options > 5 min, VIX > 10 min, 09:15–15:30) | Agent | Real feed cadence (day-04 §3) |
+| D59 | 4 | Sync records `backlog_after` with each batch, in the same transaction | Agent | Postgres can't see the SQLite changelog |
+| D60 | 4 | Single-sync lock = session-level `pg_try_advisory_lock`; second sync exits `REFUSED` | Agent | Released by Postgres even on a crash; per database |
+| D61 | 4 | Backfilled rows: negative ids + `source='backtest-backfill'` (CHECK); compat and L1/L2 cover `id > 0` | Agent (implements D50) | Sync can't touch them; bot sees only its rows; reconcile stays meaningful |
+| D62 | 4 | Backtest → dashboard row: BUY for net debit, qty from the lot multiplier (50), per-unit prices | Agent | Keeps (exit − entry) × qty = P&L |
+| D63 | 4 | Index audit outcome: B-tree on `ts AT TIME ZONE 'Asia/Kolkata'` for candles and delta snapshots; no BRIN | Agent | Measured: 12.3 → 1.7 ms and 175.9 → 0.13 ms; BRIN slower for top-N |
+| D64 | 4 | Duplicate SQLite `idx_` indexes measured on a sandbox copy, not dropped in the bot's DB | Agent (implements D28) | The bot's schema is the owner's call |
+| D65 | 4 | RDS wizard writes `RDS_*` only; `PG_DSN` stays on Docker until RDS reconciles | Agent | The main pair never points at an empty database |
+| D66 | 4 | **Main cloud switched to RDS** (`PG_DSN`); Docker main cloud kept as `DOCKER_PG_DSN`, no longer synced; tests stay on Docker | Team | One changelog can keep only one cloud current; PITR needs RDS live |
 
 ## How to add a day
 

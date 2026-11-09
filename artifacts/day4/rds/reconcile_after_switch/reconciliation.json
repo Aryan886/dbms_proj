@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-11-08T16:26:37.680102+00:00",
+  "sqlite": "data\\trading_bot.db",
+  "levels": {
+    "1": {
+      "passed": true,
+      "tables": {
+        "market_data_1m": {
+          "sqlite": 32543,
+          "postgres": 32543,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_5m": {
+          "sqlite": 6311,
+          "postgres": 6311,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_15m": {
+          "sqlite": 3379,
+          "postgres": 3379,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_data_1h": {
+          "sqlite": 1235,
+          "postgres": 1235,
+          "rejected": 0,
+          "passed": true
+        },
+        "market_sma_1h": {
+          "sqlite": 1235,
+          "postgres": 1235,
+          "rejected": 0,
+          "passed": true
+        },
+        "vix_data": {
+          "sqlite": 2885,
+          "postgres": 2885,
+          "rejected": 0,
+          "passed": true
+        },
+        "signals": {
+          "sqlite": 188,
+          "postgres": 188,
+          "rejected": 0,
+          "passed": true
+        },
+        "option_data": {
+          "sqlite": 336480,
+          "postgres": 336480,
+          "rejected": 0,
+          "passed": true
+        },
+        "delta_cache": {
+          "sqlite": 348109,
+          "postgres": 346059,
+          "rejected": 2050,
+          "passed": true
+        },
+        "dashboard_strategy_state": {
+          "sqlite": 3,
+          "postgres": 3,
+          "rejected": 0,
+          "passed": true
+        },
+        "dashboard_trade_history": {
+          "sqlite": 8,
+          "postgres": 8,
+          "rejected": 0,
+          "passed": true
+        }
+      }
+    },
+    "2": {
+      "passed": true,
+      "tables": {
+        "market_data_1m": {
+          "passed": true,
+          "days_compared": 88,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_5m": {
+          "passed": true,
+          "days_compared": 85,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_15m": {
+          "passed": true,
+          "days_compared": 136,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_data_1h": {
+          "passed": true,
+          "days_compared": 186,
+          "measure": "close",
+          "mismatches": []
+        },
+        "market_sma_1h": {
+          "passed": true,
+          "days_compared": 186,
+          "measure": "sma_20",
+          "mismatches": []
+        },
+        "vix_data": {
+          "passed": true,
+          "days_compared": 28,
+          "measure": "vix_value",
+          "mismatches": []
+        },
+        "signals": {
+          "passed": true,
+          "days_compared": 26,
+          "measure": "confidence_score",
+          "mismatches": []
+        },
+        "option_data": {
+          "passed": true,
+          "days_compared": 1,
+          "measure": "ltp",
+          "mismatches": []
+        },
+        "delta_cache": {
+          "passed": true,
+          "days_compared": 53,
+          "measure": "delta",
+          "mismatches": []
+        },
+        "dashboard_strategy_state": {
+          "passed": true,
+          "days_compared": 3,
+          "measure": "NULL",
+          "mismatches": []
+        },
+        "dashboard_trade_history": {
+          "passed": true,
+          "days_compared": 5,
+          "measure": "realized_pnl",
+          "mismatches": []
+        }
+      }
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,7960 @@
+[
+ {
+  "trade_id": "698fa7f3",
+  "entry_time": "2026-03-04 13:35:29",
+  "entry_signal_time": "2026-03-04 13:34:00",
+  "entry_fill_time": "2026-03-04 13:35:29",
+  "exit_time": "2026-03-04 14:11:09",
+  "exit_signal_time": "2026-03-04 14:08:00",
+  "exit_fill_time": "2026-03-04 14:11:09",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024500CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24500,
+    "expiry": "2026-03-10",
+    "entry_price": 281.475,
+    "last_price": 278.32500000000005,
+    "exit_price": 317.175,
+    "exit_time": "2026-03-04 14:11:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 426.75,
+    "last_price": 429.0,
+    "exit_price": 397.575,
+    "exit_time": "2026-03-04 14:11:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 183.55,
+    "last_price": 181.10000000000002,
+    "exit_price": 210.375,
+    "exit_time": "2026-03-04 14:11:09"
+   }
+  ],
+  "entry_price_total": -26233.75,
+  "exit_price_total": 25218.75,
+  "pnl": -1015.0000000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24449.15,
+   "strikes": {
+    "pe_strike": 24400,
+    "ce_strike_near": 24500,
+    "pe_strike_upper": 24700
+   }
+  },
+  "sl_initial": 24477.45,
+  "sl_final": 24455.771774999997,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-04 13:35:29",
+    "old_sl": 0.0,
+    "new_sl": 24477.45,
+    "sh_value": null,
+    "close_price": 24449.15,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-04 13:53:00",
+    "old_sl": 24477.45,
+    "new_sl": 24471.779775,
+    "sh_value": 24471.779775,
+    "close_price": 24429.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-04 13:54:00",
+    "old_sl": 24471.779775,
+    "new_sl": 24461.324549999998,
+    "sh_value": 24461.324549999998,
+    "close_price": 24431.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-04 13:57:00",
+    "old_sl": 24461.324549999998,
+    "new_sl": 24457.52265,
+    "sh_value": 24457.52265,
+    "close_price": 24417.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-04 13:58:00",
+    "old_sl": 24457.52265,
+    "new_sl": 24455.771774999997,
+    "sh_value": 24455.771774999997,
+    "close_price": 24420.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-04 14:11:09",
+    "old_sl": 24455.771774999997,
+    "new_sl": 24455.771774999997,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "f8a7af29",
+  "entry_time": "2026-03-04 13:35:29",
+  "entry_signal_time": "2026-03-04 13:34:00",
+  "entry_fill_time": "2026-03-04 13:35:29",
+  "exit_time": "2026-03-04 14:11:09",
+  "exit_signal_time": "2026-03-04 14:10:00",
+  "exit_fill_time": "2026-03-04 14:11:09",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024500CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24500,
+    "expiry": "2026-03-10",
+    "entry_price": 281.475,
+    "last_price": 289.5,
+    "exit_price": 317.175,
+    "exit_time": "2026-03-04 14:11:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 426.75,
+    "last_price": 418.125,
+    "exit_price": 397.575,
+    "exit_time": "2026-03-04 14:11:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 183.55,
+    "last_price": 189.0,
+    "exit_price": 210.375,
+    "exit_time": "2026-03-04 14:11:09"
+   }
+  ],
+  "entry_price_total": -26233.75,
+  "exit_price_total": 25218.75,
+  "pnl": -1015.0000000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24449.15,
+   "strikes": {
+    "pe_strike": 24400,
+    "ce_strike_near": 24500,
+    "pe_strike_upper": 24700
+   }
+  },
+  "sl_initial": 24477.45,
+  "sl_final": 24477.45,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-04 13:35:29",
+    "old_sl": 0.0,
+    "new_sl": 24477.45,
+    "sh_value": null,
+    "close_price": 24449.15,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-04 14:11:09",
+    "old_sl": 24477.45,
+    "new_sl": 24477.45,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "c95ce9e5",
+  "entry_time": "2026-03-05 10:06:28",
+  "entry_signal_time": "2026-03-05 10:05:00",
+  "entry_fill_time": "2026-03-05 10:06:28",
+  "exit_time": "2026-03-05 10:39:54",
+  "exit_signal_time": "2026-03-05 10:38:00",
+  "exit_fill_time": "2026-03-05 10:39:54",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 216.075,
+    "last_price": 231.25,
+    "exit_price": 217.675,
+    "exit_time": "2026-03-05 10:39:54"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 260.6,
+    "last_price": 278.4,
+    "exit_price": 262.92499999999995,
+    "exit_time": "2026-03-05 10:39:54"
+   }
+  ],
+  "entry_price_total": -2226.250000000002,
+  "exit_price_total": 2262.499999999998,
+  "pnl": 36.24999999999545,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24623.25,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24600,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24648.8,
+  "sl_final": 24603.545625,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 10:06:28",
+    "old_sl": 0.0,
+    "new_sl": 24648.8,
+    "sh_value": null,
+    "close_price": 24623.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 10:20:00",
+    "old_sl": 24648.8,
+    "new_sl": 24623.555624999997,
+    "sh_value": 24623.555624999997,
+    "close_price": 24596.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:21:00",
+    "old_sl": 24623.555624999997,
+    "new_sl": 24620.954325,
+    "sh_value": 24620.954325,
+    "close_price": 24593.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:24:00",
+    "old_sl": 24620.954325,
+    "new_sl": 24620.20395,
+    "sh_value": 24620.20395,
+    "close_price": 24577.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:26:00",
+    "old_sl": 24620.20395,
+    "new_sl": 24618.553125,
+    "sh_value": 24618.553125,
+    "close_price": 24566.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:27:00",
+    "old_sl": 24618.553125,
+    "new_sl": 24610.4991,
+    "sh_value": 24610.4991,
+    "close_price": 24546.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:29:00",
+    "old_sl": 24610.4991,
+    "new_sl": 24603.545625,
+    "sh_value": 24603.545625,
+    "close_price": 24539.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:39:54",
+    "old_sl": 24603.545625,
+    "new_sl": 24603.545625,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "b44e93cf",
+  "entry_time": "2026-03-05 10:06:28",
+  "entry_signal_time": "2026-03-05 10:05:00",
+  "entry_fill_time": "2026-03-05 10:06:28",
+  "exit_time": "2026-03-05 10:47:09",
+  "exit_signal_time": "2026-03-05 10:45:00",
+  "exit_fill_time": "2026-03-05 10:47:09",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 216.075,
+    "last_price": 211.925,
+    "exit_price": 206.85000000000002,
+    "exit_time": "2026-03-05 10:47:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 260.6,
+    "last_price": 255.925,
+    "exit_price": 248.65,
+    "exit_time": "2026-03-05 10:47:09"
+   }
+  ],
+  "entry_price_total": -2226.250000000002,
+  "exit_price_total": 2089.999999999998,
+  "pnl": -136.25000000000261,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24623.25,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24600,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24656.7,
+  "sl_final": 24648.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 10:06:28",
+    "old_sl": 0.0,
+    "new_sl": 24656.7,
+    "sh_value": null,
+    "close_price": 24623.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 10:06:00",
+    "old_sl": 24656.7,
+    "new_sl": 24651.95,
+    "sh_value": 24651.95,
+    "close_price": 24623.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:35:00",
+    "old_sl": 24651.95,
+    "new_sl": 24648.8,
+    "sh_value": 24648.8,
+    "close_price": 24559.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 10:47:09",
+    "old_sl": 24648.8,
+    "new_sl": 24648.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "e3e37d36",
+  "entry_time": "2026-03-05 11:03:45",
+  "entry_signal_time": "2026-03-05 11:03:00",
+  "entry_fill_time": "2026-03-05 11:03:45",
+  "exit_time": "2026-03-05 12:12:59",
+  "exit_signal_time": "2026-03-05 12:12:00",
+  "exit_fill_time": "2026-03-05 12:12:59",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 206.72500000000002,
+    "last_price": 232.65,
+    "exit_price": 220.425,
+    "exit_time": "2026-03-05 12:12:59"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 248.875,
+    "last_price": 280.625,
+    "exit_price": 266.175,
+    "exit_time": "2026-03-05 12:12:59"
+   }
+  ],
+  "entry_price_total": -2107.499999999998,
+  "exit_price_total": 2287.5,
+  "pnl": 180.00000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24649.25,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24650,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24672.8,
+  "sl_final": 24603.145425,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 11:03:45",
+    "old_sl": 0.0,
+    "new_sl": 24672.8,
+    "sh_value": null,
+    "close_price": 24649.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 11:15:00",
+    "old_sl": 24672.8,
+    "new_sl": 24671.829749999997,
+    "sh_value": 24671.829749999997,
+    "close_price": 24643.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:28:00",
+    "old_sl": 24671.829749999997,
+    "new_sl": 24662.575125,
+    "sh_value": 24662.575125,
+    "close_price": 24628.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:29:00",
+    "old_sl": 24662.575125,
+    "new_sl": 24655.371525,
+    "sh_value": 24655.371525,
+    "close_price": 24611.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:30:00",
+    "old_sl": 24655.371525,
+    "new_sl": 24652.269975,
+    "sh_value": 24652.269975,
+    "close_price": 24612.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:36:00",
+    "old_sl": 24652.269975,
+    "new_sl": 24650.61915,
+    "sh_value": 24650.61915,
+    "close_price": 24615.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:45:00",
+    "old_sl": 24650.61915,
+    "new_sl": 24619.903799999996,
+    "sh_value": 24619.903799999996,
+    "close_price": 24590.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:47:00",
+    "old_sl": 24619.903799999996,
+    "new_sl": 24618.152925,
+    "sh_value": 24618.152925,
+    "close_price": 24585.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:50:00",
+    "old_sl": 24618.152925,
+    "new_sl": 24615.251475,
+    "sh_value": 24615.251475,
+    "close_price": 24569.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:51:00",
+    "old_sl": 24615.251475,
+    "new_sl": 24611.049375,
+    "sh_value": 24611.049375,
+    "close_price": 24563.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:52:00",
+    "old_sl": 24611.049375,
+    "new_sl": 24605.446575,
+    "sh_value": 24605.446575,
+    "close_price": 24560.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:53:00",
+    "old_sl": 24605.446575,
+    "new_sl": 24603.145425,
+    "sh_value": 24603.145425,
+    "close_price": 24563.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 12:12:59",
+    "old_sl": 24603.145425,
+    "new_sl": 24603.145425,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "bcd0c426",
+  "entry_time": "2026-03-05 11:03:45",
+  "entry_signal_time": "2026-03-05 11:03:00",
+  "entry_fill_time": "2026-03-05 11:03:45",
+  "exit_time": "2026-03-05 11:21:45",
+  "exit_signal_time": "2026-03-05 11:20:00",
+  "exit_fill_time": "2026-03-05 11:21:45",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 206.72500000000002,
+    "last_price": 211.8,
+    "exit_price": 205.95,
+    "exit_time": "2026-03-05 11:21:45"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 248.875,
+    "last_price": 254.75,
+    "exit_price": 248.425,
+    "exit_time": "2026-03-05 11:21:45"
+   }
+  ],
+  "entry_price_total": -2107.499999999998,
+  "exit_price_total": 2123.75,
+  "pnl": 16.250000000002274,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24649.25,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24650,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24672.4,
+  "sl_final": 24648.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 11:03:45",
+    "old_sl": 0.0,
+    "new_sl": 24672.4,
+    "sh_value": null,
+    "close_price": 24649.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 11:04:00",
+    "old_sl": 24672.4,
+    "new_sl": 24648.8,
+    "sh_value": 24648.8,
+    "close_price": 24666.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 11:21:45",
+    "old_sl": 24648.8,
+    "new_sl": 24648.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "3c3180f5",
+  "entry_time": "2026-03-05 12:47:35",
+  "entry_signal_time": "2026-03-05 12:46:00",
+  "entry_fill_time": "2026-03-05 12:47:35",
+  "exit_time": "2026-03-05 13:01:16",
+  "exit_signal_time": "2026-03-05 13:01:00",
+  "exit_fill_time": "2026-03-05 13:01:16",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 208.25,
+    "last_price": 198.1,
+    "exit_price": 193.775,
+    "exit_time": "2026-03-05 13:01:16"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 251.89999999999998,
+    "last_price": 239.6,
+    "exit_price": 234.35,
+    "exit_time": "2026-03-05 13:01:16"
+   }
+  ],
+  "entry_price_total": -2182.499999999998,
+  "exit_price_total": 2028.75,
+  "pnl": -153.74999999999932,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24638.85,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24650,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24657.6,
+  "sl_final": 24657.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 12:47:35",
+    "old_sl": 0.0,
+    "new_sl": 24657.6,
+    "sh_value": null,
+    "close_price": 24638.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 13:01:16",
+    "old_sl": 24657.6,
+    "new_sl": 24657.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "ae41337d",
+  "entry_time": "2026-03-05 12:47:35",
+  "entry_signal_time": "2026-03-05 12:46:00",
+  "entry_fill_time": "2026-03-05 12:47:35",
+  "exit_time": "2026-03-05 14:40:42",
+  "exit_signal_time": "2026-03-05 14:40:00",
+  "exit_fill_time": "2026-03-05 14:40:42",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 208.25,
+    "last_price": 213.5,
+    "exit_price": 168.775,
+    "exit_time": "2026-03-05 14:40:42"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24700,
+    "expiry": "2026-03-10",
+    "entry_price": 251.89999999999998,
+    "last_price": 259.625,
+    "exit_price": 204.60000000000002,
+    "exit_time": "2026-03-05 14:40:42"
+   }
+  ],
+  "entry_price_total": -2182.499999999998,
+  "exit_price_total": 1791.2500000000018,
+  "pnl": -391.24999999999795,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24638.85,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24650,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24665.95,
+  "sl_final": 24635.1,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-05 12:47:35",
+    "old_sl": 0.0,
+    "new_sl": 24665.95,
+    "sh_value": null,
+    "close_price": 24638.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-05 12:47:00",
+    "old_sl": 24665.95,
+    "new_sl": 24662.95,
+    "sh_value": 24662.95,
+    "close_price": 24645.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 13:20:00",
+    "old_sl": 24662.95,
+    "new_sl": 24660.85,
+    "sh_value": 24660.85,
+    "close_price": 24631.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 14:10:00",
+    "old_sl": 24660.85,
+    "new_sl": 24642.45,
+    "sh_value": 24642.45,
+    "close_price": 24552.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 14:15:00",
+    "old_sl": 24642.45,
+    "new_sl": 24635.1,
+    "sh_value": 24635.1,
+    "close_price": 24553.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-05 14:40:42",
+    "old_sl": 24635.1,
+    "new_sl": 24635.1,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "f312a12b",
+  "entry_time": "2026-03-06 10:00:09",
+  "entry_signal_time": "2026-03-06 09:59:00",
+  "entry_fill_time": "2026-03-06 10:00:09",
+  "exit_time": "2026-03-06 10:09:50",
+  "exit_signal_time": "2026-03-06 10:09:00",
+  "exit_fill_time": "2026-03-06 10:09:50",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 232.22500000000002,
+    "last_price": 232.22500000000002,
+    "exit_price": 243.675,
+    "exit_time": "2026-03-06 10:09:50"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24900,
+    "expiry": "2026-03-10",
+    "entry_price": 365.475,
+    "last_price": 365.475,
+    "exit_price": 347.425,
+    "exit_time": "2026-03-06 10:09:50"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024900CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24900,
+    "expiry": "2026-03-10",
+    "entry_price": 95.725,
+    "last_price": 95.725,
+    "exit_price": 102.19999999999999,
+    "exit_time": "2026-03-06 10:09:50"
+   }
+  ],
+  "entry_price_total": -25098.75,
+  "exit_price_total": 24445.0,
+  "pnl": -653.7500000000009,
+  "reason": {
+   "section": "section1",
+   "subcat": "g",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24623.65,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24600,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24656.7,
+  "sl_final": 24649.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-06 10:00:09",
+    "old_sl": 0.0,
+    "new_sl": 24656.7,
+    "sh_value": null,
+    "close_price": 24623.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-06 10:00:00",
+    "old_sl": 24656.7,
+    "new_sl": 24649.6,
+    "sh_value": 24649.6,
+    "close_price": 24625.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-06 10:09:50",
+    "old_sl": 24649.6,
+    "new_sl": 24649.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "70e64c80",
+  "entry_time": "2026-03-06 10:00:09",
+  "entry_signal_time": "2026-03-06 09:59:00",
+  "entry_fill_time": "2026-03-06 10:00:09",
+  "exit_time": "2026-03-06 15:01:43",
+  "exit_signal_time": "2026-03-06 15:00:00",
+  "exit_fill_time": "2026-03-06 15:01:43",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024600CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24600,
+    "expiry": "2026-03-10",
+    "entry_price": 232.22500000000002,
+    "last_price": 174.0,
+    "exit_price": 174.35,
+    "exit_time": "2026-03-06 15:01:43"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24900,
+    "expiry": "2026-03-10",
+    "entry_price": 365.475,
+    "last_price": 489.95,
+    "exit_price": 499.9,
+    "exit_time": "2026-03-06 15:01:43"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024900CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24900,
+    "expiry": "2026-03-10",
+    "entry_price": 95.725,
+    "last_price": 66.95,
+    "exit_price": 69.3,
+    "exit_time": "2026-03-06 15:01:43"
+   }
+  ],
+  "entry_price_total": -25098.75,
+  "exit_price_total": 30247.5,
+  "pnl": 5148.749999999996,
+  "reason": {
+   "section": "section1",
+   "subcat": "g",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24623.65,
+   "strikes": {
+    "pe_strike": 24600,
+    "ce_strike_near": 24600,
+    "pe_strike_upper": 24900
+   }
+  },
+  "sl_initial": 24688.1,
+  "sl_final": 24614.85,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-06 10:00:09",
+    "old_sl": 0.0,
+    "new_sl": 24688.1,
+    "sh_value": null,
+    "close_price": 24623.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-06 10:35:00",
+    "old_sl": 24688.1,
+    "new_sl": 24675.65,
+    "sh_value": 24675.65,
+    "close_price": 24619.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-06 11:25:00",
+    "old_sl": 24675.65,
+    "new_sl": 24648.7,
+    "sh_value": 24648.7,
+    "close_price": 24600.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-06 12:30:00",
+    "old_sl": 24648.7,
+    "new_sl": 24631.45,
+    "sh_value": 24631.45,
+    "close_price": 24578.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-06 13:35:00",
+    "old_sl": 24631.45,
+    "new_sl": 24614.85,
+    "sh_value": 24614.85,
+    "close_price": 24584.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-06 15:01:43",
+    "old_sl": 24614.85,
+    "new_sl": 24614.85,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "27d1a64c",
+  "entry_time": "2026-03-09 14:29:22",
+  "entry_signal_time": "2026-03-09 14:21:00",
+  "entry_fill_time": "2026-03-09 14:29:22",
+  "exit_time": "2026-03-09 14:39:49",
+  "exit_signal_time": "2026-03-09 14:36:00",
+  "exit_fill_time": "2026-03-09 14:39:49",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024100CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 119.625,
+    "last_price": 119.625,
+    "exit_price": 132.15,
+    "exit_time": "2026-03-09 14:39:49"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 310.25,
+    "last_price": 310.25,
+    "exit_price": 291.275,
+    "exit_time": "2026-03-09 14:39:49"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024100CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 119.625,
+    "last_price": 119.625,
+    "exit_price": 132.15,
+    "exit_time": "2026-03-09 14:39:49"
+   }
+  ],
+  "entry_price_total": -15512.5,
+  "exit_price_total": 14563.75,
+  "pnl": -948.7500000000011,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23866.2,
+   "strikes": {
+    "pe_strike": 23900,
+    "ce_strike_near": 24100,
+    "pe_strike_upper": 24100
+   }
+  },
+  "sl_initial": 23890.05,
+  "sl_final": 23890.05,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-09 14:29:22",
+    "old_sl": 0.0,
+    "new_sl": 23890.05,
+    "sh_value": null,
+    "close_price": 23866.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-09 14:39:49",
+    "old_sl": 23890.05,
+    "new_sl": 23890.05,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "8b38563f",
+  "entry_time": "2026-03-09 14:29:22",
+  "entry_signal_time": "2026-03-09 14:21:00",
+  "entry_fill_time": "2026-03-09 14:29:22",
+  "exit_time": "2026-03-09 14:44:53",
+  "exit_signal_time": "2026-03-09 14:40:00",
+  "exit_fill_time": "2026-03-09 14:44:53",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024100CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 119.625,
+    "last_price": 119.625,
+    "exit_price": 138.875,
+    "exit_time": "2026-03-09 14:44:53"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 310.25,
+    "last_price": 310.25,
+    "exit_price": 277.275,
+    "exit_time": "2026-03-09 14:44:53"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024100CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 119.625,
+    "last_price": 119.625,
+    "exit_price": 138.875,
+    "exit_time": "2026-03-09 14:44:53"
+   }
+  ],
+  "entry_price_total": -15512.5,
+  "exit_price_total": 13863.75,
+  "pnl": -1648.7500000000011,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23866.2,
+   "strikes": {
+    "pe_strike": 23900,
+    "ce_strike_near": 24100,
+    "pe_strike_upper": 24100
+   }
+  },
+  "sl_initial": 23911.55,
+  "sl_final": 23911.55,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-09 14:29:22",
+    "old_sl": 0.0,
+    "new_sl": 23911.55,
+    "sh_value": null,
+    "close_price": 23866.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-09 14:44:53",
+    "old_sl": 23911.55,
+    "new_sl": 23911.55,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "3549d6f7",
+  "entry_time": "2026-03-10 09:41:02",
+  "entry_signal_time": "2026-03-10 09:40:00",
+  "entry_fill_time": "2026-03-10 09:41:02",
+  "exit_time": "2026-03-10 10:09:37",
+  "exit_signal_time": "2026-03-10 10:09:00",
+  "exit_fill_time": "2026-03-10 10:09:37",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024100PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 91.525,
+    "last_price": 72.025,
+    "exit_price": 61.675,
+    "exit_time": "2026-03-10 10:09:37"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 148.15,
+    "last_price": 124.4,
+    "exit_price": 110.025,
+    "exit_time": "2026-03-10 10:09:37"
+   }
+  ],
+  "entry_price_total": -2831.25,
+  "exit_price_total": 2417.5,
+  "pnl": -413.74999999999955,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24093.4,
+   "strikes": {
+    "pe_strike": 24100,
+    "ce_strike_near": 24100,
+    "pe_strike_upper": 24300
+   }
+  },
+  "sl_initial": 24146.9,
+  "sl_final": 24139.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 09:41:02",
+    "old_sl": 0.0,
+    "new_sl": 24146.9,
+    "sh_value": null,
+    "close_price": 24093.4,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 09:56:00",
+    "old_sl": 24146.9,
+    "new_sl": 24140.25,
+    "sh_value": 24140.25,
+    "close_price": 24118.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 09:58:00",
+    "old_sl": 24140.25,
+    "new_sl": 24139.2,
+    "sh_value": 24139.2,
+    "close_price": 24100.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 10:09:37",
+    "old_sl": 24139.2,
+    "new_sl": 24139.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "d7735e96",
+  "entry_time": "2026-03-10 09:41:02",
+  "entry_signal_time": "2026-03-10 09:40:00",
+  "entry_fill_time": "2026-03-10 09:41:02",
+  "exit_time": "2026-03-10 10:21:45",
+  "exit_signal_time": "2026-03-10 10:20:00",
+  "exit_fill_time": "2026-03-10 10:21:45",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024100PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24100,
+    "expiry": "2026-03-10",
+    "entry_price": 91.525,
+    "last_price": 44.2,
+    "exit_price": 42.375,
+    "exit_time": "2026-03-10 10:21:45"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 148.15,
+    "last_price": 81.475,
+    "exit_price": 80.675,
+    "exit_time": "2026-03-10 10:21:45"
+   }
+  ],
+  "entry_price_total": -2831.25,
+  "exit_price_total": 1915.0,
+  "pnl": -916.25,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24093.4,
+   "strikes": {
+    "pe_strike": 24100,
+    "ce_strike_near": 24100,
+    "pe_strike_upper": 24300
+   }
+  },
+  "sl_initial": 24303.8,
+  "sl_final": 24171.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 09:41:02",
+    "old_sl": 0.0,
+    "new_sl": 24303.8,
+    "sh_value": null,
+    "close_price": 24093.4,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 10:00:00",
+    "old_sl": 24303.8,
+    "new_sl": 24171.2,
+    "sh_value": 24171.2,
+    "close_price": 24093.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 10:21:45",
+    "old_sl": 24171.2,
+    "new_sl": 24171.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "e6820e87",
+  "entry_time": "2026-03-10 10:49:20",
+  "entry_signal_time": "2026-03-10 10:28:00",
+  "entry_fill_time": "2026-03-10 10:49:20",
+  "exit_time": "2026-03-10 11:03:02",
+  "exit_signal_time": "2026-03-10 11:01:00",
+  "exit_fill_time": "2026-03-10 11:03:02",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 57.475,
+    "last_price": 71.975,
+    "exit_price": 72.35,
+    "exit_time": "2026-03-10 11:03:02"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 112.1,
+    "last_price": 135.14999999999998,
+    "exit_price": 136.89999999999998,
+    "exit_time": "2026-03-10 11:03:02"
+   }
+  ],
+  "entry_price_total": -2731.25,
+  "exit_price_total": 3227.4999999999995,
+  "pnl": 496.24999999999943,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24156.2,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24150,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24197.55,
+  "sl_final": 24197.55,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 10:49:20",
+    "old_sl": 0.0,
+    "new_sl": 24197.55,
+    "sh_value": null,
+    "close_price": 24156.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:03:02",
+    "old_sl": 24197.55,
+    "new_sl": 24197.55,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "9b452d28",
+  "entry_time": "2026-03-10 10:49:20",
+  "entry_signal_time": "2026-03-10 10:28:00",
+  "entry_fill_time": "2026-03-10 10:49:20",
+  "exit_time": "2026-03-10 11:03:02",
+  "exit_signal_time": "2026-03-10 11:00:00",
+  "exit_fill_time": "2026-03-10 11:03:02",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 57.475,
+    "last_price": 71.975,
+    "exit_price": 72.35,
+    "exit_time": "2026-03-10 11:03:02"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 112.1,
+    "last_price": 135.14999999999998,
+    "exit_price": 136.89999999999998,
+    "exit_time": "2026-03-10 11:03:02"
+   }
+  ],
+  "entry_price_total": -2731.25,
+  "exit_price_total": 3227.4999999999995,
+  "pnl": 496.24999999999943,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24156.2,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24150,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24213.7,
+  "sl_final": 24171.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 10:49:20",
+    "old_sl": 0.0,
+    "new_sl": 24213.7,
+    "sh_value": null,
+    "close_price": 24156.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 10:29:00",
+    "old_sl": 24213.7,
+    "new_sl": 24171.2,
+    "sh_value": 24171.2,
+    "close_price": 24169.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:03:02",
+    "old_sl": 24171.2,
+    "new_sl": 24171.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "e870df0b",
+  "entry_time": "2026-03-10 11:03:49",
+  "entry_signal_time": "2026-03-10 11:03:00",
+  "entry_fill_time": "2026-03-10 11:03:49",
+  "exit_time": "2026-03-10 11:13:33",
+  "exit_signal_time": "2026-03-10 11:10:00",
+  "exit_fill_time": "2026-03-10 11:13:33",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 70.05,
+    "last_price": 64.07499999999999,
+    "exit_price": 53.8,
+    "exit_time": "2026-03-10 11:13:33"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 131.3,
+    "last_price": 126.5,
+    "exit_price": 109.1,
+    "exit_time": "2026-03-10 11:13:33"
+   }
+  ],
+  "entry_price_total": -3062.500000000001,
+  "exit_price_total": 2765.0,
+  "pnl": -297.5000000000009,
+  "reason": {
+   "section": "section1",
+   "subcat": "b",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24189.45,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24207.3,
+  "sl_final": 24207.3,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:03:49",
+    "old_sl": 0.0,
+    "new_sl": 24207.3,
+    "sh_value": null,
+    "close_price": 24189.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:13:33",
+    "old_sl": 24207.3,
+    "new_sl": 24207.3,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "38c2867d",
+  "entry_time": "2026-03-10 11:03:49",
+  "entry_signal_time": "2026-03-10 11:03:00",
+  "entry_fill_time": "2026-03-10 11:03:49",
+  "exit_time": "2026-03-10 11:18:47",
+  "exit_signal_time": "2026-03-10 11:15:00",
+  "exit_fill_time": "2026-03-10 11:18:47",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 70.05,
+    "last_price": 53.8,
+    "exit_price": 55.650000000000006,
+    "exit_time": "2026-03-10 11:18:47"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 131.3,
+    "last_price": 109.1,
+    "exit_price": 112.75,
+    "exit_time": "2026-03-10 11:18:47"
+   }
+  ],
+  "entry_price_total": -3062.500000000001,
+  "exit_price_total": 2854.9999999999995,
+  "pnl": -207.50000000000102,
+  "reason": {
+   "section": "section1",
+   "subcat": "b",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24189.45,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24233.2,
+  "sl_final": 24171.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:03:49",
+    "old_sl": 0.0,
+    "new_sl": 24233.2,
+    "sh_value": null,
+    "close_price": 24189.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:04:00",
+    "old_sl": 24233.2,
+    "new_sl": 24171.2,
+    "sh_value": 24171.2,
+    "close_price": 24197.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:18:47",
+    "old_sl": 24171.2,
+    "new_sl": 24171.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "8fee78a5",
+  "entry_time": "2026-03-10 11:20:05",
+  "entry_signal_time": "2026-03-10 11:20:00",
+  "entry_fill_time": "2026-03-10 11:20:05",
+  "exit_time": "2026-03-10 11:34:52",
+  "exit_signal_time": "2026-03-10 11:33:00",
+  "exit_fill_time": "2026-03-10 11:34:52",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 56.675,
+    "last_price": 48.075,
+    "exit_price": 45.025,
+    "exit_time": "2026-03-10 11:34:52"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 115.875,
+    "last_price": 103.0,
+    "exit_price": 97.6,
+    "exit_time": "2026-03-10 11:34:52"
+   }
+  ],
+  "entry_price_total": -2960.0,
+  "exit_price_total": 2628.75,
+  "pnl": -331.25000000000034,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24210.25,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24243.5,
+  "sl_final": 24237.7,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:20:05",
+    "old_sl": 0.0,
+    "new_sl": 24243.5,
+    "sh_value": null,
+    "close_price": 24210.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:26:00",
+    "old_sl": 24243.5,
+    "new_sl": 24237.7,
+    "sh_value": 24237.7,
+    "close_price": 24224.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:34:52",
+    "old_sl": 24237.7,
+    "new_sl": 24237.7,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "19c84c34",
+  "entry_time": "2026-03-10 11:20:05",
+  "entry_signal_time": "2026-03-10 11:20:00",
+  "entry_fill_time": "2026-03-10 11:20:05",
+  "exit_time": "2026-03-10 11:35:35",
+  "exit_signal_time": "2026-03-10 11:35:00",
+  "exit_fill_time": "2026-03-10 11:35:35",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 56.675,
+    "last_price": 48.025000000000006,
+    "exit_price": 40.849999999999994,
+    "exit_time": "2026-03-10 11:35:35"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 115.875,
+    "last_price": 102.05000000000001,
+    "exit_price": 90.7,
+    "exit_time": "2026-03-10 11:35:35"
+   }
+  ],
+  "entry_price_total": -2960.0,
+  "exit_price_total": 2492.5,
+  "pnl": -467.49999999999966,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24210.25,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24243.5,
+  "sl_final": 24171.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:20:05",
+    "old_sl": 0.0,
+    "new_sl": 24243.5,
+    "sh_value": null,
+    "close_price": 24210.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:21:00",
+    "old_sl": 24243.5,
+    "new_sl": 24171.2,
+    "sh_value": 24171.2,
+    "close_price": 24210.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:35:35",
+    "old_sl": 24171.2,
+    "new_sl": 24171.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "7191d9d6",
+  "entry_time": "2026-03-10 11:50:47",
+  "entry_signal_time": "2026-03-10 11:47:00",
+  "entry_fill_time": "2026-03-10 11:50:47",
+  "exit_time": "2026-03-10 12:12:01",
+  "exit_signal_time": "2026-03-10 12:08:00",
+  "exit_fill_time": "2026-03-10 12:12:01",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 56.3,
+    "last_price": 46.2,
+    "exit_price": 49.925,
+    "exit_time": "2026-03-10 12:12:01"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 116.775,
+    "last_price": 104.55000000000001,
+    "exit_price": 111.30000000000001,
+    "exit_time": "2026-03-10 12:12:01"
+   }
+  ],
+  "entry_price_total": -3023.75,
+  "exit_price_total": 3068.750000000001,
+  "pnl": 45.000000000000284,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24239.55,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24250,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24255.3,
+  "sl_final": 24225.25,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:50:47",
+    "old_sl": 0.0,
+    "new_sl": 24255.3,
+    "sh_value": null,
+    "close_price": 24239.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:50:00",
+    "old_sl": 24255.3,
+    "new_sl": 24254.9,
+    "sh_value": 24254.9,
+    "close_price": 24208.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:52:00",
+    "old_sl": 24254.9,
+    "new_sl": 24250.5,
+    "sh_value": 24250.5,
+    "close_price": 24196.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:53:00",
+    "old_sl": 24250.5,
+    "new_sl": 24247.0,
+    "sh_value": 24247.0,
+    "close_price": 24200.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 11:57:00",
+    "old_sl": 24247.0,
+    "new_sl": 24225.25,
+    "sh_value": 24225.25,
+    "close_price": 24199.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:12:01",
+    "old_sl": 24225.25,
+    "new_sl": 24225.25,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "cb8f5862",
+  "entry_time": "2026-03-10 11:50:47",
+  "entry_signal_time": "2026-03-10 11:47:00",
+  "entry_fill_time": "2026-03-10 11:50:47",
+  "exit_time": "2026-03-10 12:07:01",
+  "exit_signal_time": "2026-03-10 12:05:00",
+  "exit_fill_time": "2026-03-10 12:07:01",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 56.3,
+    "last_price": 46.2,
+    "exit_price": 46.425,
+    "exit_time": "2026-03-10 12:07:01"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 116.775,
+    "last_price": 104.55000000000001,
+    "exit_price": 104.85,
+    "exit_time": "2026-03-10 12:07:01"
+   }
+  ],
+  "entry_price_total": -3023.75,
+  "exit_price_total": 2921.25,
+  "pnl": -102.50000000000057,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24239.55,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24250,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24255.3,
+  "sl_final": 24171.2,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 11:50:47",
+    "old_sl": 0.0,
+    "new_sl": 24255.3,
+    "sh_value": null,
+    "close_price": 24239.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 11:48:00",
+    "old_sl": 24255.3,
+    "new_sl": 24171.2,
+    "sh_value": 24171.2,
+    "close_price": 24250.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:07:01",
+    "old_sl": 24171.2,
+    "new_sl": 24171.2,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "51333c9e",
+  "entry_time": "2026-03-10 12:12:01",
+  "entry_signal_time": "2026-03-10 12:10:00",
+  "entry_fill_time": "2026-03-10 12:12:01",
+  "exit_time": "2026-03-10 12:48:04",
+  "exit_signal_time": "2026-03-10 12:47:00",
+  "exit_fill_time": "2026-03-10 12:48:04",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 49.925,
+    "last_price": 75.1,
+    "exit_price": 65.55,
+    "exit_time": "2026-03-10 12:48:04"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 111.30000000000001,
+    "last_price": 149.9,
+    "exit_price": 138.425,
+    "exit_time": "2026-03-10 12:48:04"
+   }
+  ],
+  "entry_price_total": -3068.750000000001,
+  "exit_price_total": 3643.750000000001,
+  "pnl": 575.0,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24205.3,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24229.45,
+  "sl_final": 24168.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 12:12:01",
+    "old_sl": 0.0,
+    "new_sl": 24229.45,
+    "sh_value": null,
+    "close_price": 24205.3,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 12:16:00",
+    "old_sl": 24229.45,
+    "new_sl": 24216.9,
+    "sh_value": 24216.9,
+    "close_price": 24176.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:22:00",
+    "old_sl": 24216.9,
+    "new_sl": 24189.45,
+    "sh_value": 24189.45,
+    "close_price": 24172.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:24:00",
+    "old_sl": 24189.45,
+    "new_sl": 24188.5,
+    "sh_value": 24188.5,
+    "close_price": 24153.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:44:00",
+    "old_sl": 24188.5,
+    "new_sl": 24180.65,
+    "sh_value": 24180.65,
+    "close_price": 24145.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:45:00",
+    "old_sl": 24180.65,
+    "new_sl": 24168.6,
+    "sh_value": 24168.6,
+    "close_price": 24147.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:48:04",
+    "old_sl": 24168.6,
+    "new_sl": 24168.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "95a8b2b0",
+  "entry_time": "2026-03-10 12:12:01",
+  "entry_signal_time": "2026-03-10 12:10:00",
+  "entry_fill_time": "2026-03-10 12:12:01",
+  "exit_time": "2026-03-10 12:58:04",
+  "exit_signal_time": "2026-03-10 12:55:00",
+  "exit_fill_time": "2026-03-10 12:58:04",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631024200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 24200,
+    "expiry": "2026-03-10",
+    "entry_price": 49.925,
+    "last_price": 49.625,
+    "exit_price": 36.45,
+    "exit_time": "2026-03-10 12:58:04"
+   },
+   {
+    "tradingsymbol": "NIFTY2631024300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24300,
+    "expiry": "2026-03-10",
+    "entry_price": 111.30000000000001,
+    "last_price": 114.025,
+    "exit_price": 90.94999999999999,
+    "exit_time": "2026-03-10 12:58:04"
+   }
+  ],
+  "entry_price_total": -3068.750000000001,
+  "exit_price_total": 2724.999999999999,
+  "pnl": -343.75000000000136,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 24205.3,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24500
+   }
+  },
+  "sl_initial": 24255.3,
+  "sl_final": 24215.9,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-10 12:12:01",
+    "old_sl": 0.0,
+    "new_sl": 24255.3,
+    "sh_value": null,
+    "close_price": 24205.3,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-10 12:20:00",
+    "old_sl": 24255.3,
+    "new_sl": 24250.5,
+    "sh_value": 24250.5,
+    "close_price": 24184.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:25:00",
+    "old_sl": 24250.5,
+    "new_sl": 24229.45,
+    "sh_value": 24229.45,
+    "close_price": 24152.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:45:00",
+    "old_sl": 24229.45,
+    "new_sl": 24215.9,
+    "sh_value": 24215.9,
+    "close_price": 24147.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-10 12:58:04",
+    "old_sl": 24215.9,
+    "new_sl": 24215.9,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "8855a510",
+  "entry_time": "2026-03-11 09:48:40",
+  "entry_signal_time": "2026-03-11 09:48:00",
+  "entry_fill_time": "2026-03-11 09:48:40",
+  "exit_time": "2026-03-11 10:18:30",
+  "exit_signal_time": "2026-03-11 10:18:00",
+  "exit_fill_time": "2026-03-11 10:18:30",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631724200CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24200,
+    "expiry": "2026-03-17",
+    "entry_price": 265.75,
+    "last_price": 245.77499999999998,
+    "exit_price": 248.975,
+    "exit_time": "2026-03-11 10:18:30"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24400,
+    "expiry": "2026-03-17",
+    "entry_price": 345.725,
+    "last_price": 405.65,
+    "exit_price": 400.79999999999995,
+    "exit_time": "2026-03-11 10:18:30"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724400CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24400,
+    "expiry": "2026-03-17",
+    "entry_price": 166.025,
+    "last_price": 154.8,
+    "exit_price": 156.85,
+    "exit_time": "2026-03-11 10:18:30"
+   }
+  ],
+  "entry_price_total": -22272.5,
+  "exit_price_total": 24646.249999999996,
+  "pnl": 2373.749999999997,
+  "reason": {
+   "section": "section1",
+   "subcat": "g",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24181.45,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24201.65,
+  "sl_final": 24125.9,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-11 09:48:40",
+    "old_sl": 0.0,
+    "new_sl": 24201.65,
+    "sh_value": null,
+    "close_price": 24181.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-11 10:01:00",
+    "old_sl": 24201.65,
+    "new_sl": 24170.55,
+    "sh_value": 24170.55,
+    "close_price": 24146.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:07:00",
+    "old_sl": 24170.55,
+    "new_sl": 24161.7,
+    "sh_value": 24161.7,
+    "close_price": 24143.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:11:00",
+    "old_sl": 24161.7,
+    "new_sl": 24161.45,
+    "sh_value": 24161.45,
+    "close_price": 24119.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:12:00",
+    "old_sl": 24161.45,
+    "new_sl": 24160.95,
+    "sh_value": 24160.95,
+    "close_price": 24121.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:13:00",
+    "old_sl": 24160.95,
+    "new_sl": 24152.8,
+    "sh_value": 24152.8,
+    "close_price": 24112.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:17:00",
+    "old_sl": 24152.8,
+    "new_sl": 24125.9,
+    "sh_value": 24125.9,
+    "close_price": 24112.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:18:30",
+    "old_sl": 24125.9,
+    "new_sl": 24125.9,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "d7549c29",
+  "entry_time": "2026-03-11 09:48:40",
+  "entry_signal_time": "2026-03-11 09:48:00",
+  "entry_fill_time": "2026-03-11 09:48:40",
+  "exit_time": "2026-03-11 14:32:15",
+  "exit_signal_time": "2026-03-11 14:30:00",
+  "exit_fill_time": "2026-03-11 14:32:15",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631724200CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 24200,
+    "expiry": "2026-03-17",
+    "entry_price": 265.75,
+    "last_price": 172.65,
+    "exit_price": 181.7,
+    "exit_time": "2026-03-11 14:32:15"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24400,
+    "expiry": "2026-03-17",
+    "entry_price": 345.725,
+    "last_price": 585.425,
+    "exit_price": 558.4749999999999,
+    "exit_time": "2026-03-11 14:32:15"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724400CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 24400,
+    "expiry": "2026-03-17",
+    "entry_price": 166.025,
+    "last_price": 106.65,
+    "exit_price": 113.025,
+    "exit_time": "2026-03-11 14:32:15"
+   }
+  ],
+  "entry_price_total": -22272.5,
+  "exit_price_total": 31357.5,
+  "pnl": 9084.999999999993,
+  "reason": {
+   "section": "section1",
+   "subcat": "g",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 24181.45,
+   "strikes": {
+    "pe_strike": 24200,
+    "ce_strike_near": 24200,
+    "pe_strike_upper": 24400
+   }
+  },
+  "sl_initial": 24300.65,
+  "sl_final": 23966.25,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-11 09:48:40",
+    "old_sl": 0.0,
+    "new_sl": 24300.65,
+    "sh_value": null,
+    "close_price": 24181.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-11 09:49:00",
+    "old_sl": 24300.65,
+    "new_sl": 24299.0,
+    "sh_value": 24299.0,
+    "close_price": 24187.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:00:00",
+    "old_sl": 24299.0,
+    "new_sl": 24250.35,
+    "sh_value": 24250.35,
+    "close_price": 24153.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:10:00",
+    "old_sl": 24250.35,
+    "new_sl": 24230.7,
+    "sh_value": 24230.7,
+    "close_price": 24117.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:15:00",
+    "old_sl": 24230.7,
+    "new_sl": 24207.5,
+    "sh_value": 24207.5,
+    "close_price": 24116.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:40:00",
+    "old_sl": 24207.5,
+    "new_sl": 24160.95,
+    "sh_value": 24160.95,
+    "close_price": 24085.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 10:45:00",
+    "old_sl": 24160.95,
+    "new_sl": 24141.95,
+    "sh_value": 24141.95,
+    "close_price": 24074.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 11:15:00",
+    "old_sl": 24141.95,
+    "new_sl": 24114.1,
+    "sh_value": 24114.1,
+    "close_price": 24071.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 11:50:00",
+    "old_sl": 24114.1,
+    "new_sl": 24073.75,
+    "sh_value": 24073.75,
+    "close_price": 23996.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 12:00:00",
+    "old_sl": 24073.75,
+    "new_sl": 24034.35,
+    "sh_value": 24034.35,
+    "close_price": 23982.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 12:35:00",
+    "old_sl": 24034.35,
+    "new_sl": 24024.2,
+    "sh_value": 24024.2,
+    "close_price": 23990.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 13:00:00",
+    "old_sl": 24024.2,
+    "new_sl": 24023.65,
+    "sh_value": 24023.65,
+    "close_price": 23973.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 13:15:00",
+    "old_sl": 24023.65,
+    "new_sl": 24011.85,
+    "sh_value": 24011.85,
+    "close_price": 23929.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 13:50:00",
+    "old_sl": 24011.85,
+    "new_sl": 24005.35,
+    "sh_value": 24005.35,
+    "close_price": 23951.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 14:10:00",
+    "old_sl": 24005.35,
+    "new_sl": 23985.6,
+    "sh_value": 23985.6,
+    "close_price": 23934.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 14:20:00",
+    "old_sl": 23985.6,
+    "new_sl": 23966.25,
+    "sh_value": 23966.25,
+    "close_price": 23915.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 14:32:15",
+    "old_sl": 23966.25,
+    "new_sl": 23966.25,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "5d0dd70c",
+  "entry_time": "2026-03-11 14:44:23",
+  "entry_signal_time": "2026-03-11 14:42:00",
+  "entry_fill_time": "2026-03-11 14:44:23",
+  "exit_time": "2026-03-11 15:01:26",
+  "exit_signal_time": "2026-03-11 15:00:00",
+  "exit_fill_time": "2026-03-11 15:01:26",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723900PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23900,
+    "expiry": "2026-03-17",
+    "entry_price": 274.175,
+    "last_price": 288.65,
+    "exit_price": 293.3,
+    "exit_time": "2026-03-11 15:01:26"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724000PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24000,
+    "expiry": "2026-03-17",
+    "entry_price": 319.85,
+    "last_price": 333.32500000000005,
+    "exit_price": 341.3,
+    "exit_time": "2026-03-11 15:01:26"
+   }
+  ],
+  "entry_price_total": -2283.750000000002,
+  "exit_price_total": 2400.0,
+  "pnl": 116.24999999999955,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23920.85,
+   "strikes": {
+    "pe_strike": 23900,
+    "ce_strike_near": 23900,
+    "pe_strike_upper": 24200
+   }
+  },
+  "sl_initial": 23939.5,
+  "sl_final": 23917.9,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-11 14:44:23",
+    "old_sl": 0.0,
+    "new_sl": 23939.5,
+    "sh_value": null,
+    "close_price": 23920.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-11 14:50:00",
+    "old_sl": 23939.5,
+    "new_sl": 23930.4,
+    "sh_value": 23930.4,
+    "close_price": 23916.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 14:59:00",
+    "old_sl": 23930.4,
+    "new_sl": 23917.9,
+    "sh_value": 23917.9,
+    "close_price": 23888.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 15:01:26",
+    "old_sl": 23917.9,
+    "new_sl": 23917.9,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "247b32c8",
+  "entry_time": "2026-03-11 14:44:23",
+  "entry_signal_time": "2026-03-11 14:42:00",
+  "entry_fill_time": "2026-03-11 14:44:23",
+  "exit_time": "2026-03-11 15:01:26",
+  "exit_signal_time": "2026-03-11 15:00:00",
+  "exit_fill_time": "2026-03-11 15:01:26",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723900PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23900,
+    "expiry": "2026-03-17",
+    "entry_price": 274.175,
+    "last_price": 288.65,
+    "exit_price": 293.3,
+    "exit_time": "2026-03-11 15:01:26"
+   },
+   {
+    "tradingsymbol": "NIFTY2631724000PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 24000,
+    "expiry": "2026-03-17",
+    "entry_price": 319.85,
+    "last_price": 333.32500000000005,
+    "exit_price": 341.3,
+    "exit_time": "2026-03-11 15:01:26"
+   }
+  ],
+  "entry_price_total": -2283.750000000002,
+  "exit_price_total": 2400.0,
+  "pnl": 116.24999999999955,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23920.85,
+   "strikes": {
+    "pe_strike": 23900,
+    "ce_strike_near": 23900,
+    "pe_strike_upper": 24200
+   }
+  },
+  "sl_initial": 23977.05,
+  "sl_final": 23966.25,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-11 14:44:23",
+    "old_sl": 0.0,
+    "new_sl": 23977.05,
+    "sh_value": null,
+    "close_price": 23920.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-11 14:43:00",
+    "old_sl": 23977.05,
+    "new_sl": 23966.25,
+    "sh_value": 23966.25,
+    "close_price": 23936.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-11 15:01:26",
+    "old_sl": 23966.25,
+    "new_sl": 23966.25,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "67a5fe08",
+  "entry_time": "2026-03-12 10:24:17",
+  "entry_signal_time": "2026-03-12 10:24:00",
+  "entry_fill_time": "2026-03-12 10:24:17",
+  "exit_time": "2026-03-12 11:30:10",
+  "exit_signal_time": "2026-03-12 10:31:00",
+  "exit_fill_time": "2026-03-12 11:30:10",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 266.1,
+    "last_price": 253.175,
+    "exit_price": 212.75,
+    "exit_time": "2026-03-12 11:30:10"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 312.725,
+    "last_price": 297.375,
+    "exit_price": 253.225,
+    "exit_time": "2026-03-12 11:30:10"
+   }
+  ],
+  "entry_price_total": -2331.25,
+  "exit_price_total": 2023.75,
+  "pnl": -307.50000000000045,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23609.45,
+   "strikes": {
+    "pe_strike": 23600,
+    "ce_strike_near": 23600,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23628.95,
+  "sl_final": 23628.95,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 10:24:17",
+    "old_sl": 0.0,
+    "new_sl": 23628.95,
+    "sh_value": null,
+    "close_price": 23609.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 11:30:10",
+    "old_sl": 23628.95,
+    "new_sl": 23628.95,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "735d924f",
+  "entry_time": "2026-03-12 10:24:17",
+  "entry_signal_time": "2026-03-12 10:24:00",
+  "entry_fill_time": "2026-03-12 10:24:17",
+  "exit_time": "2026-03-12 11:30:10",
+  "exit_signal_time": "2026-03-12 10:40:00",
+  "exit_fill_time": "2026-03-12 11:30:10",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723600PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 266.1,
+    "last_price": 235.675,
+    "exit_price": 212.75,
+    "exit_time": "2026-03-12 11:30:10"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 312.725,
+    "last_price": 278.65,
+    "exit_price": 253.225,
+    "exit_time": "2026-03-12 11:30:10"
+   }
+  ],
+  "entry_price_total": -2331.25,
+  "exit_price_total": 2023.75,
+  "pnl": -307.50000000000045,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23609.45,
+   "strikes": {
+    "pe_strike": 23600,
+    "ce_strike_near": 23600,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23696.75,
+  "sl_final": 23696.75,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 10:24:17",
+    "old_sl": 0.0,
+    "new_sl": 23696.75,
+    "sh_value": null,
+    "close_price": 23609.45,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 11:30:10",
+    "old_sl": 23696.75,
+    "new_sl": 23696.75,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "1fbd0179",
+  "entry_time": "2026-03-12 11:30:10",
+  "entry_signal_time": "2026-03-12 10:51:00",
+  "entry_fill_time": "2026-03-12 11:30:10",
+  "exit_time": "2026-03-12 11:41:38",
+  "exit_signal_time": "2026-03-12 11:41:00",
+  "exit_fill_time": "2026-03-12 11:41:38",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 253.225,
+    "last_price": 254.25,
+    "exit_price": 246.65,
+    "exit_time": "2026-03-12 11:41:38"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 300.05,
+    "last_price": 301.225,
+    "exit_price": 293.0,
+    "exit_time": "2026-03-12 11:41:38"
+   }
+  ],
+  "entry_price_total": -2341.25,
+  "exit_price_total": 2317.5,
+  "pnl": -23.750000000001137,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23677.15,
+   "strikes": {
+    "pe_strike": 23700,
+    "ce_strike_near": 23700,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23704.85,
+  "sl_final": 23704.85,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 11:30:10",
+    "old_sl": 0.0,
+    "new_sl": 23704.85,
+    "sh_value": null,
+    "close_price": 23677.15,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 11:41:38",
+    "old_sl": 23704.85,
+    "new_sl": 23704.85,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "c01457de",
+  "entry_time": "2026-03-12 11:30:10",
+  "entry_signal_time": "2026-03-12 10:51:00",
+  "entry_fill_time": "2026-03-12 11:30:10",
+  "exit_time": "2026-03-12 11:45:34",
+  "exit_signal_time": "2026-03-12 11:45:00",
+  "exit_fill_time": "2026-03-12 11:45:34",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 253.225,
+    "last_price": 246.65,
+    "exit_price": 246.85000000000002,
+    "exit_time": "2026-03-12 11:45:34"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 300.05,
+    "last_price": 293.0,
+    "exit_price": 292.92499999999995,
+    "exit_time": "2026-03-12 11:45:34"
+   }
+  ],
+  "entry_price_total": -2341.25,
+  "exit_price_total": 2303.7499999999964,
+  "pnl": -37.50000000000426,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23677.15,
+   "strikes": {
+    "pe_strike": 23700,
+    "ce_strike_near": 23700,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23721.05,
+  "sl_final": 23696.75,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 11:30:10",
+    "old_sl": 0.0,
+    "new_sl": 23721.05,
+    "sh_value": null,
+    "close_price": 23677.15,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 10:52:00",
+    "old_sl": 23721.05,
+    "new_sl": 23696.75,
+    "sh_value": 23696.75,
+    "close_price": 23694.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 11:45:34",
+    "old_sl": 23696.75,
+    "new_sl": 23696.75,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "dcde1301",
+  "entry_time": "2026-03-12 11:50:32",
+  "entry_signal_time": "2026-03-12 11:50:00",
+  "entry_fill_time": "2026-03-12 11:50:32",
+  "exit_time": "2026-03-12 11:58:02",
+  "exit_signal_time": "2026-03-12 11:57:00",
+  "exit_fill_time": "2026-03-12 11:58:02",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 251.2,
+    "last_price": 245.175,
+    "exit_price": 235.05,
+    "exit_time": "2026-03-12 11:58:02"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 298.275,
+    "last_price": 291.55,
+    "exit_price": 278.525,
+    "exit_time": "2026-03-12 11:58:02"
+   }
+  ],
+  "entry_price_total": -2353.749999999998,
+  "exit_price_total": 2173.749999999998,
+  "pnl": -180.00000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23694.3,
+   "strikes": {
+    "pe_strike": 23700,
+    "ce_strike_near": 23700,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23725.0,
+  "sl_final": 23725.0,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 11:50:32",
+    "old_sl": 0.0,
+    "new_sl": 23725.0,
+    "sh_value": null,
+    "close_price": 23694.3,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 11:58:02",
+    "old_sl": 23725.0,
+    "new_sl": 23725.0,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "7405214e",
+  "entry_time": "2026-03-12 11:50:32",
+  "entry_signal_time": "2026-03-12 11:50:00",
+  "entry_fill_time": "2026-03-12 11:50:32",
+  "exit_time": "2026-03-12 13:30:33",
+  "exit_signal_time": "2026-03-12 13:25:00",
+  "exit_fill_time": "2026-03-12 13:30:33",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23700,
+    "expiry": "2026-03-17",
+    "entry_price": 251.2,
+    "last_price": 219.825,
+    "exit_price": 201.85000000000002,
+    "exit_time": "2026-03-12 13:30:33"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 298.275,
+    "last_price": 264.5,
+    "exit_price": 244.725,
+    "exit_time": "2026-03-12 13:30:33"
+   }
+  ],
+  "entry_price_total": -2353.749999999998,
+  "exit_price_total": 2143.749999999998,
+  "pnl": -210.0000000000009,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23694.3,
+   "strikes": {
+    "pe_strike": 23700,
+    "ce_strike_near": 23700,
+    "pe_strike_upper": 23900
+   }
+  },
+  "sl_initial": 23756.65,
+  "sl_final": 23731.7,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 11:50:32",
+    "old_sl": 0.0,
+    "new_sl": 23756.65,
+    "sh_value": null,
+    "close_price": 23694.3,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 13:10:00",
+    "old_sl": 23756.65,
+    "new_sl": 23731.7,
+    "sh_value": 23731.7,
+    "close_price": 23682.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 13:30:33",
+    "old_sl": 23731.7,
+    "new_sl": 23731.7,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "a5155d63",
+  "entry_time": "2026-03-12 13:50:21",
+  "entry_signal_time": "2026-03-12 13:50:00",
+  "entry_fill_time": "2026-03-12 13:50:21",
+  "exit_time": "2026-03-12 15:26:18",
+  "exit_signal_time": "2026-03-12 15:00:00",
+  "exit_fill_time": "2026-03-12 15:26:18",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 232.275,
+    "last_price": 255.35000000000002,
+    "exit_price": 319.1,
+    "exit_time": "2026-03-12 15:26:18"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23900,
+    "expiry": "2026-03-17",
+    "entry_price": 279.07500000000005,
+    "last_price": 306.975,
+    "exit_price": 378.20000000000005,
+    "exit_time": "2026-03-12 15:26:18"
+   }
+  ],
+  "entry_price_total": -2340.000000000002,
+  "exit_price_total": 2955.000000000002,
+  "pnl": 614.9999999999991,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23782.55,
+   "strikes": {
+    "pe_strike": 23800,
+    "ce_strike_near": 23800,
+    "pe_strike_upper": 24000
+   }
+  },
+  "sl_initial": 23801.95,
+  "sl_final": 23680.05,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 13:50:21",
+    "old_sl": 0.0,
+    "new_sl": 23801.95,
+    "sh_value": null,
+    "close_price": 23782.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 13:51:00",
+    "old_sl": 23801.95,
+    "new_sl": 23801.25,
+    "sh_value": 23801.25,
+    "close_price": 23779.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 13:54:00",
+    "old_sl": 23801.25,
+    "new_sl": 23799.15,
+    "sh_value": 23799.15,
+    "close_price": 23766.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 13:56:00",
+    "old_sl": 23799.15,
+    "new_sl": 23793.1,
+    "sh_value": 23793.1,
+    "close_price": 23753.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 13:58:00",
+    "old_sl": 23793.1,
+    "new_sl": 23781.1,
+    "sh_value": 23781.1,
+    "close_price": 23748.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 13:59:00",
+    "old_sl": 23781.1,
+    "new_sl": 23775.65,
+    "sh_value": 23775.65,
+    "close_price": 23746.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:08:00",
+    "old_sl": 23775.65,
+    "new_sl": 23771.55,
+    "sh_value": 23771.55,
+    "close_price": 23743.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:13:00",
+    "old_sl": 23771.55,
+    "new_sl": 23766.85,
+    "sh_value": 23766.85,
+    "close_price": 23705.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:25:00",
+    "old_sl": 23766.85,
+    "new_sl": 23755.8,
+    "sh_value": 23755.8,
+    "close_price": 23732.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:28:00",
+    "old_sl": 23755.8,
+    "new_sl": 23753.95,
+    "sh_value": 23753.95,
+    "close_price": 23732.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:38:00",
+    "old_sl": 23753.95,
+    "new_sl": 23745.15,
+    "sh_value": 23745.15,
+    "close_price": 23726.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:44:00",
+    "old_sl": 23745.15,
+    "new_sl": 23739.9,
+    "sh_value": 23739.9,
+    "close_price": 23684.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:46:00",
+    "old_sl": 23739.9,
+    "new_sl": 23739.55,
+    "sh_value": 23739.55,
+    "close_price": 23675.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:47:00",
+    "old_sl": 23739.55,
+    "new_sl": 23726.15,
+    "sh_value": 23726.15,
+    "close_price": 23660.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:48:00",
+    "old_sl": 23726.15,
+    "new_sl": 23706.2,
+    "sh_value": 23706.2,
+    "close_price": 23660.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:51:00",
+    "old_sl": 23706.2,
+    "new_sl": 23685.95,
+    "sh_value": 23685.95,
+    "close_price": 23627.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:52:00",
+    "old_sl": 23685.95,
+    "new_sl": 23684.1,
+    "sh_value": 23684.1,
+    "close_price": 23617.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:53:00",
+    "old_sl": 23684.1,
+    "new_sl": 23680.05,
+    "sh_value": 23680.05,
+    "close_price": 23621.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 15:26:18",
+    "old_sl": 23680.05,
+    "new_sl": 23680.05,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "280db8c1",
+  "entry_time": "2026-03-12 13:50:21",
+  "entry_signal_time": "2026-03-12 13:50:00",
+  "entry_fill_time": "2026-03-12 13:50:21",
+  "exit_time": "2026-03-12 14:05:46",
+  "exit_signal_time": "2026-03-12 14:05:00",
+  "exit_fill_time": "2026-03-12 14:05:46",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723800PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23800,
+    "expiry": "2026-03-17",
+    "entry_price": 232.275,
+    "last_price": 252.95,
+    "exit_price": 243.72500000000002,
+    "exit_time": "2026-03-12 14:05:46"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23900,
+    "expiry": "2026-03-17",
+    "entry_price": 279.07500000000005,
+    "last_price": 303.525,
+    "exit_price": 293.35,
+    "exit_time": "2026-03-12 14:05:46"
+   }
+  ],
+  "entry_price_total": -2340.000000000002,
+  "exit_price_total": 2481.25,
+  "pnl": 141.24999999999795,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23782.55,
+   "strikes": {
+    "pe_strike": 23800,
+    "ce_strike_near": 23800,
+    "pe_strike_upper": 24000
+   }
+  },
+  "sl_initial": 23833.15,
+  "sl_final": 23731.7,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-12 13:50:21",
+    "old_sl": 0.0,
+    "new_sl": 23833.15,
+    "sh_value": null,
+    "close_price": 23782.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-12 13:51:00",
+    "old_sl": 23833.15,
+    "new_sl": 23731.7,
+    "sh_value": 23731.7,
+    "close_price": 23782.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-12 14:05:46",
+    "old_sl": 23731.7,
+    "new_sl": 23731.7,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "c26d7264",
+  "entry_time": "2026-03-13 09:43:36",
+  "entry_signal_time": "2026-03-13 09:43:00",
+  "entry_fill_time": "2026-03-13 09:43:36",
+  "exit_time": "2026-03-13 10:29:21",
+  "exit_signal_time": "2026-03-13 10:29:00",
+  "exit_fill_time": "2026-03-13 10:29:21",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 205.97500000000002,
+    "last_price": 278.2,
+    "exit_price": 259.525,
+    "exit_time": "2026-03-13 10:29:21"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-17",
+    "entry_price": 252.175,
+    "last_price": 331.54999999999995,
+    "exit_price": 312.125,
+    "exit_time": "2026-03-13 10:29:21"
+   }
+  ],
+  "entry_price_total": -2309.999999999998,
+  "exit_price_total": 2630.000000000002,
+  "pnl": 320.0000000000018,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23442.55,
+   "strikes": {
+    "pe_strike": 23400,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23700
+   }
+  },
+  "sl_initial": 23474.45,
+  "sl_final": 23334.85,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 09:43:36",
+    "old_sl": 0.0,
+    "new_sl": 23474.45,
+    "sh_value": null,
+    "close_price": 23442.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 09:46:00",
+    "old_sl": 23474.45,
+    "new_sl": 23463.55,
+    "sh_value": 23463.55,
+    "close_price": 23414.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:47:00",
+    "old_sl": 23463.55,
+    "new_sl": 23462.0,
+    "sh_value": 23462.0,
+    "close_price": 23403.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:48:00",
+    "old_sl": 23462.0,
+    "new_sl": 23458.9,
+    "sh_value": 23458.9,
+    "close_price": 23393.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:49:00",
+    "old_sl": 23458.9,
+    "new_sl": 23450.95,
+    "sh_value": 23450.95,
+    "close_price": 23400.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:50:00",
+    "old_sl": 23450.95,
+    "new_sl": 23443.8,
+    "sh_value": 23443.8,
+    "close_price": 23397.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:52:00",
+    "old_sl": 23443.8,
+    "new_sl": 23426.85,
+    "sh_value": 23426.85,
+    "close_price": 23383.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:53:00",
+    "old_sl": 23426.85,
+    "new_sl": 23418.5,
+    "sh_value": 23418.5,
+    "close_price": 23374.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:54:00",
+    "old_sl": 23418.5,
+    "new_sl": 23411.1,
+    "sh_value": 23411.1,
+    "close_price": 23377.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:59:00",
+    "old_sl": 23411.1,
+    "new_sl": 23384.4,
+    "sh_value": 23384.4,
+    "close_price": 23347.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:00:00",
+    "old_sl": 23384.4,
+    "new_sl": 23382.25,
+    "sh_value": 23382.25,
+    "close_price": 23347.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:01:00",
+    "old_sl": 23382.25,
+    "new_sl": 23377.9,
+    "sh_value": 23377.9,
+    "close_price": 23335.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:06:00",
+    "old_sl": 23377.9,
+    "new_sl": 23369.95,
+    "sh_value": 23369.95,
+    "close_price": 23341.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:13:00",
+    "old_sl": 23369.95,
+    "new_sl": 23344.1,
+    "sh_value": 23344.1,
+    "close_price": 23320.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:20:00",
+    "old_sl": 23344.1,
+    "new_sl": 23340.7,
+    "sh_value": 23340.7,
+    "close_price": 23317.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:24:00",
+    "old_sl": 23340.7,
+    "new_sl": 23334.85,
+    "sh_value": 23334.85,
+    "close_price": 23314.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 10:29:21",
+    "old_sl": 23334.85,
+    "new_sl": 23334.85,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "340e0a65",
+  "entry_time": "2026-03-13 09:43:36",
+  "entry_signal_time": "2026-03-13 09:43:00",
+  "entry_fill_time": "2026-03-13 09:43:36",
+  "exit_time": "2026-03-13 09:55:43",
+  "exit_signal_time": "2026-03-13 09:55:00",
+  "exit_fill_time": "2026-03-13 09:55:43",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 205.97500000000002,
+    "last_price": 232.525,
+    "exit_price": 250.22500000000002,
+    "exit_time": "2026-03-13 09:55:43"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-17",
+    "entry_price": 252.175,
+    "last_price": 281.725,
+    "exit_price": 300.65,
+    "exit_time": "2026-03-13 09:55:43"
+   }
+  ],
+  "entry_price_total": -2309.999999999998,
+  "exit_price_total": 2521.2499999999964,
+  "pnl": 211.24999999999818,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23442.55,
+   "strikes": {
+    "pe_strike": 23400,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23700
+   }
+  },
+  "sl_initial": 23652.15,
+  "sl_final": 23188.05,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 09:43:36",
+    "old_sl": 0.0,
+    "new_sl": 23652.15,
+    "sh_value": null,
+    "close_price": 23442.55,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 09:44:00",
+    "old_sl": 23652.15,
+    "new_sl": 23188.05,
+    "sh_value": 23188.05,
+    "close_price": 23454.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 09:55:43",
+    "old_sl": 23188.05,
+    "new_sl": 23188.05,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "76cfd1f0",
+  "entry_time": "2026-03-13 10:44:47",
+  "entry_signal_time": "2026-03-13 10:44:00",
+  "entry_fill_time": "2026-03-13 10:44:47",
+  "exit_time": "2026-03-13 10:51:08",
+  "exit_signal_time": "2026-03-13 10:51:00",
+  "exit_fill_time": "2026-03-13 10:51:08",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 261.775,
+    "last_price": 261.775,
+    "exit_price": 272.525,
+    "exit_time": "2026-03-13 10:51:08"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723600PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 392.325,
+    "last_price": 392.325,
+    "exit_price": 371.225,
+    "exit_time": "2026-03-13 10:51:08"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723600CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 128.55,
+    "last_price": 128.55,
+    "exit_price": 133.125,
+    "exit_time": "2026-03-13 10:51:08"
+   }
+  ],
+  "entry_price_total": -26277.5,
+  "exit_price_total": 25531.25,
+  "pnl": -746.2499999999976,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23318.35,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23342.0,
+  "sl_final": 23342.0,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 10:44:47",
+    "old_sl": 0.0,
+    "new_sl": 23342.0,
+    "sh_value": null,
+    "close_price": 23318.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 10:51:08",
+    "old_sl": 23342.0,
+    "new_sl": 23342.0,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "539a781b",
+  "entry_time": "2026-03-13 10:44:47",
+  "entry_signal_time": "2026-03-13 10:44:00",
+  "entry_fill_time": "2026-03-13 10:44:47",
+  "exit_time": "2026-03-13 11:01:00",
+  "exit_signal_time": "2026-03-13 11:00:00",
+  "exit_fill_time": "2026-03-13 11:01:00",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 261.775,
+    "last_price": 288.75,
+    "exit_price": 283.6,
+    "exit_time": "2026-03-13 11:01:00"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723600PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 392.325,
+    "last_price": 347.35,
+    "exit_price": 358.70000000000005,
+    "exit_time": "2026-03-13 11:01:00"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723600CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23600,
+    "expiry": "2026-03-17",
+    "entry_price": 128.55,
+    "last_price": 141.5,
+    "exit_price": 139.35,
+    "exit_time": "2026-03-13 11:01:00"
+   }
+  ],
+  "entry_price_total": -26277.5,
+  "exit_price_total": 25147.500000000007,
+  "pnl": -1129.999999999994,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23318.35,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23361.8,
+  "sl_final": 23361.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 10:44:47",
+    "old_sl": 0.0,
+    "new_sl": 23361.8,
+    "sh_value": null,
+    "close_price": 23318.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 11:01:00",
+    "old_sl": 23361.8,
+    "new_sl": 23361.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "0cfd3585",
+  "entry_time": "2026-03-13 11:08:43",
+  "entry_signal_time": "2026-03-13 11:08:00",
+  "entry_fill_time": "2026-03-13 11:08:43",
+  "exit_time": "2026-03-13 11:28:10",
+  "exit_signal_time": "2026-03-13 11:28:00",
+  "exit_fill_time": "2026-03-13 11:28:10",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 208.75,
+    "last_price": 218.125,
+    "exit_price": 206.85,
+    "exit_time": "2026-03-13 11:28:10"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 253.775,
+    "last_price": 264.975,
+    "exit_price": 251.72500000000002,
+    "exit_time": "2026-03-13 11:28:10"
+   }
+  ],
+  "entry_price_total": -2251.25,
+  "exit_price_total": 2243.750000000002,
+  "pnl": -7.499999999998863,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23349.2,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23350,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23374.7,
+  "sl_final": 23351.05,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 11:08:43",
+    "old_sl": 0.0,
+    "new_sl": 23374.7,
+    "sh_value": null,
+    "close_price": 23349.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 11:10:00",
+    "old_sl": 23374.7,
+    "new_sl": 23368.2,
+    "sh_value": 23368.2,
+    "close_price": 23334.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 11:13:00",
+    "old_sl": 23368.2,
+    "new_sl": 23361.65,
+    "sh_value": 23361.65,
+    "close_price": 23329.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 11:14:00",
+    "old_sl": 23361.65,
+    "new_sl": 23358.25,
+    "sh_value": 23358.25,
+    "close_price": 23328.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 11:15:00",
+    "old_sl": 23358.25,
+    "new_sl": 23353.2,
+    "sh_value": 23353.2,
+    "close_price": 23321.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 11:16:00",
+    "old_sl": 23353.2,
+    "new_sl": 23351.05,
+    "sh_value": 23351.05,
+    "close_price": 23309.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 11:28:10",
+    "old_sl": 23351.05,
+    "new_sl": 23351.05,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "7231a6e1",
+  "entry_time": "2026-03-13 11:08:43",
+  "entry_signal_time": "2026-03-13 11:08:00",
+  "entry_fill_time": "2026-03-13 11:08:43",
+  "exit_time": "2026-03-13 11:35:07",
+  "exit_signal_time": "2026-03-13 11:35:00",
+  "exit_fill_time": "2026-03-13 11:35:07",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 208.75,
+    "last_price": 199.625,
+    "exit_price": 193.175,
+    "exit_time": "2026-03-13 11:35:07"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 253.775,
+    "last_price": 243.2,
+    "exit_price": 234.725,
+    "exit_time": "2026-03-13 11:35:07"
+   }
+  ],
+  "entry_price_total": -2251.25,
+  "exit_price_total": 2077.5,
+  "pnl": -173.75000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23349.2,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23350,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23379.55,
+  "sl_final": 23379.55,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 11:08:43",
+    "old_sl": 0.0,
+    "new_sl": 23379.55,
+    "sh_value": null,
+    "close_price": 23349.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 11:35:07",
+    "old_sl": 23379.55,
+    "new_sl": 23379.55,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "fcdd1b3d",
+  "entry_time": "2026-03-13 11:53:32",
+  "entry_signal_time": "2026-03-13 11:53:00",
+  "entry_fill_time": "2026-03-13 11:53:32",
+  "exit_time": "2026-03-13 13:22:16",
+  "exit_signal_time": "2026-03-13 12:51:00",
+  "exit_fill_time": "2026-03-13 13:22:16",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 231.64999999999998,
+    "last_price": 262.42499999999995,
+    "exit_price": 369.45000000000005,
+    "exit_time": "2026-03-13 13:22:16"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-17",
+    "entry_price": 280.45,
+    "last_price": 316.42499999999995,
+    "exit_price": 434.675,
+    "exit_time": "2026-03-13 13:22:16"
+   }
+  ],
+  "entry_price_total": -2440.000000000002,
+  "exit_price_total": 3261.2499999999964,
+  "pnl": 821.2499999999973,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23392.6,
+   "strikes": {
+    "pe_strike": 23400,
+    "ce_strike_near": 23400,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23409.4,
+  "sl_final": 23241.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 11:53:32",
+    "old_sl": 0.0,
+    "new_sl": 23409.4,
+    "sh_value": null,
+    "close_price": 23392.6,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 11:59:00",
+    "old_sl": 23409.4,
+    "new_sl": 23406.1,
+    "sh_value": 23406.1,
+    "close_price": 23367.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:01:00",
+    "old_sl": 23406.1,
+    "new_sl": 23403.7,
+    "sh_value": 23403.7,
+    "close_price": 23355.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:02:00",
+    "old_sl": 23403.7,
+    "new_sl": 23389.7,
+    "sh_value": 23389.7,
+    "close_price": 23346.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:03:00",
+    "old_sl": 23389.7,
+    "new_sl": 23381.15,
+    "sh_value": 23381.15,
+    "close_price": 23339.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:04:00",
+    "old_sl": 23381.15,
+    "new_sl": 23378.1,
+    "sh_value": 23378.1,
+    "close_price": 23345.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:09:00",
+    "old_sl": 23378.1,
+    "new_sl": 23349.45,
+    "sh_value": 23349.45,
+    "close_price": 23326.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:11:00",
+    "old_sl": 23349.45,
+    "new_sl": 23347.5,
+    "sh_value": 23347.5,
+    "close_price": 23326.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:20:00",
+    "old_sl": 23347.5,
+    "new_sl": 23342.55,
+    "sh_value": 23342.55,
+    "close_price": 23318.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:22:00",
+    "old_sl": 23342.55,
+    "new_sl": 23338.9,
+    "sh_value": 23338.9,
+    "close_price": 23309.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:23:00",
+    "old_sl": 23338.9,
+    "new_sl": 23337.7,
+    "sh_value": 23337.7,
+    "close_price": 23291.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:26:00",
+    "old_sl": 23337.7,
+    "new_sl": 23334.9,
+    "sh_value": 23334.9,
+    "close_price": 23273.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:31:00",
+    "old_sl": 23334.9,
+    "new_sl": 23291.25,
+    "sh_value": 23291.25,
+    "close_price": 23270.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:38:00",
+    "old_sl": 23291.25,
+    "new_sl": 23272.1,
+    "sh_value": 23272.1,
+    "close_price": 23229.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:39:00",
+    "old_sl": 23272.1,
+    "new_sl": 23252.6,
+    "sh_value": 23252.6,
+    "close_price": 23210.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:41:00",
+    "old_sl": 23252.6,
+    "new_sl": 23244.5,
+    "sh_value": 23244.5,
+    "close_price": 23210.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:42:00",
+    "old_sl": 23244.5,
+    "new_sl": 23241.8,
+    "sh_value": 23241.8,
+    "close_price": 23199.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 13:22:16",
+    "old_sl": 23241.8,
+    "new_sl": 23241.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "fad91671",
+  "entry_time": "2026-03-13 11:53:32",
+  "entry_signal_time": "2026-03-13 11:53:00",
+  "entry_fill_time": "2026-03-13 11:53:32",
+  "exit_time": "2026-03-13 14:21:25",
+  "exit_signal_time": "2026-03-13 14:20:00",
+  "exit_fill_time": "2026-03-13 14:21:25",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 231.64999999999998,
+    "last_price": 363.425,
+    "exit_price": 333.375,
+    "exit_time": "2026-03-13 14:21:25"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-17",
+    "entry_price": 280.45,
+    "last_price": 429.3,
+    "exit_price": 395.04999999999995,
+    "exit_time": "2026-03-13 14:21:25"
+   }
+  ],
+  "entry_price_total": -2440.000000000002,
+  "exit_price_total": 3083.7499999999964,
+  "pnl": 643.7499999999973,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23392.6,
+   "strikes": {
+    "pe_strike": 23400,
+    "ce_strike_near": 23400,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23414.9,
+  "sl_final": 23202.65,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 11:53:32",
+    "old_sl": 0.0,
+    "new_sl": 23414.9,
+    "sh_value": null,
+    "close_price": 23392.6,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 11:54:00",
+    "old_sl": 23414.9,
+    "new_sl": 23379.55,
+    "sh_value": 23379.55,
+    "close_price": 23403.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:35:00",
+    "old_sl": 23379.55,
+    "new_sl": 23365.45,
+    "sh_value": 23365.45,
+    "close_price": 23239.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:40:00",
+    "old_sl": 23365.45,
+    "new_sl": 23347.5,
+    "sh_value": 23347.5,
+    "close_price": 23216.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 12:45:00",
+    "old_sl": 23347.5,
+    "new_sl": 23342.55,
+    "sh_value": 23342.55,
+    "close_price": 23212.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 13:10:00",
+    "old_sl": 23342.55,
+    "new_sl": 23250.2,
+    "sh_value": 23250.2,
+    "close_price": 23197.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 13:40:00",
+    "old_sl": 23250.2,
+    "new_sl": 23227.5,
+    "sh_value": 23227.5,
+    "close_price": 23145.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 13:55:00",
+    "old_sl": 23227.5,
+    "new_sl": 23202.65,
+    "sh_value": 23202.65,
+    "close_price": 23138.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 14:21:25",
+    "old_sl": 23202.65,
+    "new_sl": 23202.65,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "772ce881",
+  "entry_time": "2026-03-13 14:53:10",
+  "entry_signal_time": "2026-03-13 14:53:00",
+  "entry_fill_time": "2026-03-13 14:53:10",
+  "exit_time": "2026-03-13 15:00:17",
+  "exit_signal_time": "2026-03-13 15:00:00",
+  "exit_fill_time": "2026-03-13 15:00:17",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 206.325,
+    "last_price": 198.675,
+    "exit_price": 193.1,
+    "exit_time": "2026-03-13 15:00:17"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 353.725,
+    "last_price": 371.4,
+    "exit_price": 370.925,
+    "exit_time": "2026-03-13 15:00:17"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 162.075,
+    "last_price": 156.625,
+    "exit_price": 151.125,
+    "exit_time": "2026-03-13 15:00:17"
+   }
+  ],
+  "entry_price_total": -19898.75,
+  "exit_price_total": 20645.0,
+  "pnl": 746.2499999999991,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23191.1,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23216.2,
+  "sl_final": 23212.5,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 14:53:10",
+    "old_sl": 0.0,
+    "new_sl": 23216.2,
+    "sh_value": null,
+    "close_price": 23191.1,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 14:54:00",
+    "old_sl": 23216.2,
+    "new_sl": 23212.5,
+    "sh_value": 23212.5,
+    "close_price": 23173.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-13 15:00:17",
+    "old_sl": 23212.5,
+    "new_sl": 23212.5,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "438ea1ea",
+  "entry_time": "2026-03-13 14:53:10",
+  "entry_signal_time": "2026-03-13 14:53:00",
+  "entry_fill_time": "2026-03-13 14:53:10",
+  "exit_time": "2026-03-13 15:00:17",
+  "exit_signal_time": "2026-03-13 15:00:00",
+  "exit_fill_time": "2026-03-13 15:00:17",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723300CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 206.325,
+    "last_price": 198.675,
+    "exit_price": 193.1,
+    "exit_time": "2026-03-13 15:00:17"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 353.725,
+    "last_price": 371.4,
+    "exit_price": 370.925,
+    "exit_time": "2026-03-13 15:00:17"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723400CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23400,
+    "expiry": "2026-03-17",
+    "entry_price": 162.075,
+    "last_price": 156.625,
+    "exit_price": 151.125,
+    "exit_time": "2026-03-13 15:00:17"
+   }
+  ],
+  "entry_price_total": -19898.75,
+  "exit_price_total": 20645.0,
+  "pnl": 746.2499999999991,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23191.1,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23258.6,
+  "sl_final": 23258.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-13 14:53:10",
+    "old_sl": 0.0,
+    "new_sl": 23258.6,
+    "sh_value": null,
+    "close_price": 23191.1,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-13 15:00:17",
+    "old_sl": 23258.6,
+    "new_sl": 23258.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "625963d0",
+  "entry_time": "2026-03-16 09:54:35",
+  "entry_signal_time": "2026-03-16 09:54:00",
+  "entry_fill_time": "2026-03-16 09:54:35",
+  "exit_time": "2026-03-16 11:04:53",
+  "exit_signal_time": "2026-03-16 11:04:00",
+  "exit_fill_time": "2026-03-16 11:04:53",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 164.675,
+    "last_price": 279.375,
+    "exit_price": 256.025,
+    "exit_time": "2026-03-16 11:04:53"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 211.525,
+    "last_price": 348.225,
+    "exit_price": 322.6,
+    "exit_time": "2026-03-16 11:04:53"
+   }
+  ],
+  "entry_price_total": -2342.5,
+  "exit_price_total": 3328.7500000000036,
+  "pnl": 986.2500000000027,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23233.2,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23250,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23262.1,
+  "sl_final": 23041.5,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 09:54:35",
+    "old_sl": 0.0,
+    "new_sl": 23262.1,
+    "sh_value": null,
+    "close_price": 23233.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 09:55:00",
+    "old_sl": 23262.1,
+    "new_sl": 23261.0,
+    "sh_value": 23261.0,
+    "close_price": 23226.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:00:00",
+    "old_sl": 23261.0,
+    "new_sl": 23256.25,
+    "sh_value": 23256.25,
+    "close_price": 23167.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:01:00",
+    "old_sl": 23256.25,
+    "new_sl": 23235.9,
+    "sh_value": 23235.9,
+    "close_price": 23187.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:02:00",
+    "old_sl": 23235.9,
+    "new_sl": 23232.75,
+    "sh_value": 23232.75,
+    "close_price": 23173.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:03:00",
+    "old_sl": 23232.75,
+    "new_sl": 23232.05,
+    "sh_value": 23232.05,
+    "close_price": 23172.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:10:00",
+    "old_sl": 23232.05,
+    "new_sl": 23210.5,
+    "sh_value": 23210.5,
+    "close_price": 23184.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:14:00",
+    "old_sl": 23210.5,
+    "new_sl": 23207.2,
+    "sh_value": 23207.2,
+    "close_price": 23146.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:15:00",
+    "old_sl": 23207.2,
+    "new_sl": 23203.95,
+    "sh_value": 23203.95,
+    "close_price": 23155.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:16:00",
+    "old_sl": 23203.95,
+    "new_sl": 23199.35,
+    "sh_value": 23199.35,
+    "close_price": 23137.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:17:00",
+    "old_sl": 23199.35,
+    "new_sl": 23189.95,
+    "sh_value": 23189.95,
+    "close_price": 23130.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:18:00",
+    "old_sl": 23189.95,
+    "new_sl": 23181.75,
+    "sh_value": 23181.75,
+    "close_price": 23111.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:19:00",
+    "old_sl": 23181.75,
+    "new_sl": 23168.25,
+    "sh_value": 23168.25,
+    "close_price": 23117.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:20:00",
+    "old_sl": 23168.25,
+    "new_sl": 23159.95,
+    "sh_value": 23159.95,
+    "close_price": 23100.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:21:00",
+    "old_sl": 23159.95,
+    "new_sl": 23155.3,
+    "sh_value": 23155.3,
+    "close_price": 23057.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:22:00",
+    "old_sl": 23155.3,
+    "new_sl": 23154.35,
+    "sh_value": 23154.35,
+    "close_price": 23076.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:23:00",
+    "old_sl": 23154.35,
+    "new_sl": 23139.4,
+    "sh_value": 23139.4,
+    "close_price": 23073.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:24:00",
+    "old_sl": 23139.4,
+    "new_sl": 23133.05,
+    "sh_value": 23133.05,
+    "close_price": 23065.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:25:00",
+    "old_sl": 23133.05,
+    "new_sl": 23120.05,
+    "sh_value": 23120.05,
+    "close_price": 23056.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:27:00",
+    "old_sl": 23120.05,
+    "new_sl": 23100.6,
+    "sh_value": 23100.6,
+    "close_price": 23053.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:28:00",
+    "old_sl": 23100.6,
+    "new_sl": 23078.8,
+    "sh_value": 23078.8,
+    "close_price": 23046.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:29:00",
+    "old_sl": 23078.8,
+    "new_sl": 23077.85,
+    "sh_value": 23077.85,
+    "close_price": 23033.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:35:00",
+    "old_sl": 23077.85,
+    "new_sl": 23074.5,
+    "sh_value": 23074.5,
+    "close_price": 23045.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:46:00",
+    "old_sl": 23074.5,
+    "new_sl": 23072.25,
+    "sh_value": 23072.25,
+    "close_price": 23041.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:49:00",
+    "old_sl": 23072.25,
+    "new_sl": 23064.95,
+    "sh_value": 23064.95,
+    "close_price": 23037.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:50:00",
+    "old_sl": 23064.95,
+    "new_sl": 23064.25,
+    "sh_value": 23064.25,
+    "close_price": 23035.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:55:00",
+    "old_sl": 23064.25,
+    "new_sl": 23053.85,
+    "sh_value": 23053.85,
+    "close_price": 22986.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:56:00",
+    "old_sl": 23053.85,
+    "new_sl": 23041.5,
+    "sh_value": 23041.5,
+    "close_price": 22967.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:04:53",
+    "old_sl": 23041.5,
+    "new_sl": 23041.5,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "e95b8e01",
+  "entry_time": "2026-03-16 09:54:35",
+  "entry_signal_time": "2026-03-16 09:54:00",
+  "entry_fill_time": "2026-03-16 09:54:35",
+  "exit_time": "2026-03-16 11:21:12",
+  "exit_signal_time": "2026-03-16 11:20:00",
+  "exit_fill_time": "2026-03-16 11:21:12",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 164.675,
+    "last_price": 230.625,
+    "exit_price": 183.675,
+    "exit_time": "2026-03-16 11:21:12"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 211.525,
+    "last_price": 292.70000000000005,
+    "exit_price": 234.85,
+    "exit_time": "2026-03-16 11:21:12"
+   }
+  ],
+  "entry_price_total": -2342.5,
+  "exit_price_total": 2558.75,
+  "pnl": 216.24999999999955,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23233.2,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23250,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23284.65,
+  "sl_final": 23100.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 09:54:35",
+    "old_sl": 0.0,
+    "new_sl": 23284.65,
+    "sh_value": null,
+    "close_price": 23233.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 09:55:00",
+    "old_sl": 23284.65,
+    "new_sl": 23249.05,
+    "sh_value": 23249.05,
+    "close_price": 23226.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:30:00",
+    "old_sl": 23249.05,
+    "new_sl": 23232.75,
+    "sh_value": 23232.75,
+    "close_price": 23024.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:35:00",
+    "old_sl": 23232.75,
+    "new_sl": 23210.5,
+    "sh_value": 23210.5,
+    "close_price": 23045.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 10:55:00",
+    "old_sl": 23210.5,
+    "new_sl": 23100.6,
+    "sh_value": 23100.6,
+    "close_price": 22986.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:21:12",
+    "old_sl": 23100.6,
+    "new_sl": 23100.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "5d5c99b2",
+  "entry_time": "2026-03-16 11:38:05",
+  "entry_signal_time": "2026-03-16 11:38:00",
+  "entry_fill_time": "2026-03-16 11:38:05",
+  "exit_time": "2026-03-16 12:04:20",
+  "exit_signal_time": "2026-03-16 12:02:00",
+  "exit_fill_time": "2026-03-16 12:04:20",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 182.925,
+    "last_price": 193.60000000000002,
+    "exit_price": 176.2,
+    "exit_time": "2026-03-16 12:04:20"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 234.10000000000002,
+    "last_price": 247.225,
+    "exit_price": 227.525,
+    "exit_time": "2026-03-16 12:04:20"
+   }
+  ],
+  "entry_price_total": -2558.750000000002,
+  "exit_price_total": 2566.25,
+  "pnl": 7.500000000000284,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23179.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23200,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23218.15,
+  "sl_final": 23170.55,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 11:38:05",
+    "old_sl": 0.0,
+    "new_sl": 23218.15,
+    "sh_value": null,
+    "close_price": 23179.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 11:40:00",
+    "old_sl": 23218.15,
+    "new_sl": 23211.9,
+    "sh_value": 23211.9,
+    "close_price": 23166.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:41:00",
+    "old_sl": 23211.9,
+    "new_sl": 23209.05,
+    "sh_value": 23209.05,
+    "close_price": 23168.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:45:00",
+    "old_sl": 23209.05,
+    "new_sl": 23186.75,
+    "sh_value": 23186.75,
+    "close_price": 23149.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:47:00",
+    "old_sl": 23186.75,
+    "new_sl": 23184.05,
+    "sh_value": 23184.05,
+    "close_price": 23151.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:56:00",
+    "old_sl": 23184.05,
+    "new_sl": 23170.55,
+    "sh_value": 23170.55,
+    "close_price": 23139.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 12:04:20",
+    "old_sl": 23170.55,
+    "new_sl": 23170.55,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "492d28c8",
+  "entry_time": "2026-03-16 11:38:05",
+  "entry_signal_time": "2026-03-16 11:38:00",
+  "entry_fill_time": "2026-03-16 11:38:05",
+  "exit_time": "2026-03-16 11:51:40",
+  "exit_signal_time": "2026-03-16 11:50:00",
+  "exit_fill_time": "2026-03-16 11:51:40",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 182.925,
+    "last_price": 187.97500000000002,
+    "exit_price": 188.77499999999998,
+    "exit_time": "2026-03-16 11:51:40"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-17",
+    "entry_price": 234.10000000000002,
+    "last_price": 241.325,
+    "exit_price": 242.55,
+    "exit_time": "2026-03-16 11:51:40"
+   }
+  ],
+  "entry_price_total": -2558.750000000002,
+  "exit_price_total": 2688.750000000002,
+  "pnl": 130.00000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23179.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23200,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23218.15,
+  "sl_final": 23100.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 11:38:05",
+    "old_sl": 0.0,
+    "new_sl": 23218.15,
+    "sh_value": null,
+    "close_price": 23179.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 11:39:00",
+    "old_sl": 23218.15,
+    "new_sl": 23100.6,
+    "sh_value": 23100.6,
+    "close_price": 23196.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 11:51:40",
+    "old_sl": 23100.6,
+    "new_sl": 23100.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "cbda46a8",
+  "entry_time": "2026-03-16 12:11:25",
+  "entry_signal_time": "2026-03-16 12:11:00",
+  "entry_fill_time": "2026-03-16 12:11:25",
+  "exit_time": "2026-03-16 12:25:52",
+  "exit_signal_time": "2026-03-16 12:25:00",
+  "exit_fill_time": "2026-03-16 12:25:52",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723100PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-17",
+    "entry_price": 149.35,
+    "last_price": 139.9,
+    "exit_price": 135.22500000000002,
+    "exit_time": "2026-03-16 12:25:52"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 194.225,
+    "last_price": 183.05,
+    "exit_price": 176.35,
+    "exit_time": "2026-03-16 12:25:52"
+   }
+  ],
+  "entry_price_total": -2243.75,
+  "exit_price_total": 2056.249999999999,
+  "pnl": -187.50000000000136,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23148.8,
+   "strikes": {
+    "pe_strike": 23100,
+    "ce_strike_near": 23150,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23188.95,
+  "sl_final": 23185.85,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 12:11:25",
+    "old_sl": 0.0,
+    "new_sl": 23188.95,
+    "sh_value": null,
+    "close_price": 23148.8,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 12:17:00",
+    "old_sl": 23188.95,
+    "new_sl": 23185.85,
+    "sh_value": 23185.85,
+    "close_price": 23156.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 12:25:52",
+    "old_sl": 23185.85,
+    "new_sl": 23185.85,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "639a56b4",
+  "entry_time": "2026-03-16 12:11:25",
+  "entry_signal_time": "2026-03-16 12:11:00",
+  "entry_fill_time": "2026-03-16 12:11:25",
+  "exit_time": "2026-03-16 14:26:30",
+  "exit_signal_time": "2026-03-16 14:20:00",
+  "exit_fill_time": "2026-03-16 14:26:30",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2631723100PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-17",
+    "entry_price": 149.35,
+    "last_price": 142.9,
+    "exit_price": 89.80000000000001,
+    "exit_time": "2026-03-16 14:26:30"
+   },
+   {
+    "tradingsymbol": "NIFTY2631723200PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-17",
+    "entry_price": 194.225,
+    "last_price": 187.025,
+    "exit_price": 121.175,
+    "exit_time": "2026-03-16 14:26:30"
+   }
+  ],
+  "entry_price_total": -2243.75,
+  "exit_price_total": 1568.749999999999,
+  "pnl": -675.0000000000009,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23148.8,
+   "strikes": {
+    "pe_strike": 23100,
+    "ce_strike_near": 23150,
+    "pe_strike_upper": 23400
+   }
+  },
+  "sl_initial": 23209.05,
+  "sl_final": 23168.95,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-16 12:11:25",
+    "old_sl": 0.0,
+    "new_sl": 23209.05,
+    "sh_value": null,
+    "close_price": 23148.8,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-16 12:35:00",
+    "old_sl": 23209.05,
+    "new_sl": 23196.45,
+    "sh_value": 23196.45,
+    "close_price": 23144.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 13:35:00",
+    "old_sl": 23196.45,
+    "new_sl": 23172.6,
+    "sh_value": 23172.6,
+    "close_price": 23108.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 13:45:00",
+    "old_sl": 23172.6,
+    "new_sl": 23168.95,
+    "sh_value": 23168.95,
+    "close_price": 23108.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-16 14:26:30",
+    "old_sl": 23168.95,
+    "new_sl": 23168.95,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "b4c53305",
+  "entry_time": "2026-03-19 10:16:05",
+  "entry_signal_time": "2026-03-19 10:15:00",
+  "entry_fill_time": "2026-03-19 10:16:05",
+  "exit_time": "2026-03-19 10:26:31",
+  "exit_signal_time": "2026-03-19 10:25:00",
+  "exit_fill_time": "2026-03-19 10:26:31",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 130.175,
+    "last_price": 131.525,
+    "exit_price": 142.3,
+    "exit_time": "2026-03-19 10:26:31"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 416.325,
+    "last_price": 413.325,
+    "exit_price": 371.9,
+    "exit_time": "2026-03-19 10:26:31"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 113.15,
+    "last_price": 114.35,
+    "exit_price": 122.55000000000001,
+    "exit_time": "2026-03-19 10:26:31"
+   }
+  ],
+  "entry_price_total": -21667.5,
+  "exit_price_total": 19582.5,
+  "pnl": -2085.000000000001,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23236.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23268.35,
+  "sl_final": 23251.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 10:16:05",
+    "old_sl": 0.0,
+    "new_sl": 23268.35,
+    "sh_value": null,
+    "close_price": 23236.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 10:17:00",
+    "old_sl": 23268.35,
+    "new_sl": 23260.85,
+    "sh_value": 23260.85,
+    "close_price": 23217.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 10:18:00",
+    "old_sl": 23260.85,
+    "new_sl": 23251.8,
+    "sh_value": 23251.8,
+    "close_price": 23220.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 10:26:31",
+    "old_sl": 23251.8,
+    "new_sl": 23251.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "f5d00fca",
+  "entry_time": "2026-03-19 10:16:05",
+  "entry_signal_time": "2026-03-19 10:15:00",
+  "entry_fill_time": "2026-03-19 10:16:05",
+  "exit_time": "2026-03-19 10:36:15",
+  "exit_signal_time": "2026-03-19 10:35:00",
+  "exit_fill_time": "2026-03-19 10:36:15",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 130.175,
+    "last_price": 142.275,
+    "exit_price": 142.475,
+    "exit_time": "2026-03-19 10:36:15"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 416.325,
+    "last_price": 371.575,
+    "exit_price": 369.025,
+    "exit_time": "2026-03-19 10:36:15"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 113.15,
+    "last_price": 123.19999999999999,
+    "exit_price": 123.375,
+    "exit_time": "2026-03-19 10:36:15"
+   }
+  ],
+  "entry_price_total": -21667.5,
+  "exit_price_total": 19406.25,
+  "pnl": -2261.250000000001,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23236.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23281.65,
+  "sl_final": 23273.35,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 10:16:05",
+    "old_sl": 0.0,
+    "new_sl": 23281.65,
+    "sh_value": null,
+    "close_price": 23236.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 10:20:00",
+    "old_sl": 23281.65,
+    "new_sl": 23273.35,
+    "sh_value": 23273.35,
+    "close_price": 23217.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 10:36:15",
+    "old_sl": 23273.35,
+    "new_sl": 23273.35,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "a2790c7c",
+  "entry_time": "2026-03-19 11:06:21",
+  "entry_signal_time": "2026-03-19 11:06:00",
+  "entry_fill_time": "2026-03-19 11:06:21",
+  "exit_time": "2026-03-19 11:47:09",
+  "exit_signal_time": "2026-03-19 11:47:00",
+  "exit_fill_time": "2026-03-19 11:47:09",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 133.45,
+    "last_price": 132.225,
+    "exit_price": 135.675,
+    "exit_time": "2026-03-19 11:47:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 390.3,
+    "last_price": 392.95,
+    "exit_price": 383.975,
+    "exit_time": "2026-03-19 11:47:09"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 115.65,
+    "last_price": 114.44999999999999,
+    "exit_price": 117.4,
+    "exit_time": "2026-03-19 11:47:09"
+   }
+  ],
+  "entry_price_total": -20405.0,
+  "exit_price_total": 20112.5,
+  "pnl": -292.4999999999983,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23244.9,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23280.5,
+  "sl_final": 23253.6,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 11:06:21",
+    "old_sl": 0.0,
+    "new_sl": 23280.5,
+    "sh_value": null,
+    "close_price": 23244.9,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 11:09:00",
+    "old_sl": 23280.5,
+    "new_sl": 23261.65,
+    "sh_value": 23261.65,
+    "close_price": 23242.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 11:10:00",
+    "old_sl": 23261.65,
+    "new_sl": 23259.25,
+    "sh_value": 23259.25,
+    "close_price": 23239.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 11:15:00",
+    "old_sl": 23259.25,
+    "new_sl": 23254.95,
+    "sh_value": 23254.95,
+    "close_price": 23220.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 11:27:00",
+    "old_sl": 23254.95,
+    "new_sl": 23253.6,
+    "sh_value": 23253.6,
+    "close_price": 23235.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 11:47:09",
+    "old_sl": 23253.6,
+    "new_sl": 23253.6,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "f840ee9d",
+  "entry_time": "2026-03-19 11:06:21",
+  "entry_signal_time": "2026-03-19 11:06:00",
+  "entry_fill_time": "2026-03-19 11:06:21",
+  "exit_time": "2026-03-19 12:15:28",
+  "exit_signal_time": "2026-03-19 12:15:00",
+  "exit_fill_time": "2026-03-19 12:15:28",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 133.45,
+    "last_price": 128.725,
+    "exit_price": 136.225,
+    "exit_time": "2026-03-19 12:15:28"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 390.3,
+    "last_price": 394.5,
+    "exit_price": 365.04999999999995,
+    "exit_time": "2026-03-19 12:15:28"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 115.65,
+    "last_price": 111.325,
+    "exit_price": 117.475,
+    "exit_time": "2026-03-19 12:15:28"
+   }
+  ],
+  "entry_price_total": -20405.0,
+  "exit_price_total": 19189.999999999996,
+  "pnl": -1215.0000000000018,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23244.9,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23317.8,
+  "sl_final": 23260.0,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 11:06:21",
+    "old_sl": 0.0,
+    "new_sl": 23317.8,
+    "sh_value": null,
+    "close_price": 23244.9,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 11:15:00",
+    "old_sl": 23317.8,
+    "new_sl": 23316.3,
+    "sh_value": 23316.3,
+    "close_price": 23220.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 11:20:00",
+    "old_sl": 23316.3,
+    "new_sl": 23312.6,
+    "sh_value": 23312.6,
+    "close_price": 23218.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 12:05:00",
+    "old_sl": 23312.6,
+    "new_sl": 23260.0,
+    "sh_value": 23260.0,
+    "close_price": 23231.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 12:15:28",
+    "old_sl": 23260.0,
+    "new_sl": 23260.0,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "d2be41de",
+  "entry_time": "2026-03-19 13:09:46",
+  "entry_signal_time": "2026-03-19 13:09:00",
+  "entry_fill_time": "2026-03-19 13:09:46",
+  "exit_time": "2026-03-19 13:41:26",
+  "exit_signal_time": "2026-03-19 13:39:00",
+  "exit_fill_time": "2026-03-19 13:41:26",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 128.85,
+    "last_price": 112.44999999999999,
+    "exit_price": 116.175,
+    "exit_time": "2026-03-19 13:41:26"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 389.65,
+    "last_price": 438.85,
+    "exit_price": 414.125,
+    "exit_time": "2026-03-19 13:41:26"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 111.225,
+    "last_price": 96.85,
+    "exit_price": 99.85,
+    "exit_time": "2026-03-19 13:41:26"
+   }
+  ],
+  "entry_price_total": -20363.75,
+  "exit_price_total": 21522.5,
+  "pnl": 1158.7500000000014,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23230.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23255.4,
+  "sl_final": 23194.95,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 13:09:46",
+    "old_sl": 0.0,
+    "new_sl": 23255.4,
+    "sh_value": null,
+    "close_price": 23230.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 13:11:00",
+    "old_sl": 23255.4,
+    "new_sl": 23255.05,
+    "sh_value": 23255.05,
+    "close_price": 23218.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:24:00",
+    "old_sl": 23255.05,
+    "new_sl": 23208.7,
+    "sh_value": 23208.7,
+    "close_price": 23187.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:25:00",
+    "old_sl": 23208.7,
+    "new_sl": 23207.9,
+    "sh_value": 23207.9,
+    "close_price": 23182.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:28:00",
+    "old_sl": 23207.9,
+    "new_sl": 23203.4,
+    "sh_value": 23203.4,
+    "close_price": 23181.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:29:00",
+    "old_sl": 23203.4,
+    "new_sl": 23203.2,
+    "sh_value": 23203.2,
+    "close_price": 23176.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:30:00",
+    "old_sl": 23203.2,
+    "new_sl": 23198.15,
+    "sh_value": 23198.15,
+    "close_price": 23176.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:35:00",
+    "old_sl": 23198.15,
+    "new_sl": 23194.95,
+    "sh_value": 23194.95,
+    "close_price": 23175.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 13:41:26",
+    "old_sl": 23194.95,
+    "new_sl": 23194.95,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "ef629396",
+  "entry_time": "2026-03-19 13:09:46",
+  "entry_signal_time": "2026-03-19 13:09:00",
+  "entry_fill_time": "2026-03-19 13:09:46",
+  "exit_time": "2026-03-19 15:00:52",
+  "exit_signal_time": "2026-03-19 15:00:00",
+  "exit_fill_time": "2026-03-19 15:00:52",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423450CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 23450,
+    "expiry": "2026-03-24",
+    "entry_price": 128.85,
+    "last_price": 71.425,
+    "exit_price": 71.275,
+    "exit_time": "2026-03-19 15:00:52"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 389.65,
+    "last_price": 607.5,
+    "exit_price": 636.4000000000001,
+    "exit_time": "2026-03-19 15:00:52"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423500CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23500,
+    "expiry": "2026-03-24",
+    "entry_price": 111.225,
+    "last_price": 61.95,
+    "exit_price": 61.675,
+    "exit_time": "2026-03-19 15:00:52"
+   }
+  ],
+  "entry_price_total": -20363.75,
+  "exit_price_total": 32300.000000000007,
+  "pnl": 11936.250000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 23230.65,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23450,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23277.3,
+  "sl_final": 23133.45,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-19 13:09:46",
+    "old_sl": 0.0,
+    "new_sl": 23277.3,
+    "sh_value": null,
+    "close_price": 23230.65,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-19 13:35:00",
+    "old_sl": 23277.3,
+    "new_sl": 23265.6,
+    "sh_value": 23265.6,
+    "close_price": 23175.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 14:00:00",
+    "old_sl": 23265.6,
+    "new_sl": 23217.85,
+    "sh_value": 23217.85,
+    "close_price": 23163.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 14:30:00",
+    "old_sl": 23217.85,
+    "new_sl": 23200.5,
+    "sh_value": 23200.5,
+    "close_price": 23100.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 14:40:00",
+    "old_sl": 23200.5,
+    "new_sl": 23137.05,
+    "sh_value": 23137.05,
+    "close_price": 23098.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 14:55:00",
+    "old_sl": 23137.05,
+    "new_sl": 23133.45,
+    "sh_value": 23133.45,
+    "close_price": 23033.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-19 15:00:52",
+    "old_sl": 23133.45,
+    "new_sl": 23133.45,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "8134dbfd",
+  "entry_time": "2026-03-20 11:29:12",
+  "entry_signal_time": "2026-03-20 10:49:00",
+  "entry_fill_time": "2026-03-20 11:29:12",
+  "exit_time": "2026-03-20 11:37:16",
+  "exit_signal_time": "2026-03-20 11:36:00",
+  "exit_fill_time": "2026-03-20 11:37:16",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 224.425,
+    "last_price": 221.95,
+    "exit_price": 223.95,
+    "exit_time": "2026-03-20 11:37:16"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-24",
+    "entry_price": 270.975,
+    "last_price": 269.75,
+    "exit_price": 272.35,
+    "exit_time": "2026-03-20 11:37:16"
+   }
+  ],
+  "entry_price_total": -2327.500000000002,
+  "exit_price_total": 2420.000000000002,
+  "pnl": 92.50000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23278.25,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23312.6,
+  "sl_final": 23293.3,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 11:29:12",
+    "old_sl": 0.0,
+    "new_sl": 23312.6,
+    "sh_value": null,
+    "close_price": 23278.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 11:04:00",
+    "old_sl": 23312.6,
+    "new_sl": 23303.65,
+    "sh_value": 23303.65,
+    "close_price": 23277.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:12:00",
+    "old_sl": 23303.65,
+    "new_sl": 23293.3,
+    "sh_value": 23293.3,
+    "close_price": 23272.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:37:16",
+    "old_sl": 23293.3,
+    "new_sl": 23293.3,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "5d69b36b",
+  "entry_time": "2026-03-20 11:29:12",
+  "entry_signal_time": "2026-03-20 10:49:00",
+  "entry_fill_time": "2026-03-20 11:29:12",
+  "exit_time": "2026-03-20 11:41:16",
+  "exit_signal_time": "2026-03-20 11:40:00",
+  "exit_fill_time": "2026-03-20 11:41:16",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 224.425,
+    "last_price": 224.8,
+    "exit_price": 229.325,
+    "exit_time": "2026-03-20 11:41:16"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-24",
+    "entry_price": 270.975,
+    "last_price": 273.025,
+    "exit_price": 277.775,
+    "exit_time": "2026-03-20 11:41:16"
+   }
+  ],
+  "entry_price_total": -2327.500000000002,
+  "exit_price_total": 2422.499999999998,
+  "pnl": 94.99999999999886,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23278.25,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23301.8,
+  "sl_final": 23266.7,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 11:29:12",
+    "old_sl": 0.0,
+    "new_sl": 23301.8,
+    "sh_value": null,
+    "close_price": 23278.25,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 10:50:00",
+    "old_sl": 23301.8,
+    "new_sl": 23266.7,
+    "sh_value": 23266.7,
+    "close_price": 23296.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:41:16",
+    "old_sl": 23266.7,
+    "new_sl": 23266.7,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "f89007f0",
+  "entry_time": "2026-03-20 11:41:16",
+  "entry_signal_time": "2026-03-20 11:40:00",
+  "entry_fill_time": "2026-03-20 11:41:16",
+  "exit_time": "2026-03-20 12:35:44",
+  "exit_signal_time": "2026-03-20 12:34:00",
+  "exit_fill_time": "2026-03-20 12:35:44",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 229.325,
+    "last_price": 328.9,
+    "exit_price": 321.45,
+    "exit_time": "2026-03-20 12:35:44"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-24",
+    "entry_price": 277.775,
+    "last_price": 388.325,
+    "exit_price": 379.79999999999995,
+    "exit_time": "2026-03-20 12:35:44"
+   }
+  ],
+  "entry_price_total": -2422.499999999998,
+  "exit_price_total": 2917.4999999999964,
+  "pnl": 494.9999999999991,
+  "reason": {
+   "section": "section1",
+   "subcat": "b",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23304.85,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23328.55,
+  "sl_final": 23160.05,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 11:41:16",
+    "old_sl": 0.0,
+    "new_sl": 23328.55,
+    "sh_value": null,
+    "close_price": 23304.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 11:41:00",
+    "old_sl": 23328.55,
+    "new_sl": 23321.7,
+    "sh_value": 23321.7,
+    "close_price": 23302.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:44:00",
+    "old_sl": 23321.7,
+    "new_sl": 23316.65,
+    "sh_value": 23316.65,
+    "close_price": 23288.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:45:00",
+    "old_sl": 23316.65,
+    "new_sl": 23313.45,
+    "sh_value": 23313.45,
+    "close_price": 23286.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:48:00",
+    "old_sl": 23313.45,
+    "new_sl": 23303.55,
+    "sh_value": 23303.55,
+    "close_price": 23283.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:49:00",
+    "old_sl": 23303.55,
+    "new_sl": 23300.1,
+    "sh_value": 23300.1,
+    "close_price": 23281.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:51:00",
+    "old_sl": 23300.1,
+    "new_sl": 23294.4,
+    "sh_value": 23294.4,
+    "close_price": 23260.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:52:00",
+    "old_sl": 23294.4,
+    "new_sl": 23292.85,
+    "sh_value": 23292.85,
+    "close_price": 23256.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:54:00",
+    "old_sl": 23292.85,
+    "new_sl": 23291.95,
+    "sh_value": 23291.95,
+    "close_price": 23251.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:57:00",
+    "old_sl": 23291.95,
+    "new_sl": 23288.75,
+    "sh_value": 23288.75,
+    "close_price": 23235.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 11:58:00",
+    "old_sl": 23288.75,
+    "new_sl": 23270.9,
+    "sh_value": 23270.9,
+    "close_price": 23224.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:04:00",
+    "old_sl": 23270.9,
+    "new_sl": 23259.5,
+    "sh_value": 23259.5,
+    "close_price": 23229.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:08:00",
+    "old_sl": 23259.5,
+    "new_sl": 23245.75,
+    "sh_value": 23245.75,
+    "close_price": 23224.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:09:00",
+    "old_sl": 23245.75,
+    "new_sl": 23240.0,
+    "sh_value": 23240.0,
+    "close_price": 23215.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:16:00",
+    "old_sl": 23240.0,
+    "new_sl": 23236.1,
+    "sh_value": 23236.1,
+    "close_price": 23219.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:19:00",
+    "old_sl": 23236.1,
+    "new_sl": 23234.9,
+    "sh_value": 23234.9,
+    "close_price": 23202.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:22:00",
+    "old_sl": 23234.9,
+    "new_sl": 23234.15,
+    "sh_value": 23234.15,
+    "close_price": 23178.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:23:00",
+    "old_sl": 23234.15,
+    "new_sl": 23221.45,
+    "sh_value": 23221.45,
+    "close_price": 23164.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:24:00",
+    "old_sl": 23221.45,
+    "new_sl": 23219.35,
+    "sh_value": 23219.35,
+    "close_price": 23157.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:25:00",
+    "old_sl": 23219.35,
+    "new_sl": 23213.8,
+    "sh_value": 23213.8,
+    "close_price": 23155.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:26:00",
+    "old_sl": 23213.8,
+    "new_sl": 23206.85,
+    "sh_value": 23206.85,
+    "close_price": 23152.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:27:00",
+    "old_sl": 23206.85,
+    "new_sl": 23193.55,
+    "sh_value": 23193.55,
+    "close_price": 23146.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:31:00",
+    "old_sl": 23193.55,
+    "new_sl": 23163.2,
+    "sh_value": 23163.2,
+    "close_price": 23140.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:32:00",
+    "old_sl": 23163.2,
+    "new_sl": 23160.05,
+    "sh_value": 23160.05,
+    "close_price": 23127.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:35:44",
+    "old_sl": 23160.05,
+    "new_sl": 23160.05,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "ed440860",
+  "entry_time": "2026-03-20 11:41:16",
+  "entry_signal_time": "2026-03-20 11:40:00",
+  "entry_fill_time": "2026-03-20 11:41:16",
+  "exit_time": "2026-03-20 13:40:05",
+  "exit_signal_time": "2026-03-20 13:40:00",
+  "exit_fill_time": "2026-03-20 13:40:05",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 229.325,
+    "last_price": 261.225,
+    "exit_price": 245.47500000000002,
+    "exit_time": "2026-03-20 13:40:05"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423400PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23400,
+    "expiry": "2026-03-24",
+    "entry_price": 277.775,
+    "last_price": 312.6,
+    "exit_price": 295.6,
+    "exit_time": "2026-03-20 13:40:05"
+   }
+  ],
+  "entry_price_total": -2422.499999999998,
+  "exit_price_total": 2506.25,
+  "pnl": 83.75000000000057,
+  "reason": {
+   "section": "section1",
+   "subcat": "b",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23304.85,
+   "strikes": {
+    "pe_strike": 23300,
+    "ce_strike_near": 23300,
+    "pe_strike_upper": 23600
+   }
+  },
+  "sl_initial": 23345.15,
+  "sl_final": 23259.5,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 11:41:16",
+    "old_sl": 0.0,
+    "new_sl": 23345.15,
+    "sh_value": null,
+    "close_price": 23304.85,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 11:41:00",
+    "old_sl": 23345.15,
+    "new_sl": 23317.9,
+    "sh_value": 23317.9,
+    "close_price": 23304.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:20:00",
+    "old_sl": 23317.9,
+    "new_sl": 23292.85,
+    "sh_value": 23292.85,
+    "close_price": 23185.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:25:00",
+    "old_sl": 23292.85,
+    "new_sl": 23288.75,
+    "sh_value": 23288.75,
+    "close_price": 23155.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 12:30:00",
+    "old_sl": 23288.75,
+    "new_sl": 23259.5,
+    "sh_value": 23259.5,
+    "close_price": 23155.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 13:40:05",
+    "old_sl": 23259.5,
+    "new_sl": 23259.5,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "d4199170",
+  "entry_time": "2026-03-20 13:42:48",
+  "entry_signal_time": "2026-03-20 13:42:00",
+  "entry_fill_time": "2026-03-20 13:42:48",
+  "exit_time": "2026-03-20 14:05:12",
+  "exit_signal_time": "2026-03-20 14:05:00",
+  "exit_fill_time": "2026-03-20 14:05:12",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-24",
+    "entry_price": 216.175,
+    "last_price": 243.075,
+    "exit_price": 222.95,
+    "exit_time": "2026-03-20 14:05:12"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 259.85,
+    "last_price": 289.75,
+    "exit_price": 267.525,
+    "exit_time": "2026-03-20 14:05:12"
+   }
+  ],
+  "entry_price_total": -2183.750000000002,
+  "exit_price_total": 2228.749999999998,
+  "pnl": 44.99999999999886,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23240.35,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23250,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23272.4,
+  "sl_final": 23230.3,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 13:42:48",
+    "old_sl": 0.0,
+    "new_sl": 23272.4,
+    "sh_value": null,
+    "close_price": 23240.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 13:47:00",
+    "old_sl": 23272.4,
+    "new_sl": 23270.55,
+    "sh_value": 23270.55,
+    "close_price": 23221.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 13:48:00",
+    "old_sl": 23270.55,
+    "new_sl": 23261.05,
+    "sh_value": 23261.05,
+    "close_price": 23212.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 13:49:00",
+    "old_sl": 23261.05,
+    "new_sl": 23253.8,
+    "sh_value": 23253.8,
+    "close_price": 23208.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 13:52:00",
+    "old_sl": 23253.8,
+    "new_sl": 23234.0,
+    "sh_value": 23234.0,
+    "close_price": 23198.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 13:58:00",
+    "old_sl": 23234.0,
+    "new_sl": 23230.3,
+    "sh_value": 23230.3,
+    "close_price": 23209.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 14:05:12",
+    "old_sl": 23230.3,
+    "new_sl": 23230.3,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "cc10130e",
+  "entry_time": "2026-03-20 13:42:48",
+  "entry_signal_time": "2026-03-20 13:42:00",
+  "entry_fill_time": "2026-03-20 13:42:48",
+  "exit_time": "2026-03-20 15:00:28",
+  "exit_signal_time": "2026-03-20 15:00:00",
+  "exit_fill_time": "2026-03-20 15:00:28",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632423200PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23200,
+    "expiry": "2026-03-24",
+    "entry_price": 216.175,
+    "last_price": 317.2,
+    "exit_price": 309.07500000000005,
+    "exit_time": "2026-03-20 15:00:28"
+   },
+   {
+    "tradingsymbol": "NIFTY2632423300PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23300,
+    "expiry": "2026-03-24",
+    "entry_price": 259.85,
+    "last_price": 374.675,
+    "exit_price": 365.475,
+    "exit_time": "2026-03-20 15:00:28"
+   }
+  ],
+  "entry_price_total": -2183.750000000002,
+  "exit_price_total": 2819.999999999998,
+  "pnl": 636.2499999999982,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 23240.35,
+   "strikes": {
+    "pe_strike": 23200,
+    "ce_strike_near": 23250,
+    "pe_strike_upper": 23500
+   }
+  },
+  "sl_initial": 23272.4,
+  "sl_final": 23205.75,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-20 13:42:48",
+    "old_sl": 0.0,
+    "new_sl": 23272.4,
+    "sh_value": null,
+    "close_price": 23240.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-20 13:43:00",
+    "old_sl": 23272.4,
+    "new_sl": 23259.5,
+    "sh_value": 23259.5,
+    "close_price": 23270.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 14:25:00",
+    "old_sl": 23259.5,
+    "new_sl": 23244.55,
+    "sh_value": 23244.55,
+    "close_price": 23185.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 14:45:00",
+    "old_sl": 23244.55,
+    "new_sl": 23228.55,
+    "sh_value": 23228.55,
+    "close_price": 23097.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 14:50:00",
+    "old_sl": 23228.55,
+    "new_sl": 23205.75,
+    "sh_value": 23205.75,
+    "close_price": 23104.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-20 15:00:28",
+    "old_sl": 23205.75,
+    "new_sl": 23205.75,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "b282ef34",
+  "entry_time": "2026-03-24 08:59:39",
+  "entry_signal_time": "2026-03-23 09:26:00",
+  "entry_fill_time": "2026-03-24 08:59:39",
+  "exit_time": "2026-03-24 08:59:39",
+  "exit_signal_time": "2026-03-23 15:00:00",
+  "exit_fill_time": "2026-03-24 08:59:39",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22700,
+    "expiry": "2026-03-24",
+    "entry_price": 300.15,
+    "last_price": 90.575,
+    "exit_price": 300.15,
+    "exit_time": "2026-03-24 08:59:39"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 368.55,
+    "last_price": 112.575,
+    "exit_price": 368.55,
+    "exit_time": "2026-03-24 08:59:39"
+   }
+  ],
+  "entry_price_total": -3420.000000000002,
+  "exit_price_total": 3420.000000000002,
+  "pnl": 0.0,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22703.0,
+   "strikes": {
+    "pe_strike": 22700,
+    "ce_strike_near": 22700,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 22737.1,
+  "sl_final": 22504.1,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 08:59:39",
+    "old_sl": 0.0,
+    "new_sl": 22737.1,
+    "sh_value": null,
+    "close_price": 22703.0,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-23 09:32:00",
+    "old_sl": 22737.1,
+    "new_sl": 22728.25,
+    "sh_value": 22728.25,
+    "close_price": 22701.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:47:00",
+    "old_sl": 22728.25,
+    "new_sl": 22716.7,
+    "sh_value": 22716.7,
+    "close_price": 22689.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:48:00",
+    "old_sl": 22716.7,
+    "new_sl": 22713.65,
+    "sh_value": 22713.65,
+    "close_price": 22676.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:49:00",
+    "old_sl": 22713.65,
+    "new_sl": 22710.7,
+    "sh_value": 22710.7,
+    "close_price": 22664.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:52:00",
+    "old_sl": 22710.7,
+    "new_sl": 22706.65,
+    "sh_value": 22706.65,
+    "close_price": 22652.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:54:00",
+    "old_sl": 22706.65,
+    "new_sl": 22692.25,
+    "sh_value": 22692.25,
+    "close_price": 22637.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:55:00",
+    "old_sl": 22692.25,
+    "new_sl": 22677.2,
+    "sh_value": 22677.2,
+    "close_price": 22629.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:56:00",
+    "old_sl": 22677.2,
+    "new_sl": 22665.55,
+    "sh_value": 22665.55,
+    "close_price": 22625.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:57:00",
+    "old_sl": 22665.55,
+    "new_sl": 22665.05,
+    "sh_value": 22665.05,
+    "close_price": 22612.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:58:00",
+    "old_sl": 22665.05,
+    "new_sl": 22661.15,
+    "sh_value": 22661.15,
+    "close_price": 22603.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:00:00",
+    "old_sl": 22661.15,
+    "new_sl": 22655.45,
+    "sh_value": 22655.45,
+    "close_price": 22597.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:01:00",
+    "old_sl": 22655.45,
+    "new_sl": 22638.75,
+    "sh_value": 22638.75,
+    "close_price": 22587.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:02:00",
+    "old_sl": 22638.75,
+    "new_sl": 22634.35,
+    "sh_value": 22634.35,
+    "close_price": 22591.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:10:00",
+    "old_sl": 22634.35,
+    "new_sl": 22633.05,
+    "sh_value": 22633.05,
+    "close_price": 22605.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:15:00",
+    "old_sl": 22633.05,
+    "new_sl": 22615.75,
+    "sh_value": 22615.75,
+    "close_price": 22571.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:16:00",
+    "old_sl": 22615.75,
+    "new_sl": 22611.75,
+    "sh_value": 22611.75,
+    "close_price": 22560.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:17:00",
+    "old_sl": 22611.75,
+    "new_sl": 22609.2,
+    "sh_value": 22609.2,
+    "close_price": 22556.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:20:00",
+    "old_sl": 22609.2,
+    "new_sl": 22590.35,
+    "sh_value": 22590.35,
+    "close_price": 22554.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:21:00",
+    "old_sl": 22590.35,
+    "new_sl": 22587.5,
+    "sh_value": 22587.5,
+    "close_price": 22547.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:29:00",
+    "old_sl": 22587.5,
+    "new_sl": 22559.6,
+    "sh_value": 22559.6,
+    "close_price": 22534.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:35:00",
+    "old_sl": 22559.6,
+    "new_sl": 22554.05,
+    "sh_value": 22554.05,
+    "close_price": 22537.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:52:00",
+    "old_sl": 22554.05,
+    "new_sl": 22550.25,
+    "sh_value": 22550.25,
+    "close_price": 22515.55,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 11:01:00",
+    "old_sl": 22550.25,
+    "new_sl": 22536.75,
+    "sh_value": 22536.75,
+    "close_price": 22515.65,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 12:23:00",
+    "old_sl": 22536.75,
+    "new_sl": 22530.65,
+    "sh_value": 22530.65,
+    "close_price": 22512.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 12:25:00",
+    "old_sl": 22530.65,
+    "new_sl": 22529.9,
+    "sh_value": 22529.9,
+    "close_price": 22482.95,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 12:27:00",
+    "old_sl": 22529.9,
+    "new_sl": 22527.3,
+    "sh_value": 22527.3,
+    "close_price": 22481.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 13:04:00",
+    "old_sl": 22527.3,
+    "new_sl": 22504.1,
+    "sh_value": 22504.1,
+    "close_price": 22482.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 08:59:39",
+    "old_sl": 22504.1,
+    "new_sl": 22504.1,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "70d0963a",
+  "entry_time": "2026-03-24 08:59:39",
+  "entry_signal_time": "2026-03-23 09:26:00",
+  "entry_fill_time": "2026-03-24 08:59:39",
+  "exit_time": "2026-03-24 08:59:39",
+  "exit_signal_time": "2026-03-23 15:00:00",
+  "exit_fill_time": "2026-03-24 08:59:39",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22700,
+    "expiry": "2026-03-24",
+    "entry_price": 300.15,
+    "last_price": 90.575,
+    "exit_price": 300.15,
+    "exit_time": "2026-03-24 08:59:39"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 368.55,
+    "last_price": 112.575,
+    "exit_price": 368.55,
+    "exit_time": "2026-03-24 08:59:39"
+   }
+  ],
+  "entry_price_total": -3420.000000000002,
+  "exit_price_total": 3420.000000000002,
+  "pnl": 0.0,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22703.0,
+   "strikes": {
+    "pe_strike": 22700,
+    "ce_strike_near": 22700,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 23156.05,
+  "sl_final": 22555.9,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 08:59:39",
+    "old_sl": 0.0,
+    "new_sl": 23156.05,
+    "sh_value": null,
+    "close_price": 22703.0,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-23 09:30:00",
+    "old_sl": 23156.05,
+    "new_sl": 23139.8,
+    "sh_value": 23139.8,
+    "close_price": 22704.4,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:50:00",
+    "old_sl": 23139.8,
+    "new_sl": 22851.7,
+    "sh_value": 22851.7,
+    "close_price": 22663.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 09:55:00",
+    "old_sl": 22851.7,
+    "new_sl": 22742.8,
+    "sh_value": 22742.8,
+    "close_price": 22629.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:15:00",
+    "old_sl": 22742.8,
+    "new_sl": 22716.7,
+    "sh_value": 22716.7,
+    "close_price": 22571.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:20:00",
+    "old_sl": 22716.7,
+    "new_sl": 22706.65,
+    "sh_value": 22706.65,
+    "close_price": 22554.5,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:25:00",
+    "old_sl": 22706.65,
+    "new_sl": 22665.05,
+    "sh_value": 22665.05,
+    "close_price": 22541.6,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:30:00",
+    "old_sl": 22665.05,
+    "new_sl": 22634.35,
+    "sh_value": 22634.35,
+    "close_price": 22531.0,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:35:00",
+    "old_sl": 22634.35,
+    "new_sl": 22633.05,
+    "sh_value": 22633.05,
+    "close_price": 22537.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 10:55:00",
+    "old_sl": 22633.05,
+    "new_sl": 22581.5,
+    "sh_value": 22581.5,
+    "close_price": 22527.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 11:45:00",
+    "old_sl": 22581.5,
+    "new_sl": 22571.6,
+    "sh_value": 22571.6,
+    "close_price": 22520.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 12:20:00",
+    "old_sl": 22571.6,
+    "new_sl": 22564.0,
+    "sh_value": 22564.0,
+    "close_price": 22528.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-23 12:55:00",
+    "old_sl": 22564.0,
+    "new_sl": 22555.9,
+    "sh_value": 22555.9,
+    "close_price": 22504.25,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 08:59:39",
+    "old_sl": 22555.9,
+    "new_sl": 22555.9,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "7a91f437",
+  "entry_time": "2026-03-24 09:48:11",
+  "entry_signal_time": "2026-03-24 09:48:00",
+  "entry_fill_time": "2026-03-24 09:48:11",
+  "exit_time": "2026-03-24 10:17:49",
+  "exit_signal_time": "2026-03-24 10:17:00",
+  "exit_fill_time": "2026-03-24 10:17:49",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22700,
+    "expiry": "2026-03-24",
+    "entry_price": 98.475,
+    "last_price": 104.125,
+    "exit_price": 76.6,
+    "exit_time": "2026-03-24 10:17:49"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 154.875,
+    "last_price": 163.9,
+    "exit_price": 129.02499999999998,
+    "exit_time": "2026-03-24 10:17:49"
+   }
+  ],
+  "entry_price_total": -2820.0,
+  "exit_price_total": 2621.2499999999995,
+  "pnl": -198.75000000000114,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22717.35,
+   "strikes": {
+    "pe_strike": 22700,
+    "ce_strike_near": 22700,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 22783.1,
+  "sl_final": 22724.45,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 09:48:11",
+    "old_sl": 0.0,
+    "new_sl": 22783.1,
+    "sh_value": null,
+    "close_price": 22717.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-24 09:49:00",
+    "old_sl": 22783.1,
+    "new_sl": 22782.4,
+    "sh_value": 22782.4,
+    "close_price": 22711.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:01:00",
+    "old_sl": 22782.4,
+    "new_sl": 22773.65,
+    "sh_value": 22773.65,
+    "close_price": 22747.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:07:00",
+    "old_sl": 22773.65,
+    "new_sl": 22756.65,
+    "sh_value": 22756.65,
+    "close_price": 22705.8,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:08:00",
+    "old_sl": 22756.65,
+    "new_sl": 22746.75,
+    "sh_value": 22746.75,
+    "close_price": 22697.85,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:09:00",
+    "old_sl": 22746.75,
+    "new_sl": 22730.5,
+    "sh_value": 22730.5,
+    "close_price": 22688.9,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:10:00",
+    "old_sl": 22730.5,
+    "new_sl": 22724.45,
+    "sh_value": 22724.45,
+    "close_price": 22685.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:17:49",
+    "old_sl": 22724.45,
+    "new_sl": 22724.45,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "872c1dd6",
+  "entry_time": "2026-03-24 09:48:11",
+  "entry_signal_time": "2026-03-24 09:48:00",
+  "entry_fill_time": "2026-03-24 09:48:11",
+  "exit_time": "2026-03-24 11:50:22",
+  "exit_signal_time": "2026-03-24 11:50:00",
+  "exit_fill_time": "2026-03-24 11:50:22",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422700PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22700,
+    "expiry": "2026-03-24",
+    "entry_price": 98.475,
+    "last_price": 49.45,
+    "exit_price": 48.95,
+    "exit_time": "2026-03-24 11:50:22"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 154.875,
+    "last_price": 95.275,
+    "exit_price": 94.75,
+    "exit_time": "2026-03-24 11:50:22"
+   }
+  ],
+  "entry_price_total": -2820.0,
+  "exit_price_total": 2290.0,
+  "pnl": -530.0000000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22717.35,
+   "strikes": {
+    "pe_strike": 22700,
+    "ce_strike_near": 22700,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 22899.6,
+  "sl_final": 22766.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 09:48:11",
+    "old_sl": 0.0,
+    "new_sl": 22899.6,
+    "sh_value": null,
+    "close_price": 22717.35,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-24 09:55:00",
+    "old_sl": 22899.6,
+    "new_sl": 22852.4,
+    "sh_value": 22852.4,
+    "close_price": 22730.7,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:10:00",
+    "old_sl": 22852.4,
+    "new_sl": 22827.9,
+    "sh_value": 22827.9,
+    "close_price": 22685.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 10:35:00",
+    "old_sl": 22827.9,
+    "new_sl": 22766.8,
+    "sh_value": 22766.8,
+    "close_price": 22667.75,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 11:50:22",
+    "old_sl": 22766.8,
+    "new_sl": 22766.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "c97d5e44",
+  "entry_time": "2026-03-24 12:09:05",
+  "entry_signal_time": "2026-03-24 12:09:00",
+  "entry_fill_time": "2026-03-24 12:09:05",
+  "exit_time": "2026-03-24 12:24:36",
+  "exit_signal_time": "2026-03-24 12:23:00",
+  "exit_fill_time": "2026-03-24 12:24:36",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 88.25,
+    "last_price": 93.0,
+    "exit_price": 57.4,
+    "exit_time": "2026-03-24 12:24:36"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22900,
+    "expiry": "2026-03-24",
+    "entry_price": 156.8,
+    "last_price": 162.15,
+    "exit_price": 105.9,
+    "exit_time": "2026-03-24 12:24:36"
+   }
+  ],
+  "entry_price_total": -3427.500000000001,
+  "exit_price_total": 2425.0,
+  "pnl": -1002.5000000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22771.4,
+   "strikes": {
+    "pe_strike": 22800,
+    "ce_strike_near": 22750,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 22805.0,
+  "sl_final": 22787.75,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 12:09:05",
+    "old_sl": 0.0,
+    "new_sl": 22805.0,
+    "sh_value": null,
+    "close_price": 22771.4,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-24 12:13:00",
+    "old_sl": 22805.0,
+    "new_sl": 22787.75,
+    "sh_value": 22787.75,
+    "close_price": 22766.05,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 12:24:36",
+    "old_sl": 22787.75,
+    "new_sl": 22787.75,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "7595bf77",
+  "entry_time": "2026-03-24 12:09:05",
+  "entry_signal_time": "2026-03-24 12:09:00",
+  "entry_fill_time": "2026-03-24 12:09:05",
+  "exit_time": "2026-03-24 12:26:04",
+  "exit_signal_time": "2026-03-24 12:25:00",
+  "exit_fill_time": "2026-03-24 12:26:04",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY2632422800PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 22800,
+    "expiry": "2026-03-24",
+    "entry_price": 88.25,
+    "last_price": 88.925,
+    "exit_price": 40.849999999999994,
+    "exit_time": "2026-03-24 12:26:04"
+   },
+   {
+    "tradingsymbol": "NIFTY2632422900PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 22900,
+    "expiry": "2026-03-24",
+    "entry_price": 156.8,
+    "last_price": 159.25,
+    "exit_price": 80.975,
+    "exit_time": "2026-03-24 12:26:04"
+   }
+  ],
+  "entry_price_total": -3427.500000000001,
+  "exit_price_total": 2006.2499999999998,
+  "pnl": -1421.2500000000005,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "B"
+  },
+  "meta": {
+   "spot": 22771.4,
+   "strikes": {
+    "pe_strike": 22800,
+    "ce_strike_near": 22750,
+    "pe_strike_upper": 23000
+   }
+  },
+  "sl_initial": 22827.8,
+  "sl_final": 22766.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-24 12:09:05",
+    "old_sl": 0.0,
+    "new_sl": 22827.8,
+    "sh_value": null,
+    "close_price": 22771.4,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-24 12:10:00",
+    "old_sl": 22827.8,
+    "new_sl": 22766.8,
+    "sh_value": 22766.8,
+    "close_price": 22770.1,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-24 12:26:04",
+    "old_sl": 22766.8,
+    "new_sl": 22766.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "2376c8a5",
+  "entry_time": "2026-03-27 11:31:56",
+  "entry_signal_time": "2026-03-27 11:19:00",
+  "entry_fill_time": "2026-03-27 11:31:56",
+  "exit_time": "2026-03-27 11:55:02",
+  "exit_signal_time": "2026-03-27 11:54:00",
+  "exit_fill_time": "2026-03-27 11:55:02",
+  "lot_id": "lot1",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY26MAR23000PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23000,
+    "expiry": "2026-03-30",
+    "entry_price": 268.275,
+    "last_price": 250.95,
+    "exit_price": 247.60000000000002,
+    "exit_time": "2026-03-27 11:55:02"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 323.65,
+    "last_price": 304.725,
+    "exit_price": 301.85,
+    "exit_time": "2026-03-27 11:55:02"
+   }
+  ],
+  "entry_price_total": -2768.75,
+  "exit_price_total": 2712.5,
+  "pnl": -56.25,
+  "reason": {
+   "section": "section2",
+   "subcat": null,
+   "position_type": "B",
+   "rsi_5m": 41.572758
+  },
+  "meta": {
+   "spot": 22968.2,
+   "strikes": {
+    "pe_strike": 23000,
+    "ce_strike_near": 22950,
+    "pe_strike_upper": 23200
+   }
+  },
+  "sl_initial": 22992.7,
+  "sl_final": 22957.3,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-27 11:31:56",
+    "old_sl": 0.0,
+    "new_sl": 22992.7,
+    "sh_value": null,
+    "close_price": 22968.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-27 11:24:00",
+    "old_sl": 22992.7,
+    "new_sl": 22988.8,
+    "sh_value": 22988.8,
+    "close_price": 22950.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 11:25:00",
+    "old_sl": 22988.8,
+    "new_sl": 22988.1,
+    "sh_value": 22988.1,
+    "close_price": 22947.35,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 11:26:00",
+    "old_sl": 22988.1,
+    "new_sl": 22968.45,
+    "sh_value": 22968.45,
+    "close_price": 22945.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 11:29:00",
+    "old_sl": 22968.45,
+    "new_sl": 22961.8,
+    "sh_value": 22961.8,
+    "close_price": 22935.45,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 11:43:00",
+    "old_sl": 22961.8,
+    "new_sl": 22957.3,
+    "sh_value": 22957.3,
+    "close_price": 22939.3,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 11:55:02",
+    "old_sl": 22957.3,
+    "new_sl": 22957.3,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "0ec802f3",
+  "entry_time": "2026-03-27 11:31:56",
+  "entry_signal_time": "2026-03-27 11:19:00",
+  "entry_fill_time": "2026-03-27 11:31:56",
+  "exit_time": "2026-03-27 12:30:32",
+  "exit_signal_time": "2026-03-27 12:30:00",
+  "exit_fill_time": "2026-03-27 12:30:32",
+  "lot_id": "lot2",
+  "position_type": "B",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY26MAR23000PE",
+    "side": "SELL",
+    "option_type": "PE",
+    "strike_price": 23000,
+    "expiry": "2026-03-30",
+    "entry_price": 268.275,
+    "last_price": 253.625,
+    "exit_price": 243.3,
+    "exit_time": "2026-03-27 12:30:32"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 323.65,
+    "last_price": 308.9,
+    "exit_price": 296.92499999999995,
+    "exit_time": "2026-03-27 12:30:32"
+   }
+  ],
+  "entry_price_total": -2768.75,
+  "exit_price_total": 2681.249999999998,
+  "pnl": -87.50000000000296,
+  "reason": {
+   "section": "section2",
+   "subcat": null,
+   "position_type": "B",
+   "rsi_5m": 41.572758
+  },
+  "meta": {
+   "spot": 22968.2,
+   "strikes": {
+    "pe_strike": 23000,
+    "ce_strike_near": 22950,
+    "pe_strike_upper": 23200
+   }
+  },
+  "sl_initial": 23018.4,
+  "sl_final": 22961.8,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-27 11:31:56",
+    "old_sl": 0.0,
+    "new_sl": 23018.4,
+    "sh_value": null,
+    "close_price": 22968.2,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-27 11:20:00",
+    "old_sl": 23018.4,
+    "new_sl": 23001.15,
+    "sh_value": 23001.15,
+    "close_price": 22960.15,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 12:20:00",
+    "old_sl": 23001.15,
+    "new_sl": 22961.8,
+    "sh_value": 22961.8,
+    "close_price": 22909.2,
+    "trigger": "TRAIL"
+   },
+   {
+    "timestamp": "2026-03-27 12:30:32",
+    "old_sl": 22961.8,
+    "new_sl": 22961.8,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "trade_id": "56ba6222",
+  "entry_time": "2026-03-27 14:49:12",
+  "entry_signal_time": "2026-03-27 14:48:00",
+  "entry_fill_time": "2026-03-27 14:49:12",
+  "exit_time": "2026-03-27 15:01:07",
+  "exit_signal_time": "2026-03-27 15:00:00",
+  "exit_fill_time": "2026-03-27 15:01:07",
+  "lot_id": "lot1",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY26MAR22950CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 22950,
+    "expiry": "2026-03-30",
+    "entry_price": 171.7,
+    "last_price": 177.35,
+    "exit_price": 156.575,
+    "exit_time": "2026-03-27 15:01:07"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 368.175,
+    "last_price": 356.425,
+    "exit_price": 379.35,
+    "exit_time": "2026-03-27 15:01:07"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 114.425,
+    "last_price": 118.25,
+    "exit_price": 104.1,
+    "exit_time": "2026-03-27 15:01:07"
+   }
+  ],
+  "entry_price_total": -21272.5,
+  "exit_price_total": 21591.25,
+  "pnl": 318.7500000000007,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 22850.75,
+   "strikes": {
+    "pe_strike": 22900,
+    "ce_strike_near": 22950,
+    "pe_strike_upper": 23100
+   }
+  },
+  "sl_initial": 22867.4,
+  "sl_final": 22867.4,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-27 14:49:12",
+    "old_sl": 0.0,
+    "new_sl": 22867.4,
+    "sh_value": null,
+    "close_price": 22850.75,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-27 15:01:07",
+    "old_sl": 22867.4,
+    "new_sl": 22867.4,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ },
+ {
+  "trade_id": "fdbb985e",
+  "entry_time": "2026-03-27 14:49:12",
+  "entry_signal_time": "2026-03-27 14:48:00",
+  "entry_fill_time": "2026-03-27 14:49:12",
+  "exit_time": "2026-03-27 15:01:07",
+  "exit_signal_time": "2026-03-27 15:00:00",
+  "exit_fill_time": "2026-03-27 15:01:07",
+  "lot_id": "lot2",
+  "position_type": "A",
+  "legs": [
+   {
+    "tradingsymbol": "NIFTY26MAR22950CE",
+    "side": "BUY",
+    "option_type": "CE",
+    "strike_price": 22950,
+    "expiry": "2026-03-30",
+    "entry_price": 171.7,
+    "last_price": 177.35,
+    "exit_price": 156.575,
+    "exit_time": "2026-03-27 15:01:07"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100PE",
+    "side": "BUY",
+    "option_type": "PE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 368.175,
+    "last_price": 356.425,
+    "exit_price": 379.35,
+    "exit_time": "2026-03-27 15:01:07"
+   },
+   {
+    "tradingsymbol": "NIFTY26MAR23100CE",
+    "side": "SELL",
+    "option_type": "CE",
+    "strike_price": 23100,
+    "expiry": "2026-03-30",
+    "entry_price": 114.425,
+    "last_price": 118.25,
+    "exit_price": 104.1,
+    "exit_time": "2026-03-27 15:01:07"
+   }
+  ],
+  "entry_price_total": -21272.5,
+  "exit_price_total": 21591.25,
+  "pnl": 318.7500000000007,
+  "reason": {
+   "section": "section1",
+   "subcat": "a",
+   "position_type": "A"
+  },
+  "meta": {
+   "spot": 22850.75,
+   "strikes": {
+    "pe_strike": 22900,
+    "ce_strike_near": 22950,
+    "pe_strike_upper": 23100
+   }
+  },
+  "sl_initial": 22917.1,
+  "sl_final": 22917.1,
+  "sl_history": [
+   {
+    "timestamp": "2026-03-27 14:49:12",
+    "old_sl": 0.0,
+    "new_sl": 22917.1,
+    "sh_value": null,
+    "close_price": 22850.75,
+    "trigger": "INIT"
+   },
+   {
+    "timestamp": "2026-03-27 15:01:07",
+    "old_sl": 22917.1,
+    "new_sl": 22917.1,
+    "sh_value": null,
+    "close_price": 0.0,
+    "trigger": "EXIT"
+   }
+  ],
+  "exit_reason": "TIME_EXIT"
+ }
+]

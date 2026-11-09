@@ -258,6 +258,42 @@ class OfflineRecoveryTest(SyncTestBase):
         self.reconcile()
 
 
+class SingleSyncLockTest(SyncTestBase):
+    def test_a_second_sync_is_refused_while_a_daemon_runs_and_allowed_after_it_dies(self):
+        import subprocess
+        import sys
+        import time
+        from tests.support import PROJECT_ROOT
+        from utils.db_func import store_market_data
+        daemon = subprocess.Popen(
+            [sys.executable, "-m", "cloudsync", "sync", "daemon", "--sqlite", str(self.sqlite),
+             "--dsn", self.dsn, "--poll", "0.2"],
+            cwd=PROJECT_ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        self.addCleanup(lambda: daemon.poll() is None and daemon.kill())
+        try:
+            store_market_data(candles_df("2026-03-27 09:15", [23000.0, 23001.0]), interval="1m",
+                              db_path=str(self.sqlite))
+            deadline = time.time() + 30
+            while time.time() < deadline and (self.changelog_backlog() or len(self.cloud_candles()) < 2):
+                time.sleep(0.25)
+            self.assertEqual(len(self.cloud_candles()), 2)  # the daemon is connected and working
+
+            # A second daemon must refuse at once; one that keeps running is killed by the timeout.
+            second = run_cli("sync", "daemon", "--sqlite", self.sqlite, "--dsn", self.dsn, check=False, timeout=20)
+            once = run_cli("sync", "once", "--sqlite", self.sqlite, "--dsn", self.dsn, check=False, timeout=20)
+            self.assertNotEqual(second.returncode, 0)
+            self.assertNotEqual(once.returncode, 0)
+            for proc in (second, once):
+                self.assertIn("another sync is already running", proc.stderr)
+        finally:
+            daemon.kill()  # like a crash: no cleanup, the session (and its lock) simply ends
+            daemon.communicate(timeout=10)
+
+        store_market_data(candles_df("2026-03-27 09:17", [23002.0]), interval="1m", db_path=str(self.sqlite))
+        self.sync_once()
+        self.assertEqual(len(self.cloud_candles()), 3)
+
+
 class DataQualityThroughSyncTest(SyncTestBase):
     def test_quarantined_candle_is_released_when_the_bot_corrects_it(self):
         from utils.db_func import store_market_data

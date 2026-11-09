@@ -1,0 +1,5 @@
+reconciliation PASSED -> artifacts\day4\rds\reconcile_l1_l2
+
+real	0m5.871s
+user	0m0.015s
+sys	0m0.046s

@@ -1,0 +1,6 @@
+{
+  "name": "day4",
+  "sqlite": "data\\sandboxes\\day4\\trading_bot.db",
+  "dsn": "user=postgres password=<redacted> dbname=algotrade_sbx_day4 host=localhost port=5433",
+  "pg_database": "algotrade_sbx_day4"
+}
