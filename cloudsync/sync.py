@@ -127,7 +127,11 @@ def _apply_deletes(conn, table, pks) -> tuple[int, int]:
 
 
 def _apply_batch(conn, entries, current, backlog: int, batch_no: int) -> dict:
-    started = datetime.now(timezone.utc)
+    # Latency and lag are measured on the sync process's clocks only: RDS's clock
+    # was measured 1.49 s behind this machine's (day-05 §4), so mixing a local start
+    # with a server commit time gave negative latencies. `changed_at` in the
+    # changelog is stamped by SQLite with this machine's clock too.
+    t0 = time.perf_counter()
     upserts = deletes = rejected = 0
     with conn.transaction():
         # Rejects of the touched rows are re-decided from their current state.
@@ -162,14 +166,15 @@ def _apply_batch(conn, entries, current, backlog: int, batch_no: int) -> dict:
                                                                      updated_at = EXCLUDED.updated_at""",
                          (name, seq))
         oldest = min(datetime.fromisoformat(e["changed_at"]).replace(tzinfo=timezone.utc) for e in entries)
+        latency_ms = (time.perf_counter() - t0) * 1000
+        lag_ms = (datetime.now(timezone.utc) - oldest).total_seconds() * 1000
         conn.execute(
             """INSERT INTO sync_batches (first_seq, last_seq, entries, upserts, deletes, rejected, tables,
                                          started_at, committed_at, latency_ms, max_lag_ms, backlog_after)
-               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, clock_timestamp(),
-                       extract(epoch FROM clock_timestamp() - %s) * 1000,
-                       extract(epoch FROM clock_timestamp() - %s) * 1000, %s)""",
+               VALUES (%s, %s, %s, %s, %s, %s, %s,
+                       clock_timestamp() - make_interval(secs => %s / 1000.0), clock_timestamp(), %s, %s, %s)""",
             (entries[0]["seq"], entries[-1]["seq"], len(entries), upserts, deletes, rejected,
-             sorted(last), started, started, oldest, backlog))
+             sorted(last), latency_ms, latency_ms, lag_ms, backlog))
     return {"entries": len(entries), "upserts": upserts, "deletes": deletes, "rejected": rejected,
             "last_seq": dict(last)}
 

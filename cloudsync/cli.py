@@ -101,7 +101,27 @@ def main(argv=None) -> int:
     i.add_argument("--out", required=True, type=Path)
     _add_dsn(i)
 
+    t = sub.add_parser("pitr", help="Point-in-time-recovery demo: fingerprint, delete and verify one IST day")
+    t.add_argument("action", choices=["snapshot", "delete-day", "verify"])
+    t.add_argument("--day", help="YYYY-MM-DD (snapshot, delete-day)")
+    t.add_argument("--snapshot", type=Path, help="fingerprint written by `pitr snapshot` (verify)")
+    t.add_argument("--out", type=Path, default=None, help="JSON record of this step")
+    _add_dsn(t)
+
     args = parser.parse_args(argv)
+    if args.command == "pitr":
+        from cloudsync import pitr
+        if args.action == "verify":
+            if not args.snapshot:
+                raise SystemExit("pitr verify needs --snapshot")
+            report = pitr.verify(_dsn(args), args.snapshot, args.out)
+            print(pitr.format_verify(report))
+            return 0 if report["passed"] else 1
+        if not args.day:
+            raise SystemExit(f"pitr {args.action} needs --day")
+        step = pitr.snapshot if args.action == "snapshot" else pitr.delete_day
+        print(json.dumps(step(_dsn(args), args.day, args.out), indent=2))
+        return 0
     if args.command == "prep":
         print(json.dumps(prep.run(args.source, args.workdir), indent=2))
     elif args.command == "migrate":

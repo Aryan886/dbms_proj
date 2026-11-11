@@ -1,0 +1,11 @@
+== restored instance, main db
+pitr verify 2026-03-27 on algotrade: PASS
+  option_snapshots           336480 rows (snapshot 336480)  identical
+  option_chain_snapshots        160 rows (snapshot 160)  identical
+  delta_snapshots              6355 rows (snapshot 6355)  identical
+  candle_indicators             482 rows (snapshot 482)  identical
+  candles                       482 rows (snapshot 482)  identical
+  candle_sma                      7 rows (snapshot 7)  identical
+  vix_observations               91 rows (snapshot 91)  identical
+  signals                         4 rows (snapshot 4)  identical
+exit 0
