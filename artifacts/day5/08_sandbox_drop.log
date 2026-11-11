@@ -1,0 +1,8 @@
+{
+  "dropped": "pitr",
+  "pg_database": "algotrade_sbx_pitr"
+}
+{
+  "dropped": "deadtup",
+  "pg_database": "algotrade_sbx_deadtup"
+}

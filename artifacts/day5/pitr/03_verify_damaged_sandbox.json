@@ -1,0 +1,50 @@
+{
+  "day": "2026-03-27",
+  "snapshot_time": "2026-11-09T18:09:32.800830Z",
+  "database": "algotrade_sbx_pitr",
+  "server_addr": "172.31.12.123/32",
+  "checked_at": "2026-11-09T18:10:43.145695Z",
+  "passed": false,
+  "tables": {
+    "option_snapshots": {
+      "expected_rows": 336480,
+      "rows": 0,
+      "identical": false
+    },
+    "option_chain_snapshots": {
+      "expected_rows": 160,
+      "rows": 0,
+      "identical": false
+    },
+    "delta_snapshots": {
+      "expected_rows": 6355,
+      "rows": 0,
+      "identical": false
+    },
+    "candle_indicators": {
+      "expected_rows": 482,
+      "rows": 0,
+      "identical": false
+    },
+    "candles": {
+      "expected_rows": 482,
+      "rows": 0,
+      "identical": false
+    },
+    "candle_sma": {
+      "expected_rows": 7,
+      "rows": 0,
+      "identical": false
+    },
+    "vix_observations": {
+      "expected_rows": 91,
+      "rows": 0,
+      "identical": false
+    },
+    "signals": {
+      "expected_rows": 4,
+      "rows": 0,
+      "identical": false
+    }
+  }
+}

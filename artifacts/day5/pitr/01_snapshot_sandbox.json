@@ -1,0 +1,40 @@
+{
+  "day": "2026-03-27",
+  "server_time": "2026-11-09T18:09:32.800830Z",
+  "database": "algotrade_sbx_pitr",
+  "server_version": "17.11",
+  "tables": {
+    "option_snapshots": {
+      "rows": 336480,
+      "md5": "c85b88833245753be5de7804a383ab1f"
+    },
+    "option_chain_snapshots": {
+      "rows": 160,
+      "md5": "f0df491fd0d8c911a40df87cb4587ffa"
+    },
+    "delta_snapshots": {
+      "rows": 6355,
+      "md5": "2095f1fd510705fef577144e54bf44c3"
+    },
+    "candle_indicators": {
+      "rows": 482,
+      "md5": "91e0459a2573b78cacc66ffa0ac09d58"
+    },
+    "candles": {
+      "rows": 482,
+      "md5": "5e24f8396c1957e159ba25596c5937a2"
+    },
+    "candle_sma": {
+      "rows": 7,
+      "md5": "00f15df8301c70b2e524de43181ed5ff"
+    },
+    "vix_observations": {
+      "rows": 91,
+      "md5": "cc3407533a89bbc7e71dfeef0d23eb75"
+    },
+    "signals": {
+      "rows": 4,
+      "md5": "9de1fe724d8266c2570e76bc0e6197b7"
+    }
+  }
+}

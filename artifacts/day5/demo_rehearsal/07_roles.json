@@ -1,0 +1,6 @@
+{
+  "bot_reader_reads_trade_history": 8,
+  "bot_reader_delete": "denied: permission denied for view dashboard_strategy_state",
+  "analyst_reads_base_table": "denied: permission denied for table dashboard_trade_history",
+  "sync_writer_rewrites_audit": "denied: permission denied for table audit_log"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "pitr",
+  "sqlite": "data\\sandboxes\\pitr\\trading_bot.db",
+  "dsn": "user=cloudsync_admin password=<redacted> connect_timeout=10 dbname=algotrade_sbx_pitr host=<rds endpoint> port=5432 sslmode=require",
+  "pg_database": "algotrade_sbx_pitr"
+}

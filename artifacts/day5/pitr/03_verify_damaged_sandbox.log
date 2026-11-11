@@ -1,0 +1,9 @@
+pitr verify 2026-03-27 on algotrade_sbx_pitr: FAIL
+  option_snapshots                0 rows (snapshot 336480)  DIFFERENT
+  option_chain_snapshots          0 rows (snapshot 160)  DIFFERENT
+  delta_snapshots                 0 rows (snapshot 6355)  DIFFERENT
+  candle_indicators               0 rows (snapshot 482)  DIFFERENT
+  candles                         0 rows (snapshot 482)  DIFFERENT
+  candle_sma                      0 rows (snapshot 7)  DIFFERENT
+  vix_observations                0 rows (snapshot 91)  DIFFERENT
+  signals                         0 rows (snapshot 4)  DIFFERENT

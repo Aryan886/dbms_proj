@@ -17,7 +17,7 @@ It's written for three readers:
 | 2 | 2026-11-06 | WAL, CDC triggers, sync engine, drift handling | ✅ Done | [day-02.md](day-02.md) |
 | 3 | 2026-11-07 | Compatibility & indicator views, replay simulator, level-3 parity | ✅ Done | [day-03.md](day-03.md) |
 | 4 | 2026-11-08 | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ✅ Done (main cloud is now RDS) | [day-04.md](day-04.md) |
-| 5 | — | PITR demo, report, demo rehearsal | ⏳ Not started | — |
+| 5 | 2026-11-09 → 11-10 | PITR demo, dead tuples, demo script and rehearsal | ✅ Done (PITR PASS on RDS; report moved to Day 6) | [day-05.md](day-05.md) |
 | 6 | — | Buffer | ⏳ Not started | — |
 
 ## Decision register
@@ -94,6 +94,14 @@ chose it as a sensible default and recorded it.
 | D64 | 4 | Duplicate SQLite `idx_` indexes measured on a sandbox copy, not dropped in the bot's DB | Agent (implements D28) | The bot's schema is the owner's call |
 | D65 | 4 | RDS wizard writes `RDS_*` only; `PG_DSN` stays on Docker until RDS reconciles | Agent | The main pair never points at an empty database |
 | D66 | 4 | **Main cloud switched to RDS** (`PG_DSN`); Docker main cloud kept as `DOCKER_PG_DSN`, no longer synced; tests stay on Docker | Team | One changelog can keep only one cloud current; PITR needs RDS live |
+| D67 | 5 | PITR delete runs in a **sandbox database on the RDS instance**, not the main cloud database | Team | Keeps the main cloud pipeline-only; a restore brings back the whole instance anyway |
+| D68 | 5 | The restore is done **by the owner in the RDS console**, guided step by step in chat | Team | No AWS CLI or keys on this machine; owner's choice |
+| D69 | 5 | Restored instance Single-AZ, same VPC/security group, public, no deletion protection; deleted after verify | Agent | A throwaway check; Multi-AZ doubles the cost for nothing |
+| D70 | 5 | PITR evidence = per-table count + md5 of the day's sorted rows, plus the live sandbox still damaged | Agent | Proves identical rows, and that they came from the restore |
+| D71 | 5 | Day-5 extra scope: demo script (51), add-on labels (52), dead tuples (41); report draft moved to Day 6 | Team | Owner's choice |
+| D72 | 5 | Dead-tuple study on an RDS sandbox | Agent | Also re-measures sync latency over the network (Day-4 open item) |
+| D73 | 5 | Sync latency/lag measured on the sync process's clocks only | Agent | RDS's clock is 1.49 s behind this machine; mixing clocks gave negative latency |
+| D74 | 5 | `scripts/demo.py` builds its own pair from the bot's database (read-only) on Docker by default, dropped afterwards | Agent (implements D29) | Rehearses the whole story, VACUUM study and bulk load included |
 
 ## How to add a day
 

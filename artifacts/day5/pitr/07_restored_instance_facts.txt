@@ -1,0 +1,3 @@
+restored server: 17.11
+dbs: ['algotrade', 'algotrade_sbx_pitr', 'postgres', 'rdsadmin']
+deadtup db exists on restored (created after target, expect False): False

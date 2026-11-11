@@ -1,0 +1,16 @@
+{
+  "day": "2026-03-27",
+  "database": "algotrade_sbx_pitr",
+  "started_at": "2026-11-09T18:10:40.960431Z",
+  "committed_at": "2026-11-09T18:10:41.584785Z",
+  "deleted": {
+    "option_snapshots": 336480,
+    "option_chain_snapshots": 160,
+    "delta_snapshots": 6355,
+    "candle_indicators": 482,
+    "candles": 482,
+    "candle_sma": 7,
+    "vix_observations": 91,
+    "signals": 4
+  }
+}

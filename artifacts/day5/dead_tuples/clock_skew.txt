@@ -1,0 +1,2 @@
+PG_DSN: rtt 19.6 ms, server clock minus local clock -1489.4 ms
+DOCKER_PG_DSN: rtt 1.1 ms, server clock minus local clock -0.9 ms
