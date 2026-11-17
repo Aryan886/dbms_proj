@@ -1,0 +1,290 @@
+AlgoTrade: SQLite -> PostgreSQL on AWS RDS
+demo pair: data/demo/20261117_1435/trading_bot.db + Postgres database cloudsync_demo_20261117_1435; prepared run artifacts/demo/20261117-1435
+
+==============================================================================
+  1. The problem   (~2 min)
+  Syllabus topic: storage internals (pages, free list, VACUUM)
+==============================================================================
+  SAY:
+   - The bot writes to a 2.5 GB SQLite file. ~40 bot files use it by table name, so we can't change it.
+   - Most of that file is empty pages. Deletes don't shrink a SQLite file, only VACUUM does.
+   - No FKs, symbols repeated as text on every row, 2,050 duplicate groups in delta_cache.
+
+  > Measured on a copy of the bot's 2.5 GB database (artifacts/day5/demo_rehearsal/01_prep_stats.json)
+                   file bytes     pages    free pages  free   
+    -------------  -------------  -------  ----------  -------
+    before VACUUM  2,569,867,264  627,409  605,183     96.46 %
+    after VACUUM   88,547,328     21,618   0           0.0 %  
+    VACUUM took 8.54 s. Real data is about 89 MB.
+  [Enter = next step]
+
+==============================================================================
+  2. Normalized cloud schema   (~3 min)
+  Syllabus topic: ER model, functional dependencies, 3NF, keys
+==============================================================================
+  SAY:
+   - Open docs/normalization.md: the FD analysis and the before/after ER diagrams.
+   - Walk one FD: (instrument, ts) -> spot_price, so option snapshots split into a header and lines (D5).
+   - Four identical candle tables became one `candles` table with a timeframe column.
+   - Symbols and contracts live once, in master tables, referenced by foreign keys.
+
+  > Base tables in the cloud database, with row counts
+    table                     rows   
+    ------------------------  -------
+    candle_indicators         43,043 
+    candle_sma                810    
+    candles                   43,043 
+    dashboard_strategy_state  3      
+    dashboard_trade_history   8      
+    delta_snapshots           346,059
+    instruments               3      
+    option_chain_snapshots    160    
+    option_contracts          2,888  
+    option_snapshots          336,480
+    rejected_rows             2,050  
+    schema_fingerprints       11     
+    signals                   188    
+    sync_batches              706    
+    sync_state                9      
+    vix_observations          2,885  
+
+  > Foreign keys: orphan rows are impossible
+    table                    references                definition                                                                                                   
+    -----------------------  ------------------------  -------------------------------------------------------------------------------------------------------------
+    option_contracts         instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    candles                  instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    candle_indicators        candles                   FOREIGN KEY (instrument_id, timeframe, ts) REFERENCES candles(instrument_id, timeframe, ts) ON DELETE CASCADE
+    vix_observations         instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    option_snapshots         option_contracts          FOREIGN KEY (contract_id) REFERENCES option_contracts(id)                                                    
+    option_snapshots         option_chain_snapshots    FOREIGN KEY (chain_snapshot_id) REFERENCES option_chain_snapshots(id)                                        
+    delta_snapshots          option_contracts          FOREIGN KEY (contract_id) REFERENCES option_contracts(id)                                                    
+    signals                  instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    dashboard_trade_history  instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    dashboard_trade_history  option_contracts          FOREIGN KEY (contract_id) REFERENCES option_contracts(id)                                                    
+    dashboard_trade_history  dashboard_strategy_state  FOREIGN KEY (strategy_id) REFERENCES dashboard_strategy_state(strategy_id)                                   
+    option_chain_snapshots   instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+    candle_sma               instruments               FOREIGN KEY (instrument_id) REFERENCES instruments(id)                                                       
+  [Enter = next step]
+
+==============================================================================
+  3. Integrity constraints and the quarantine   (~3 min)
+  Syllabus topic: CHECK, NOT NULL, FK; rejected by the database
+==============================================================================
+  SAY:
+   - Postgres decides what's invalid, not Python (D11). Python only routes the failure.
+   - A rejected row is kept in rejected_rows with the constraint it broke, so nothing is silently lost.
+
+  > Insert an impossible candle (high 90, low 110) straight into Postgres
+  PASS  rejected by Postgres: new row for relation "candles" violates check constraint "candles_ohlc_close_in_range"
+
+  > What the bulk load quarantined (rejected_rows)
+    source table  constraint            rows
+    ------------  --------------------  ----
+    delta_cache   delta_snapshots_pkey  2050
+    delta_cache: 2,050 duplicate groups on the natural key. The highest source id wins (D10),
+    the rest are kept here instead of being dropped.
+  [Enter = next step]
+
+  > Now the bot writes a bad candle (close above high) into SQLite, and we sync
+    SQLite accepted close = 22878.45 for candle id 28148126 (high is 22828.45). SQLite has no CHECK here.
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 0,
+    |   "deletes": 0,
+    |   "rejected": 1,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.1 s
+  PASS  the cloud quarantined it: [('28148126', 'candles_ohlc_close_in_range')]
+  [Enter = next step]
+
+  > The bot corrects the row, and we sync again
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.1 s
+  PASS  corrected row left the quarantine and is back in the cloud: (datetime.datetime(2026, 3, 27, 15, 29), 22824.85, 22828.45, 22820.55, 22824.7)
+  [Enter = next step]
+
+==============================================================================
+  4. Change capture and crash safety   (~4 min)
+  Syllabus topic: triggers, transactions (atomicity), recovery, idempotence
+==============================================================================
+  SAY:
+   - AFTER INSERT/UPDATE/DELETE triggers in SQLite log (table, pk, op, seq) into _changelog.
+   - The sync reads a batch, applies it AND moves the cursor in ONE Postgres transaction.
+   - So a crash leaves the cloud fully before or fully after a batch. Never half.
+
+  > The bot updates candle 28148125 in SQLite (close 22825.1 -> 22812.1)
+    The trigger captured it in _changelog:
+    seq     table           pk        op
+    ------  --------------  --------  --
+    691005  market_data_1m  28148125  U 
+    Cloud before sync: (datetime.datetime(2026, 3, 27, 15, 28), 22818.65, 22829.6, 22812.1, 22825.1)
+
+  > sync once
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.1 s
+  PASS  cloud after sync: (datetime.datetime(2026, 3, 27, 15, 28), 22818.65, 22829.6, 22812.1, 22812.1)
+    _changelog entries left for market_data_1m: 0 (pruned after Postgres acknowledged)
+  [Enter = next step]
+
+  > Now crash the sync in the middle of a batch (candle 28148125: close -> 22829.6)
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+      (with CLOUDSYNC_FAULT=mid_batch:1)
+    | [14:53:30] FAULT INJECTED: dying at mid_batch of batch 1
+    exit 75 in 0.9 s
+  PASS  the sync process died (exit 75, like kill -9)
+  PASS  cloud unchanged: close = 22812.1 (still 22812.1); cursor last_seq 691005 -> 691005
+    The change is still waiting in SQLite: 1 entry, nothing lost.
+  [Enter = next step]
+
+  > Restart the sync: it resumes from the cursor
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.0 s
+  PASS  cloud now: close = 22829.6; applied exactly once
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.1 s
+    (candle 28148125 restored to close = 22825.1 and synced)
+  SAY:
+   - Also built: exponential backoff when the network drops, schema-drift pause per table,
+   - and a replay simulator with chaos (revise, rebuild, kill) that ran in `prepare` (05_replay_chaos.log).
+  [Enter = next step]
+
+==============================================================================
+  5. Least privilege   (~1 min)
+  Syllabus topic: GRANT/REVOKE, roles, schemas as a security boundary
+==============================================================================
+  SAY:
+   - bot_reader: only the compatibility views. analyst: only the analytics views.
+   - sync_writer: writes data tables but can't rewrite the audit log.
+
+  > Each role tries what it should and shouldn't do
+  PASS  bot_reader_reads_trade_history: 8
+  PASS  bot_reader_delete: denied: permission denied for view dashboard_strategy_state
+  PASS  analyst_reads_base_table: denied: permission denied for table dashboard_trade_history
+  PASS  sync_writer_rewrites_audit: denied: permission denied for table audit_log
+  [Enter = next step]
+
+==============================================================================
+  6. Indexing and concurrency   (~3 min)
+  Syllabus topic: B-tree / expression indexes, query plans, WAL, locking
+==============================================================================
+  SAY:
+   - The bot asks for its latest 200 candles by IST time. The views expose ts AT TIME ZONE 'Asia/Kolkata',
+   - so a plain index on ts can't be used. An expression index on that same expression can (D63).
+
+  > EXPLAIN ANALYZE with the expression index
+    with candles_ist_ts: Execution Time: 2.599 ms
+      ->  Index Scan using instruments_symbol_key on instruments i (actual time=0.021..0.022 rows=1 loops=1)
+      ->  Index Scan using candles_ist_ts on candles c (actual time=0.023..0.242 rows=375 loops=1)
+      ->  Index Scan using candle_indicators_pkey on candle_indicators ci (actual time=0.003..0.003 rows=1 loops=375)
+
+  > Same query with the index dropped, inside a transaction we roll back (DDL is transactional)
+    without the index: Execution Time: 21.991 ms
+      ->  Seq Scan on instruments i (actual time=0.013..0.016 rows=1 loops=1)
+      ->  Seq Scan on candles c (actual time=18.391..18.953 rows=375 loops=1)
+      ->  Index Scan using candle_indicators_pkey on candle_indicators ci (actual time=0.004..0.004 rows=1 loops=375)
+    21.99 ms -> 2.60 ms. Index restored by the rollback: True
+  [Enter = next step]
+  SAY:
+   - SQLite: in rollback-journal mode a reader blocks the writer. WAL lets the bot write while we read.
+
+  > Live WAL vs rollback-journal benchmark (3 s per mode, on copies of the demo SQLite)
+    $ cloudsync bench-wal --sqlite data/demo/20261117_1435/trading_bot.db --out artifacts/demo/20261117-1435/live/bench_wal --seconds 3
+    exit 0 in 14.8 s
+    | Journal mode | Writes OK | Write lock errors | Write p50 ms | p95 ms | p99 ms | max ms | Reads OK | Read lock errors | Read p50 ms |
+    |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+    | delete | 2 | 0 | 1419.126 | 1585.871 | 1585.871 | 1585.871 | 3 | 0 | 1366.301 |
+    | wal | 446 | 0 | 1.092 | 1.775 | 10.705 | 29.111 | 3 | 0 | 1289.167 |
+    Recorded 10 s run (Day 2, artifacts/day2/wal_benchmark.md): 16 writes in delete mode vs 1,569 in WAL.
+  [Enter = next step]
+
+==============================================================================
+  7. Point-in-time recovery on AWS RDS   (~2 min)
+  Syllabus topic: backup and recovery, WAL archiving, PITR
+==============================================================================
+  SAY:
+   - RDS keeps snapshots plus the write-ahead log, so it can rebuild the database at any second.
+   - We fingerprinted one trading day, deleted it, and restored RDS to a moment before the delete.
+   - A restore takes 10-20 minutes, so this is the recorded run from Day 5.
+
+  > Fingerprint of 2026-03-27 taken (server time 2026-11-09T18:09:32.800830Z)
+
+  > Deleted at 2026-11-09T18:10:41.584785Z: 344,061 rows
+    table                   rows deleted
+    ----------------------  ------------
+    option_snapshots        336,480     
+    option_chain_snapshots  160         
+    delta_snapshots         6,355       
+    candle_indicators       482         
+    candles                 482         
+    candle_sma              7           
+    vix_observations        91          
+    signals                 4           
+  PASS  after the delete, the day no longer matches its fingerprint  (verify FAIL, 03_verify_damaged_sandbox.json)
+  PASS  restored instance: every table identical to the fingerprint  (verify PASS, 04_verify_restored_sandbox.json)
+  PASS  the database we didn't restore is still damaged  (verify FAIL, 06_verify_live_sandbox_after.json)
+    Watch out in the console: enter the restore time in the time zone the field shows (Day 5 lesson).
+  [Enter = next step]
+
+==============================================================================
+  8. Proof it all works   (~2 min)
+  Syllabus topic: consistency checking, end-to-end correctness
+==============================================================================
+  SAY:
+   - Level 1: row counts (sqlite = postgres + rejected). Level 2: per-day sums, min and max.
+   - Level 3: the bot's own backtester on SQLite vs on data exported from Postgres, trades diffed.
+
+  > Levels 1-2, live, after everything we just changed
+    $ cloudsync reconcile --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn>" --levels 1,2 --out artifacts/demo/20261117-1435/live/reconcile
+    exit 0 in 2.1 s
+  PASS  level 1: 11/11 tables
+  PASS  level 2: 11/11 tables
+
+  > Level 3 from `prepare` (the backtest takes about a minute)
+  PASS  source: 2 trades, P&L 637.50 | cloud: 2 trades, P&L 637.50 | differences: 0
+
+  > Our tools never wrote the bot's real database
+  PASS  SHA-256 now = SHA-256 before `prepare` (a5b0a381078a958d...)
+    Note: differs from the Day-2 reference cf66a20172d94e86... The file was rewritten outside
+    this project (last modified 2026-11-11 15:07), before `prepare` started.
+  [Enter = next step]
+
+==============================================================================
+  9. An honest finding   (~1 min)
+  Syllabus topic: distributed measurement, clocks
+==============================================================================
+  SAY:
+   - On RDS our sync-lag view showed NEGATIVE latency: a change arriving before it was made.
+   - Cause: the lag compared the laptop's clock with the RDS server's clock, and they differed by ~1.5 s.
+   - Fix: measure both ends on one clock. Lesson: distributed timings need a single clock.
+    PG_DSN: rtt 19.6 ms, server clock minus local clock -1489.4 ms
+    DOCKER_PG_DSN: rtt 1.1 ms, server clock minus local clock -0.9 ms
+  SAY:
+   - Thank you. Questions?
+  [Enter = end]
+
+live demo finished in 0.5 min; log: artifacts/demo/20261117-1435/live/present_20261117-145325.log

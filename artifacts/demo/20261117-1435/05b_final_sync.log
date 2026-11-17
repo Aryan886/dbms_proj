@@ -1,0 +1,9 @@
+{
+  "batches": 0,
+  "entries": 0,
+  "upserts": 0,
+  "deletes": 0,
+  "rejected": 0,
+  "paused_tables": [],
+  "backlog": 0
+}

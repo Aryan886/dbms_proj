@@ -1,0 +1,19 @@
+AlgoTrade: SQLite -> PostgreSQL on AWS RDS
+demo pair: data/demo/20261117_1435/trading_bot.db + Postgres database cloudsync_demo_20261117_1435; prepared run artifacts/demo/20261117-1435
+
+==============================================================================
+  1. The problem   (~2 min)
+  Syllabus topic: storage internals (pages, free list, VACUUM)
+==============================================================================
+  SAY:
+   - The bot writes to a 2.5 GB SQLite file. ~40 bot files use it by table name, so we can't change it.
+   - Most of that file is empty pages. Deletes don't shrink a SQLite file, only VACUUM does.
+   - No FKs, symbols repeated as text on every row, 2,050 duplicate groups in delta_cache.
+
+  > Measured on a copy of the bot's 2.5 GB database (artifacts/day5/demo_rehearsal/01_prep_stats.json)
+                   file bytes     pages    free pages  free   
+    -------------  -------------  -------  ----------  -------
+    before VACUUM  2,569,867,264  627,409  605,183     96.46 %
+    after VACUUM   88,547,328     21,618   0           0.0 %  
+    VACUUM took 8.54 s. Real data is about 89 MB.
+  [Enter = next step] 
