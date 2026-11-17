@@ -1,0 +1,49 @@
+{
+  "tables": {
+    "market_data_1m": {
+      "pk": "id",
+      "fingerprint": "bff12ee9151de50d"
+    },
+    "market_data_5m": {
+      "pk": "id",
+      "fingerprint": "bff12ee9151de50d"
+    },
+    "market_data_15m": {
+      "pk": "id",
+      "fingerprint": "bff12ee9151de50d"
+    },
+    "market_data_1h": {
+      "pk": "id",
+      "fingerprint": "3626880ac2b2c24e"
+    },
+    "market_sma_1h": {
+      "pk": "timestamp|symbol",
+      "fingerprint": "c50dadb1ea08a4df"
+    },
+    "vix_data": {
+      "pk": "timestamp",
+      "fingerprint": "7ee63bb82ee77a41"
+    },
+    "signals": {
+      "pk": "id",
+      "fingerprint": "063936d3425196ae"
+    },
+    "option_data": {
+      "pk": "id",
+      "fingerprint": "6ce9161677c60ec5"
+    },
+    "delta_cache": {
+      "pk": "id",
+      "fingerprint": "91e1cd40cf5bfe1a"
+    },
+    "dashboard_strategy_state": {
+      "pk": "strategy_id",
+      "fingerprint": "4ecdd66fde75da9b"
+    },
+    "dashboard_trade_history": {
+      "pk": "id",
+      "fingerprint": "f243a797621a5836"
+    }
+  },
+  "journal_mode": "wal"
+}

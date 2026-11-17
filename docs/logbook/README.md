@@ -18,7 +18,7 @@ It's written for three readers:
 | 3 | 2026-11-07 | Compatibility & indicator views, replay simulator, level-3 parity | ✅ Done | [day-03.md](day-03.md) |
 | 4 | 2026-11-08 | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ✅ Done (main cloud is now RDS) | [day-04.md](day-04.md) |
 | 5 | 2026-11-09 → 11-10 | PITR demo, dead tuples, demo script and rehearsal | ✅ Done (PITR PASS on RDS; report moved to Day 6) | [day-05.md](day-05.md) |
-| 6 | — | Buffer | ⏳ Not started | — |
+| 6 | 2026-11-17 | Buffer and report dropped (D76); presenter script for the demo | ✅ Done (demo PASS from the working copy; bot DB lost its VIX data on 11-11) | [day-06.md](day-06.md) |
 
 ## Decision register
 
@@ -102,6 +102,11 @@ chose it as a sensible default and recorded it.
 | D72 | 5 | Dead-tuple study on an RDS sandbox | Agent | Also re-measures sync latency over the network (Day-4 open item) |
 | D73 | 5 | Sync latency/lag measured on the sync process's clocks only | Agent | RDS's clock is 1.49 s behind this machine; mixing clocks gave negative latency |
 | D74 | 5 | `scripts/demo.py` builds its own pair from the bot's database (read-only) on Docker by default, dropped afterwards | Agent (implements D29) | Rehearses the whole story, VACUUM study and bulk load included |
+| D75 | 6 | The demo is built from the main working copy (read-only), not the bot's database | Team | The bot DB's `vix_data` is empty since 2026-11-11, so the L3 backtest can't run from it |
+| D76 | 6 | Day 6's buffer and report draft are out of scope; only the presenter script | Team | Owner's choice |
+| D77 | 6 | `present.py`: `prepare` beforehand, `live` in the room; slow steps from artifacts, quick ones live | Agent | No dead time watching a bulk load; live steps still show real behaviour |
+| D78 | 6 | Index segment drops the expression index inside a rolled-back transaction | Agent | Same query and data before/after; also shows transactional DDL |
+| D79 | 6 | Segment 1 shows the Day-5 VACUUM numbers when the demo source is already vacuumed | Agent | The story is the bot's 2.5 GB file; numbers labelled with their artifact |
 
 ## How to add a day
 

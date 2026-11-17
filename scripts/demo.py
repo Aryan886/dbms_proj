@@ -1,6 +1,11 @@
 """One command for the whole demo (spec stories 51-52).
 
-    .venv/Scripts/python scripts/demo.py [--out artifacts/demo/<stamp>] [--admin-dsn DSN] [--keep]
+    .venv/Scripts/python scripts/demo.py [--out artifacts/demo/<stamp>] [--admin-dsn DSN] [--keep] [--source DB]
+
+--source picks the database the demo copies and replays from (opened read-only, default: the
+bot's database, $SOURCE_DB). Use data/trading_bot.db when the bot's database has changed since
+the pipeline was built (Day 6: its vix_data was emptied on 2026-11-11). Step 9 always hashes
+the bot's real database.
 
 Runs the full story in order on a throwaway pair of its own (never the main working
 copy or the main cloud database, D29), and saves every measurement under --out:
@@ -123,9 +128,13 @@ def main() -> int:
     ap.add_argument("--admin-dsn", default=os.environ.get("PG_ADMIN_DSN"),
                     help="server for the demo's own cloud database (default: Docker, $PG_ADMIN_DSN)")
     ap.add_argument("--keep", action="store_true", help="keep the demo database and working copy afterwards")
+    ap.add_argument("--source", default=os.environ["SOURCE_DB"],
+                    help="database to copy and replay from, opened read-only (default: $SOURCE_DB)")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
-    source = os.environ["SOURCE_DB"]
+    real_db = os.environ["SOURCE_DB"]
+    source = str(Path(a.source).resolve())
+    (a.out / "00_source.txt").write_text(source + "\n")
     stamp = a.out.name.replace("-", "_").lower()
     work = ROOT / "data" / "demo" / stamp
     db = f"cloudsync_demo_{stamp}"
@@ -138,7 +147,7 @@ def main() -> int:
     started = time.perf_counter()
 
     t = time.perf_counter()
-    before = sha256(source)
+    before = sha256(real_db)
     (a.out / "00_real_db_sha256_before.txt").write_text(before + "\n")
     d.note(0, "Real database SHA-256 (before)", True, time.perf_counter() - t, "00_real_db_sha256_before.txt")
 
@@ -175,7 +184,7 @@ def main() -> int:
               "08b_dead_tuples.log")
     finally:
         t = time.perf_counter()
-        after = sha256(source)
+        after = sha256(real_db)
         (a.out / "09_real_db_sha256_after.txt").write_text(after + "\n")
         d.note(9, "Real database SHA-256 (after) unchanged", after == before, time.perf_counter() - t,
                "09_real_db_sha256_after.txt")
@@ -188,7 +197,7 @@ def main() -> int:
     passed = all(s["ok"] for s in d.steps)
     lines = [f"# Demo run {a.out.name}", "",
              f"**Result: {'PASS' if passed else 'FAIL'}** in {total / 60:.1f} min. "
-             f"Demo pair: its own working copy (from the bot's database, read-only) and Postgres database "
+             f"Demo pair: its own working copy (from `{source}`, read-only) and Postgres database "
              f"`{db}` on `{psycopg.conninfo.conninfo_to_dict(a.admin_dsn).get('host')}`"
              f"{' (kept)' if a.keep else ' (dropped afterwards)'}.", "",
              "| # | Step | Exit | OK | Seconds | Artifact |", "|---|---|---|---|---|---|"]

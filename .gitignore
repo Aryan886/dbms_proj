@@ -9,5 +9,7 @@ __pycache__/
 data/*
 !data/artifacts/
 
+
 # Daemon logs (scripts/start_sync_daemon.bat)
 logs/
+

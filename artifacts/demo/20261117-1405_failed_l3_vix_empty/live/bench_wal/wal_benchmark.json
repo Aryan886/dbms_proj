@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-11-17T08:56:25.084689+00:00",
+  "source": "C:\\Users\\aryan\\DEV_Maxxing\\dbms_proj\\data\\demo\\20261117_1405\\trading_bot.db",
+  "seconds_per_mode": 3.0,
+  "busy_timeout_s": 5.0,
+  "reader_table": "delta_cache",
+  "write_interval_ms": 5.0,
+  "modes": [
+    {
+      "journal_mode": "delete",
+      "writes_ok": 6,
+      "write_lock_errors": 0,
+      "write_latency_ms": {
+        "p50": 6.041,
+        "p95": 1308.744,
+        "p99": 1308.744,
+        "max": 1308.744,
+        "mean": 627.661
+      },
+      "reads_ok": 3,
+      "read_lock_errors": 0,
+      "read_ms": {
+        "p50": 1243.688,
+        "max": 1347.521
+      }
+    },
+    {
+      "journal_mode": "wal",
+      "writes_ok": 462,
+      "write_lock_errors": 0,
+      "write_latency_ms": {
+        "p50": 1.108,
+        "p95": 1.676,
+        "p99": 1.896,
+        "max": 6.69,
+        "mean": 1.175
+      },
+      "reads_ok": 3,
+      "read_lock_errors": 0,
+      "read_ms": {
+        "p50": 1349.146,
+        "max": 1402.661
+      }
+    }
+  ]
+}

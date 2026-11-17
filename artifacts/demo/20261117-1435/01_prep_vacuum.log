@@ -1,0 +1,20 @@
+{
+  "source": "C:\\Users\\aryan\\DEV_Maxxing\\dbms_proj\\data\\trading_bot.db",
+  "working_copy": "C:\\Users\\aryan\\DEV_Maxxing\\dbms_proj\\data\\demo\\20261117_1435\\trading_bot.db",
+  "measured_at": "2026-11-17T09:05:28.365317+00:00",
+  "before_vacuum": {
+    "page_size": 4096,
+    "page_count": 21623,
+    "freelist_count": 0,
+    "free_page_pct": 0.0,
+    "file_size_bytes": 88567808
+  },
+  "after_vacuum": {
+    "page_size": 4096,
+    "page_count": 21622,
+    "freelist_count": 0,
+    "free_page_pct": 0.0,
+    "file_size_bytes": 88563712
+  },
+  "vacuum_seconds": 2.624
+}
