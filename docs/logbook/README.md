@@ -18,7 +18,7 @@ It's written for three readers:
 | 3 | 2026-11-07 | Compatibility & indicator views, replay simulator, level-3 parity | ✅ Done | [day-03.md](day-03.md) |
 | 4 | 2026-11-08 | Roles, audit trigger, index audit, analytics, P&L backfill, switch to RDS | ✅ Done (main cloud is now RDS) | [day-04.md](day-04.md) |
 | 5 | 2026-11-09 → 11-10 | PITR demo, dead tuples, demo script and rehearsal | ✅ Done (PITR PASS on RDS; report moved to Day 6) | [day-05.md](day-05.md) |
-| 6 | 2026-11-17 | Buffer and report dropped (D76); presenter script for the demo | ✅ Done (demo PASS from the working copy; bot DB lost its VIX data on 11-11) | [day-06.md](day-06.md) |
+| 6 | 2026-11-17 | Buffer and report dropped (D76); presenter script for the demo; guide verification handbook | ✅ Done (demo PASS from the working copy; bot DB lost its VIX data on 11-11) | [day-06.md](day-06.md) |
 
 ## Decision register
 
@@ -107,6 +107,9 @@ chose it as a sensible default and recorded it.
 | D77 | 6 | `present.py`: `prepare` beforehand, `live` in the room; slow steps from artifacts, quick ones live | Agent | No dead time watching a bulk load; live steps still show real behaviour |
 | D78 | 6 | Index segment drops the expression index inside a rolled-back transaction | Agent | Same query and data before/after; also shows transactional DDL |
 | D79 | 6 | Segment 1 shows the Day-5 VACUUM numbers when the demo source is already vacuumed | Agent | The story is the bot's 2.5 GB file; numbers labelled with their artifact |
+| D80 | 6 | Guide handbook: on our laptop, local Docker only; live DBMS commands, `cloudsync` runs, viva Q&A | Team | Owner's answers to the scoping questions |
+| D81 | 6 | Handbook sandbox cloned from the Docker main pair, not the demo pair | Agent | Demo pair is temporary and was left with a bad candle (day-06 §4.5, since repaired) |
+| D82 | 6 | Handbook SQL typed in interactive psql/sqlite3; PowerShell only for `cloudsync` | Agent | No quoting problems; the guide can type their own SQL |
 
 ## How to add a day
 
