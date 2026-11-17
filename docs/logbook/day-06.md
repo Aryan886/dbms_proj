@@ -22,6 +22,7 @@ database lost all of its `vix_data` rows on 2026-11-11**, outside this project (
 | 4 | Recorded segments: VACUUM study, PITR on RDS (Day 5), L3 from `prepare`, the clock-skew finding | same run | same |
 | 5 | `present.py cleanup`: drops the demo database and working copy, keeps the artifacts | used on the failed pair (4.2) | same |
 | 6 | `demo.py --source`: the database to copy and replay from (read-only); step 9 still hashes the bot's real database | real run (section 3) | `scripts/demo.py` |
+| 7 | Guide verification handbook: the commands a guide may ask us to run live (constraints, transactions, joins, views, roles, audit trigger, EXPLAIN, MVCC, locking, SQLite WAL/triggers, CDC, quarantine, crash test, reconcile, WAL benchmark, tests), each with expected output and viva Q&A; three terminals (PowerShell, psql in Docker, sqlite3) on a `viva` sandbox | every command run once on a sandbox (section 3) | `docs/viva/guide_verification_commands.docx`, generator `docs/viva/make_guide.js` |
 
 No new automated tests: both scripts are presentation drivers over CLI commands that the
 suite already covers. They were verified by real runs. The suite was re-run after the
@@ -36,6 +37,9 @@ suite already covers. They were verified by real runs. The suite was re-run afte
 | D77 | Demo = `prepare` beforehand + `live` in the room: slow steps (VACUUM, 8-min bulk load, PITR restore) shown from artifacts, quick steps run live | Agent | Run `demo.py` live (17.7 min) | A live bulk load is dead time; live steps still show real behaviour |
 | D78 | Index segment drops `candles_ist_ts` inside a transaction that's rolled back | Agent | A second database without the index | One query, before and after, on the same data; it also shows that DDL is transactional |
 | D79 | Segment 1 shows the Day-5 VACUUM numbers when the demo source is already vacuumed | Agent | Show the 0-free-page numbers from the working copy | The story is about the bot's 2.5 GB file; the numbers are labelled with their artifact |
+| D80 | Guide handbook: commands run on our laptop, local Docker only (RDS/PITR shown from artifacts); covers live DBMS commands, `cloudsync` runs and viva Q&A | Team | Fresh clone on the guide's PC; include RDS commands; add code-ownership checks | Owner's answers to the scoping questions |
+| D81 | Handbook sandbox is cloned from the Docker main pair (`--from-dsn .../algotrade` + `data/trading_bot.db`), not the kept demo pair | Agent | Clone the demo pair `20261117-1435` | Demo pair is dropped after the presentation and was left with a bad candle (4.5); the Docker pair reconciled L1–L2 PASS |
+| D82 | SQL in the handbook is typed in interactive `psql` (`docker compose exec`) and `sqlite3` shells, `cloudsync` in PowerShell | Agent | Everything as PowerShell one-liners | No PowerShell quoting of `"timestamp"`; the guide can type their own SQL |
 
 ## 3. Measurements (real runs only)
 
@@ -50,6 +54,11 @@ suite already covers. They were verified by real runs. The suite was re-run afte
 | Bot DB SHA-256 | `a5b0a381…` before and after every run today; **differs** from the Day-2 reference `cf66a201…` (4.2) | `artifacts/day6/real_db_sha256.txt` |
 | Working copy SHA-256 | `1d5fbf0e…` before and after the run that read it | this log (sha256sum) |
 | Test suite | 59 tests in 304.4 s: **56 pass, 3 errors**, all `AttributeError: module 'utils' has no attribute 'vix_fetcher'` (4.4) | `artifacts/day6/test_suite.log` |
+| Handbook sandbox (Docker main pair) | `sandbox create` ~5 s; reconcile L1–L2 PASS in ~3 s; an edited cloud candle makes L2 FAIL on 1 of 88 days (exit 1), re-sync makes it PASS | expected-output boxes in `docs/viva/guide_verification_commands.docx` |
+| Handbook index check | latest-200 query 3.99 ms with `candles_ist_ts`, 28.59 ms without (seq scan) | same |
+| Handbook WAL benchmark, 3 s | delete mode 5 writes (p50 1,096 ms); WAL 375 writes (p50 1.16 ms) | same |
+| `tests.test_roles` + `tests.test_safety` | 6 tests in 34.9 s, OK | same |
+| Bot DB SHA-256 after the handbook runs | `a5b0a381…`, equal to the Day-6 baseline | `artifacts/day6/real_db_sha256.txt` |
 
 ## 4. Challenges and how they were fixed
 
@@ -97,6 +106,19 @@ suite already covers. They were verified by real runs. The suite was re-run afte
 - **Fix:** not done today (open item).
 - **Verified:** n/a.
 
+### 4.5 The kept demo pair was left with a bad candle (fixed)
+- **Symptom:** while preparing the handbook, the demo pair's SQLite
+  (`data/demo/20261117_1435/trading_bot.db`) had candle `28148126` with close 22878.45 above
+  its high 22828.45, and one unsynced `_changelog` entry; the cloud still had 22824.7.
+- **Root cause:** the 15:23 rehearsal (`live/present_20261117-152301.log`) stopped after
+  segment 3 wrote the bad close, before the sync and the correction ran. On the next `live`,
+  segment 3 reads that bad close as the "original" and restores it, so its PASS check fails.
+- **Fix:** with the owner's approval, set the close back to 22824.7 in the demo SQLite and ran
+  `sync once` to the demo database as `sync_writer` (2 entries, 1 upsert, 0 rejected).
+- **Verified:** cloud close 22824.7, `_changelog` empty, 0 `market_data_1m` rejects; then
+  `present.py live --only 3,4 --auto` passed every check and left both candles at their
+  original values (`artifacts/demo/20261117-1435/live/present_20261117-232134.log`).
+
 ## 5. Limitations and known gaps
 
 | Limitation | Impact | Planned |
@@ -106,6 +128,8 @@ suite already covers. They were verified by real runs. The suite was re-run afte
 | `present.py` has no automated test | A regression would show at rehearsal, not in CI | Rehearse with `live --auto` before presenting |
 | PITR and the VACUUM study are shown from recorded artifacts | Not live | By design (D77) |
 | Report draft not written (D76) | — | Out of scope |
+| Handbook numbers come from the Docker main pair as of 2026-11-17 | Row counts may drift if the working copy changes; error messages and plans won't | Re-run section 2.5 before the check |
+| Handbook was not rendered in LibreOffice; checked through Word (24 pages) and the docx schema validator | — | none |
 
 ## 6. Open items carried forward
 - [ ] **Owner: find out why the bot's `trading_bot.db` lost its `vix_data` on 2026-11-11**, and
@@ -114,6 +138,8 @@ suite already covers. They were verified by real runs. The suite was re-run afte
 - [ ] Fix the 3 tests that error after the bot's `vix_fetcher` changes (4.4).
 - [ ] Owner: delete `cloudsync-db-pitr` in the RDS console (from Day 5; not confirmed done).
 - [ ] Owner: run `present.py cleanup` after the presentation (the demo pair `20261117-1435` is kept).
+- [x] ~~Repair the demo pair's bad candle before the next `present.py live`~~ (4.5, done).
+- [ ] Team: rehearse the guide handbook once (`docs/viva/guide_verification_commands.docx`), each member owning a few checks.
 - [x] ~~Report draft (`docs/report.md`)~~: out of scope (D76).
 - [ ] Bot repo: commit or restore the uncommitted deleted result files on `main` (spec prerequisite).
 - [ ] Owner: fix `BacktestableBot` (`_last_options_snapshot_timestamp`, Day 3 §4.4).

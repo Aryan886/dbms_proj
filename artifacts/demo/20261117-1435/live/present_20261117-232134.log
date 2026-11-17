@@ -1,0 +1,111 @@
+AlgoTrade: SQLite -> PostgreSQL on AWS RDS
+demo pair: data/demo/20261117_1435/trading_bot.db + Postgres database cloudsync_demo_20261117_1435; prepared run artifacts/demo/20261117-1435
+
+==============================================================================
+  3. Integrity constraints and the quarantine   (~3 min)
+  Syllabus topic: CHECK, NOT NULL, FK; rejected by the database
+==============================================================================
+  SAY:
+   - Postgres decides what's invalid, not Python (D11). Python only routes the failure.
+   - A rejected row is kept in rejected_rows with the constraint it broke, so nothing is silently lost.
+
+  > Insert an impossible candle (high 90, low 110) straight into Postgres
+  PASS  rejected by Postgres: new row for relation "candles" violates check constraint "candles_ohlc_close_in_range"
+
+  > What the bulk load quarantined (rejected_rows)
+    source table  constraint            rows
+    ------------  --------------------  ----
+    delta_cache   delta_snapshots_pkey  2050
+    delta_cache: 2,050 duplicate groups on the natural key. The highest source id wins (D10),
+    the rest are kept here instead of being dropped.
+  [Enter = next step]
+
+  > Now the bot writes a bad candle (close above high) into SQLite, and we sync
+    SQLite accepted close = 22878.45 for candle id 28148126 (high is 22828.45). SQLite has no CHECK here.
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 0,
+    |   "deletes": 0,
+    |   "rejected": 1,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.2 s
+  PASS  the cloud quarantined it: [('28148126', 'candles_ohlc_close_in_range')]
+  [Enter = next step]
+
+  > The bot corrects the row, and we sync again
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.1 s
+  PASS  corrected row left the quarantine and is back in the cloud: (datetime.datetime(2026, 3, 27, 15, 29), 22824.85, 22828.45, 22820.55, 22824.7)
+  [Enter = next step]
+
+==============================================================================
+  4. Change capture and crash safety   (~4 min)
+  Syllabus topic: triggers, transactions (atomicity), recovery, idempotence
+==============================================================================
+  SAY:
+   - AFTER INSERT/UPDATE/DELETE triggers in SQLite log (table, pk, op, seq) into _changelog.
+   - The sync reads a batch, applies it AND moves the cursor in ONE Postgres transaction.
+   - So a crash leaves the cloud fully before or fully after a batch. Never half.
+
+  > The bot updates candle 28148125 in SQLite (close 22825.1 -> 22812.1)
+    The trigger captured it in _changelog:
+    seq     table           pk        op
+    ------  --------------  --------  --
+    691012  market_data_1m  28148125  U 
+    Cloud before sync: (datetime.datetime(2026, 3, 27, 15, 28), 22818.65, 22829.6, 22812.1, 22825.1)
+
+  > sync once
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 1.0 s
+  PASS  cloud after sync: (datetime.datetime(2026, 3, 27, 15, 28), 22818.65, 22829.6, 22812.1, 22812.1)
+    _changelog entries left for market_data_1m: 0 (pruned after Postgres acknowledged)
+  [Enter = next step]
+
+  > Now crash the sync in the middle of a batch (candle 28148125: close -> 22829.6)
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+      (with CLOUDSYNC_FAULT=mid_batch:1)
+    | [23:21:38] FAULT INJECTED: dying at mid_batch of batch 1
+    exit 75 in 0.9 s
+  PASS  the sync process died (exit 75, like kill -9)
+  PASS  cloud unchanged: close = 22812.1 (still 22812.1); cursor last_seq 691012 -> 691012
+    The change is still waiting in SQLite: 1 entry, nothing lost.
+  [Enter = next step]
+
+  > Restart the sync: it resumes from the cursor
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 0.9 s
+  PASS  cloud now: close = 22829.6; applied exactly once
+    $ cloudsync sync once --sqlite data/demo/20261117_1435/trading_bot.db --dsn "<demo dsn as sync_writer>"
+    |   "upserts": 1,
+    |   "deletes": 0,
+    |   "rejected": 0,
+    |   "paused_tables": [],
+    |   "backlog": 0
+    | }
+    exit 0 in 0.9 s
+    (candle 28148125 restored to close = 22825.1 and synced)
+  SAY:
+   - Also built: exponential backoff when the network drops, schema-drift pause per table,
+   - and a replay simulator with chaos (revise, rebuild, kill) that ran in `prepare` (05_replay_chaos.log).
+  [Enter = next step]
+
+live demo finished in 0.1 min; log: artifacts/demo/20261117-1435/live/present_20261117-232134.log
